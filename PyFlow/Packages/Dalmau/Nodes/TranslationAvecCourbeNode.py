@@ -9,7 +9,7 @@ class TranslationAvecCourbeNode(NodeAnimation):
         super(TranslationAvecCourbeNode, self).__init__(name)
         self.createInputPin("Courbe", "StringPin")
     
-    def compute(self, *args, **kwargs):
+    def execute(self, *args, **kwargs):
         monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         maCourbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Courbe"))[0]
         maDuree = self.getData("Duree deplacement")

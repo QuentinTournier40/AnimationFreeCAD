@@ -6,17 +6,13 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
     
     def __init__(self, name):
         super(TranslationRectiligneSansCourbeNode, self).__init__(name)
-        self.createInputPin("X point de depart", "FloatPin")
-        self.createInputPin("Y point de depart", "FloatPin")
-        self.createInputPin("Z point de depart", "FloatPin")
-        self.createInputPin("X point de fin", "FloatPin")
-        self.createInputPin("Y point de fin", "FloatPin")
-        self.createInputPin("Z point de fin", "FloatPin")
+        self.createInputPin("Point de depart", "VectorPin")
+        self.createInputPin("Point de fin", "VectorPin")
 
-    def compute(self, *args, **kwargs):
+    def execute(self, *args, **kwargs):
         monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
-        monPointDeDepart = FreeCAD.Vector(self.getData("X point de depart"), self.getData("Y point de depart"), self.getData("Z point de depart"))
-        monPointDeFin = FreeCAD.Vector(self.getData("X point de fin"), self.getData("Y point de fin"), self.getData("Z point de fin"))
+        monPointDeDepart = self.getData("Point de depart")
+        monPointDeFin = self.getData("Point de fin")
         maDuree = self.getData("Duree deplacement")
         monEstBoucle = self.getData("Realiser en boucle ?")
         monEstAllerRetour = self.getData("Realiser en aller-retour")

@@ -5,10 +5,10 @@ from PyFlow.Core.Common import *
 class CommencerNode(NodeBase):
     def __init__(self, name):
         super(CommencerNode, self).__init__(name)
-        self.createInputPin("inExec","ExecPin", None, self.compute)
+        self.createInputPin("inExec","ExecPin", None, self.execute)
         self.createOutputPin("outExec", "ExecPin")
 
-    def compute(self, *args, **kwargs):
+    def execute(self, *args, **kwargs):
         self["outExec"].call()
 
     @staticmethod

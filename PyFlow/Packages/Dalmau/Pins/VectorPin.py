@@ -28,7 +28,6 @@ def setDataG(self,data):
 class VectorPin(PinBase):
     def __init__(self, name, parent, direction, **kwargs):
         super(VectorPin, self).__init__(name, parent, direction, **kwargs)
-        self.setDefaultValue(Vector(7,2,3))
 
     @staticmethod
     def IsValuePin():
