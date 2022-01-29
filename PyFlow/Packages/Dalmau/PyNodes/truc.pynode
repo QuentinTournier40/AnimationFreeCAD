@@ -1,0 +1,75 @@
+from PyFlow.Core.Common import *
+import FreeCAD
+from PySide import QtCore
+import functools
+import time
+
+
+def translation(monObjet, pointDepart, pointArrivee, duree):
+
+    global monTimer2
+    deltaCoord = (pointArrivee.x - pointDepart.x, pointArrivee.y - pointDepart.y, pointArrivee.z - pointDepart.z)  
+    avancementParSeconde = []
+    
+    monObjet.Placement.Base = pointDepart              
+    for coord in deltaCoord:
+        avancementParSeconde.append(coord/(31.9*duree)) 
+    timer = QtCore.QTimer()
+
+    repetitionMouvement = functools.partial(mouvement, unObjet = monObjet, unAvancementParSec = avancementParSeconde, pointFin = pointArrivee, monTimer = timer)   
+    timer.timeout.connect(repetitionMouvement)    
+    monTimer2 = time.time()
+    timer.start(20)
+
+def mouvement(unObjet, unAvancementParSec, pointFin, monTimer):
+
+    if(unObjet.Placement.Base == pointFin):
+        monTimer.stop()
+    else:
+        unObjet.Placement.move(FreeCAD.Vector( unAvancementParSec[0], unAvancementParSec[1], unAvancementParSec[2]))    
+        
+        if(unAvancementParSec[0] > 0):                                             
+            if(unObjet.Placement.Base.x + unAvancementParSec[0] > pointFin.x):      
+                unObjet.Placement.Base = pointFin                                   
+                monTimer.stop()                                                     
+        elif(unAvancementParSec[0] < 0):                                            
+            if(unObjet.Placement.Base.x + unAvancementParSec[0] < pointFin.x):     
+                unObjet.Placement.Base = pointFin                                   
+                monTimer.stop()                                                     
+        elif(unAvancementParSec[1] > 0):                                            
+            if(unObjet.Placement.Base.y + unAvancementParSec[1] > pointFin.y):    
+                unObjet.Placement.Base = pointFin                                   
+                monTimer.stop()                                                     
+        elif(unAvancementParSec[1] < 0):                                           
+            if(unObjet.Placement.Base.y + unAvancementParSec[1] < pointFin.y):   
+                unObjet.Placement.Base = pointFin                                  
+                monTimer.stop()                                                   
+        elif(unAvancementParSec[2] > 0):                                            
+            if(unObjet.Placement.Base.z + unAvancementParSec[2] > pointFin.z):    
+                unObjet.Placement.Base = pointFin                                   
+                monTimer.stop()                                                 
+        elif(unAvancementParSec[2] < 0):                                           
+            if(unObjet.Placement.Base.z + unAvancementParSec[2] < pointFin.z):    
+                unObjet.Placement.Base = pointFin                                  
+                monTimer.stop()                                                  
+
+def prepareNode(node):
+    node.setName("Translation rectiligne uniforme")
+    node.createInputPin("InExec", "ExecPin", foo=node.processNode)
+    node.createOutputPin("OutExec", "ExecPin")
+    node.createInputPin("Objet", "StringPin")
+    node.createInputPin("X depart", "IntPin")
+    node.createInputPin("Y depart", "IntPin")
+    node.createInputPin("Z depart", "IntPin")
+    node.createInputPin("X fin", "IntPin")
+    node.createInputPin("Y fin", "IntPin")
+    node.createInputPin("Z fin", "IntPin")
+    node.createInputPin("Duree deplacement", "IntPin")
+    node.createOutputPin("Sortie", "StringPin")
+
+def compute(node):
+    positionDepart = FreeCAD.Vector(node.getData("X depart"), node.getData("Y depart"), node.getData("Z depart"))
+    positionFin = FreeCAD.Vector(node.getData("X fin"), node.getData("Y fin"), node.getData("Z fin"))
+    objetFreeCAD = FreeCAD.ActiveDocument.getObjectsByLabel(node.getData("Objet"))[0]
+    node.setData("Sortie", translation(objetFreeCAD, positionDepart, positionFin, node.getData("Duree deplacement")))
+    node["OutExec"].call()

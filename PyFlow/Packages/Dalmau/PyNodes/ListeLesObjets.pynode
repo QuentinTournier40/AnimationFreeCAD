@@ -1,0 +1,20 @@
+from PyFlow.Core.Common import *
+import FreeCAD
+
+def output():
+    mesObjets = FreeCAD.ActiveDocument.Objects
+    labelsObjets = []
+    for i in range(0,len(mesObjets)):
+        labelsObjets.append(mesObjets[i].Label)
+    return labelsObjets
+
+
+def prepareNode(node):
+    node.setName("ListesLesObjets")
+    node.createInputPin(pinName="inExec", dataType="ExecPin", foo=node.processNode)
+    node.createOutputPin(pinName="outExec", dataType="ExecPin")
+    node.createOutputPin("ListeObjets", "StringPin", structure=StructureType.Array)
+
+def compute(node):
+    node.setData("ListeObjets", output())
+    node["outExec"].call()

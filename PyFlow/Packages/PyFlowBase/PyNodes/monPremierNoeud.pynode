@@ -1,0 +1,112 @@
+from PyFlow.Core.Common import *
+
+#accent qui bug
+#définir la fonction compute sinon bug
+#structure doit être défini pour les noeuds autre que "ExecPin"
+
+#pinName = nom de la pin d'un noeud
+#dataType = typeDeLaPin (int, string, etc)
+
+""" class StructureType(IntEnum):
+    Used to determine structure type for values.
+
+    Single = 0  #: Single data structure
+    Array = 1  #: Python list structure, represented as arrays -> typed and lists -> non typed
+    Dict = 2  #: :py:class:`PFDict` structure, is basically a rey typed python dict
+    Multi = 3  #: This means it can became any of the previous ones on connection/user action """
+
+def jAiReussi():
+    return ("j ai reussi")
+
+def prepareNode(node):
+    node.setName("J'espere que ca va fonctionne")
+    node.createInputPin(pinName="inExec", dataType="ExecPin", foo=node.processNode)
+    node.createOutputPin(pinName="outExec", dataType="ExecPin")
+    node.createInputPin(pinName="n", dataType="IntPin", structure=0)
+    node.createOutputPin(pinName="resultat", dataType="StringPin", structure=0)
+
+def compute(node):
+    n = node.getData("n")
+    node.setData("resultat", jAiReussi())
+    node["outExec"].call()
+
+"""
+def createInputPin(self, pinName, dataType, defaultValue=None, foo=None, structure=StructureType.Single, constraint=None, structConstraint=None, supportedPinDataTypes=[], group=""):
+        Creates input pin
+
+        :param pinName: Pin name
+        :type pinName: str
+        :param dataType: Pin data type
+        :type dataType: str
+        :param defaultValue: Pin default value
+        :type defaultValue: object
+        :param foo: Pin callback. used for exec pins
+        :type foo: function
+        :param structure: Pin structure
+        :type structure: :class:`~PyFlow.Core.Common.StructureType.Single`
+        :param constraint: Pin constraint. Should be any hashable type. We use str
+        :type constraint: object
+        :param structConstraint: Pin struct constraint. Also should be hashable type
+        :type structConstraint: object
+        :param supportedPinDataTypes: List of allowed pin data types to be connected. Used by AnyPin
+        :type supportedPinDataTypes: list(str)
+        :param group: Pin group. Used only by ui wrapper
+        :type group: str
+        
+        pinName = self.getUniqPinName(pinName)
+        p = CreateRawPin(pinName, self, dataType, PinDirection.Input)
+        p.structureType = structure
+        p.group = group
+
+        if structure == StructureType.Array:
+            p.initAsArray(True)
+        elif structure == StructureType.Dict:
+            p.initAsDict(True)
+        elif structure == StructureType.Multi:
+            p.enableOptions(PinOptions.ArraySupported)
+
+        if foo:
+            p.onExecute.connect(foo, weak=False)
+
+        if defaultValue is not None or dataType == "AnyPin":
+            p.setDefaultValue(defaultValue)
+            p.setData(defaultValue)
+            if dataType == "AnyPin":
+                p.setTypeFromData(defaultValue)
+        else:
+            p.setDefaultValue(getPinDefaultValueByType(dataType))
+
+        if dataType == "AnyPin" and supportedPinDataTypes:
+            def supportedDataTypes():
+                return supportedPinDataTypes
+            p._supportedDataTypes = p._defaultSupportedDataTypes = tuple(supportedPinDataTypes)
+            p.supportedDataTypes = supportedDataTypes
+        if constraint is not None:
+            p.updateConstraint(constraint)
+        if structConstraint is not None:
+            p.updateStructConstraint(structConstraint)
+        p.dataBeenSet.connect(self.setDirty.send)
+        p.markedAsDirty.connect(self.setDirty.send)
+        return p
+
+
+    def createOutputPin(self, pinName, dataType, defaultValue=None, structure=StructureType.Single, constraint=None, structConstraint=None, supportedPinDataTypes=[], group=""):
+        Creates output pin
+
+        :param pinName: Pin name
+        :type pinName: str
+        :param dataType: Pin data type
+        :type dataType: str
+        :param defaultValue: Pin default value
+        :type defaultValue: object
+        :param structure: Pin structure
+        :type structure: :class:`~PyFlow.Core.Common.StructureType.Single`
+        :param constraint: Pin constraint. Should be any hashable type. We use str
+        :type constraint: object
+        :param structConstraint: Pin struct constraint. Also should be hashable type
+        :type structConstraint: object
+        :param supportedPinDataTypes: List of allowed pin data types to be connected. Used by AnyPin
+        :type supportedPinDataTypes: list(str)
+        :param group: Pin group. Used only by ui wrapper
+        :type group: str
+        """
