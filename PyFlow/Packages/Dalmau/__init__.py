@@ -11,7 +11,8 @@ from PyFlow.Packages.Dalmau.Pins.VectorPin import VectorPin
 from PyFlow.Packages.Dalmau.FunctionLibraries.DemoLib import DemoLib
 from PyFlow.Packages.Dalmau.FunctionLibraries.TranslationLib import TranslationLib
 from PyFlow.Packages.Dalmau.FunctionLibraries.RotationLib import RotationLib 
-from PyFlow.Packages.Dalmau.FunctionLibraries.AutreLib import AutreLib
+from PyFlow.Packages.Dalmau.FunctionLibraries.AutreLib import AutreLib 
+from PyFlow.Packages.Dalmau.FunctionLibraries.VectorLib import VectorLib
 
 # Class based nodes
 from PyFlow.Packages.Dalmau.Nodes.DemoNode import DemoNode
@@ -20,6 +21,7 @@ from PyFlow.Packages.Dalmau.Nodes.TranslationAvecCourbeNode import TranslationAv
 from PyFlow.Packages.Dalmau.Nodes.RotationSurSoiMemeNode import RotationSurSoiMemeNode 
 from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode 
 from PyFlow.Packages.Dalmau.Nodes.RotationNode import RotationNode 
+from PyFlow.Packages.Dalmau.Nodes.getValueVector import getValueVector
 
 # Tools
 from PyFlow.Packages.Dalmau.Tools.DemoShelfTool import DemoShelfTool
@@ -38,14 +40,16 @@ from PyFlow.Packages.Dalmau.PrefsWidgets.DemoPrefs import DemoPrefs
 _FOO_LIBS = {
 	TranslationLib.__name__: TranslationLib(PACKAGE_NAME),
 	RotationLib.__name__: RotationLib(PACKAGE_NAME),
-	AutreLib.__name__: AutreLib(PACKAGE_NAME)
+	AutreLib.__name__: AutreLib(PACKAGE_NAME),
+	VectorLib.__name__: VectorLib(PACKAGE_NAME)
 }
 _NODES = {
 	TranslationRectiligneSansCourbeNode.__name__: TranslationRectiligneSansCourbeNode,
 	TranslationAvecCourbeNode.__name__: TranslationAvecCourbeNode,
 	RotationSurSoiMemeNode.__name__: RotationSurSoiMemeNode,
 	CommencerNode.__name__: CommencerNode,
-	RotationNode.__name__: RotationNode
+	RotationNode.__name__: RotationNode,
+	getValueVector.__name__: getValueVector
 }
 _PINS = {
 	VectorPin.__name__: VectorPin
