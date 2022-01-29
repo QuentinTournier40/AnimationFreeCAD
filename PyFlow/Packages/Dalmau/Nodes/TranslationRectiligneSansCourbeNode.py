@@ -14,8 +14,8 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
         monPointDeDepart = self.getData("Point de depart")
         monPointDeFin = self.getData("Point de fin")
         maDuree = self.getData("Duree deplacement")
-        monEstBoucle = self.getData("Realiser en boucle ?")
-        monEstAllerRetour = self.getData("Realiser en aller-retour")
+        monEstBoucle = self.getData("Boucle")
+        monEstAllerRetour = self.getData("Aller-retour")
 
         translation = TranslationRectiligneSansCourbe(self, monObjet, monPointDeDepart, monPointDeFin, maDuree, monEstBoucle, monEstAllerRetour)
         translation.translater()

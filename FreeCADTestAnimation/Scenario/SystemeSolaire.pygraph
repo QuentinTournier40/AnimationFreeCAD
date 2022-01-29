@@ -1,0 +1,4309 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "CommencerNode",
+            "owningGraphName": "root",
+            "name": "CommencerNode",
+            "uuid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "CommencerNode_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a8655025-a677-4e34-9e9e-b9d3d0c5daf9",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "CommencerNode_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationUranus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "54034af9-efcb-476d-86e0-9f5f30769b34"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationUranus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "d3a60d2a-68fb-4750-bb18-d3362c85e024"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationTerre",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "01a07873-cb7d-4a44-8d0b-7ffdcd28e1a5"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationMercure10",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "09455f50-d591-4f66-85ab-da91a33295e9"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationVenus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "79c5ddd7-d20b-490c-aad0-c2422af8f290"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationMars",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "62935b5b-27e0-4edb-a2d7-5beb17474a5b"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationVenus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "f98833b2-9088-4daf-9766-14a0fca257e4"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationMercure",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "e4b0608b-b07f-4ad0-a966-11443decf9bb"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationSurSoiMemeNode",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "a2aa263b-b315-4cb1-80cd-40c9c4992c89"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationNetpune",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "029370ff-275c-44e3-9373-b0dd5cf6ea58"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationSaturne",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "31be8f5a-773d-4c90-9723-f4bd738caa61"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationSaturne",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "8dbf5ee2-24dd-4e57-9dad-1e51e3dd3f4a"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationJupiter",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "d7f6505c-d684-46e5-8145-540636d66bc9"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationJupiter",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "9104e158-e9c8-4786-8a6c-8620ce20edee"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationNeptune",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "83a66849-e596-4c8b-9e6b-65fa22403359"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationMercure",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "706b26b7-2635-4bfd-b005-b03a2861b819"
+                        },
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationTerre",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "1a43b3c1-2912-42a9-b531-e3ad6e37b421"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "afaf521b-93ff-46b2-bd54-9bf833f31589",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationSurSoiMemeNode_inExec",
+                                "uuid": "8ed76f91-f10e-44e2-afca-9f58bb890fe9",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "CommencerNode"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CommencerNode</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -821.5458291224818,
+            "y": -131.4240279659551
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationMercure",
+            "uuid": "706b26b7-2635-4bfd-b005-b03a2861b819",
+            "inputs": [
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "5",
+                    "uuid": "d1f0255a-c719-432e-9fce-56399416d146",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationMercure_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "d6bdf85a-1668-4488-8d37-477badb20f55",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "9a8868e3-d3b3-4680-8477-fbac8b62b545",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "b9342b52-3a1f-49d4-abdc-375b1b10f8c3",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "8104cebf-7f27-4e3a-8b18-78d7accacb0f",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "bab5e96a-2cdd-4fc6-b049-27fb00a4e2ac",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Mercure\"",
+                    "uuid": "efba35b8-f9b8-47ce-8aef-4d2b5dfc1989",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "fc81b9c9-fd67-4ca1-ad5d-6db854ea6ef1",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationMercure",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "706b26b7-2635-4bfd-b005-b03a2861b819"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "fc81b9c9-fd67-4ca1-ad5d-6db854ea6ef1",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationMercure_inExec",
+                                "uuid": "46ee2dc4-9e5c-4c83-962e-f945bc403495",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMercure_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "c46ab83a-1941-401b-8041-bb81845f3d19",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationMercure"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationMercure</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -674.1089227045372,
+            "y": -1292.768767486249
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationMercure",
+            "uuid": "e4b0608b-b07f-4ad0-a966-11443decf9bb",
+            "inputs": [
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "86a6fa8c-3cfb-487e-81f1-50e947115769",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "56de4fa9-7b85-4c97-a9bf-167fbad66acf",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationMercure",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "e4b0608b-b07f-4ad0-a966-11443decf9bb"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "56de4fa9-7b85-4c97-a9bf-167fbad66acf",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationMercure_inExec",
+                                "uuid": "278c86d0-53e4-4438-a663-916d112adcc7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Mercure\"",
+                    "uuid": "7e186b22-630b-420b-86cf-a61874407a80",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "7",
+                    "uuid": "051f8e7d-89ed-4923-b7a8-47d60240fa9c",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteMercure\"",
+                    "uuid": "5459c3e1-ad34-4136-8da6-dc22c93bb8c0",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "ccd28edf-d26e-4ecf-8658-300f43796d5d",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "aece7ab3-a062-4808-8e00-a013b0e55ab2",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationMercure"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationMercure</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -671.8915347227255,
+            "y": -1136.640582430817
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationVenus",
+            "uuid": "f98833b2-9088-4daf-9766-14a0fca257e4",
+            "inputs": [
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "aae2f5f8-9be9-480c-8b72-6ee94e797747",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Venus\"",
+                    "uuid": "40291a24-d079-44b2-afff-fa63ee8ccd16",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "82fbed63-851a-4b04-850b-bac53607e522",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "43d3c46a-c33a-485d-a399-51a5fa338344",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationVenus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "f98833b2-9088-4daf-9766-14a0fca257e4"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "43d3c46a-c33a-485d-a399-51a5fa338344",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationVenus_inExec",
+                                "uuid": "7d0a4761-1ffa-4aa8-a09b-337eb781a7fe",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "7",
+                    "uuid": "bb9860b4-f8ce-4426-acbb-01a52d7e88a6",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationVenus_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "2382bf50-5c3a-4ce5-9d30-c74f3b2f20e8",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "045ea1bd-229f-45e7-8cca-69ab013a9402",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "f3ed92fc-4079-4eb7-8eb6-ff065e610933",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationVenus_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "4d2573e6-59b9-4fd9-8932-d442cca29c9e",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationVenus"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationVenus</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -673.5858641889967,
+            "y": -981.385329703119
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationVenus",
+            "uuid": "79c5ddd7-d20b-490c-aad0-c2422af8f290",
+            "inputs": [
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Venus\"",
+                    "uuid": "bf608be3-e307-44f4-bd74-7c639b446a8b",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "8bd03f96-2f63-42eb-aba5-838b12c7bd81",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationVenus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "79c5ddd7-d20b-490c-aad0-c2422af8f290"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "8bd03f96-2f63-42eb-aba5-838b12c7bd81",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationVenus_inExec",
+                                "uuid": "d6ce1898-d284-4655-818e-3007a90c0bf5",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "9",
+                    "uuid": "101fcaf9-c074-4652-b736-f1fc06de65f8",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteVenus\"",
+                    "uuid": "820a3f44-1e26-4542-bafc-a2b689c45078",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "842ec4e0-a363-4bf8-9ada-8a912944c347",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "9d53beea-6430-4c82-a8f8-b8e880f117f1",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationVenus_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "062176e5-df5e-42d1-a5d4-cd1cd2e28ff3",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationVenus"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationVenus</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -671.948008934392,
+            "y": -824.569396734962
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationTerre",
+            "uuid": "01a07873-cb7d-4a44-8d0b-7ffdcd28e1a5",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "9488fc91-696f-4d1e-b75a-08b185d5c202",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationTerre",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "01a07873-cb7d-4a44-8d0b-7ffdcd28e1a5"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "9488fc91-696f-4d1e-b75a-08b185d5c202",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationTerre_inExec",
+                                "uuid": "7ef20230-e81e-4016-a784-bea85c2d7525",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "9",
+                    "uuid": "fa97e23f-9b87-4357-984a-3202155a5b34",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationTerre_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "22d2a5cc-1505-4fe2-9b4d-793c1a60c6af",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "1a3f103a-b2f7-49b0-a53d-ad233432de9e",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "38bb1675-02cf-4f35-8423-86f73a9b2d51",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "5ac447ae-9984-4124-86f9-18843fafaa24",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "41245fab-def3-4fb9-9694-219f2b06da1d",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Terre\"",
+                    "uuid": "13a05dc9-6aff-437e-b2b6-04b94534b74c",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationTerre_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "be4ccee3-750c-4e34-bf88-ae176906f507",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationTerre"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationTerre</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -674.2901070749075,
+            "y": -671.3261410234537
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationTerre",
+            "uuid": "1a43b3c1-2912-42a9-b531-e3ad6e37b421",
+            "inputs": [
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "11",
+                    "uuid": "0fee0eea-779c-4e0d-95e3-5f1e4abb6ba2",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteTerre\"",
+                    "uuid": "090169ed-caff-43f8-95bf-f09ee187f0fb",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "dc16ce85-a79a-48c9-a58c-006120d6814a",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "dcf2f6b6-3374-436a-bd07-758abb4edff4",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Terre\"",
+                    "uuid": "e67f0b5a-e06e-4da4-b864-19a25ffdfac2",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "7586334f-94a4-42a8-bb7e-194f31ab1b0a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationTerre",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "1a43b3c1-2912-42a9-b531-e3ad6e37b421"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "7586334f-94a4-42a8-bb7e-194f31ab1b0a",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationTerre_inExec",
+                                "uuid": "53db9ff8-976f-4046-85eb-49372ba18a92",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationTerre_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "7e09ef3e-943d-47c1-b514-ac1b83ec07f9",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationTerre"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationTerre</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -672.0727190930958,
+            "y": -515.1979559680215
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationJupiter",
+            "uuid": "9104e158-e9c8-4786-8a6c-8620ce20edee",
+            "inputs": [
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationJupiter_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "003699a8-c03a-453e-b6d5-86cba267c42c",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "1e4e38f9-d3d2-464e-b527-5bb1609ca1f6",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "0927b193-5afe-429d-8ba0-750a0ebcdb3d",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "2a6c7a06-f592-4b9d-be04-10d26ea8cfe8",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Jupiter\"",
+                    "uuid": "f232d194-4fd0-4ea4-893b-539ce0e38d15",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "b929c8f5-c07a-4c3e-8043-4f12acc0c45c",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "b97ce550-578f-4399-a8db-2ccc99f40453",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationJupiter",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "9104e158-e9c8-4786-8a6c-8620ce20edee"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "b97ce550-578f-4399-a8db-2ccc99f40453",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationJupiter_inExec",
+                                "uuid": "2be55853-20b5-4009-8332-0450a6de39e3",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "13",
+                    "uuid": "41a2c4c4-5c0e-4c60-857d-1a2dce76cebb",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationJupiter_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "f2fab9c7-3cea-4bdc-b7ba-dd209bf19ed9",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationJupiter"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationJupiter</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -666.5937582697928,
+            "y": -40.18244952906204
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationJupiter",
+            "uuid": "d7f6505c-d684-46e5-8145-540636d66bc9",
+            "inputs": [
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "77f7b60d-5285-4662-982f-bab78d94adf7",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "7692c0df-9caf-4948-8189-773e7574a586",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Jupiter\"",
+                    "uuid": "c5c351b5-9155-4c0e-9308-79f2f4960125",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "2bd41d9d-3906-4a7e-8088-331f69cff5a3",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationJupiter",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "d7f6505c-d684-46e5-8145-540636d66bc9"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "2bd41d9d-3906-4a7e-8088-331f69cff5a3",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationJupiter_inExec",
+                                "uuid": "9cf436b8-eac9-4498-a635-c2d320c8166f",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "15",
+                    "uuid": "ea715941-4584-4663-83cd-84f176ae66d0",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteJupiter\"",
+                    "uuid": "2e83ff62-9c1b-46a2-9130-bc21ca4c730f",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationJupiter_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "51155f85-947f-432a-b7c1-96b8ef2adc11",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationJupiter"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationJupiter</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -664.3763702879811,
+            "y": 115.94573552637019
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationSaturne",
+            "uuid": "8dbf5ee2-24dd-4e57-9dad-1e51e3dd3f4a",
+            "inputs": [
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "00225457-de0a-41b4-813b-4fb49aa00495",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "594d5b60-e507-4009-a471-e4fc0a79d63e",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "9d9482aa-eab1-40d1-bebb-3b100ab3ba67",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Saturne\"",
+                    "uuid": "bbe9f76f-afa0-4cf9-b53a-5983c8d97800",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "36973204-a917-4289-ac93-51ca16538007",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "ed55cae3-0d4d-4d14-afa0-f126128e1f27",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationSaturne",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "8dbf5ee2-24dd-4e57-9dad-1e51e3dd3f4a"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "ed55cae3-0d4d-4d14-afa0-f126128e1f27",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationSaturne_inExec",
+                                "uuid": "a87089f5-43a5-4b57-baf4-c2011b644923",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "15",
+                    "uuid": "10a680fd-2ba7-4861-bad8-e16bf2732d88",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationSaturne_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "cea09d2f-e423-42b8-b179-2c8c2ca2ff09",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSaturne_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "bfd1d5dc-0cb9-47b2-ba6f-ddce6bff8718",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationSaturne"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationSaturne</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -665.1944956619844,
+            "y": 268.1176405315896
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationSaturne",
+            "uuid": "31be8f5a-773d-4c90-9723-f4bd738caa61",
+            "inputs": [
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "19dead0e-a7bb-4e37-aa3b-0fa0867b412f",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Saturne\"",
+                    "uuid": "1b3fbe9f-7e32-4f35-ac4d-4850c0c479b9",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "2a346a66-3247-479d-97e8-14f805086d00",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationSaturne",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "31be8f5a-773d-4c90-9723-f4bd738caa61"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "2a346a66-3247-479d-97e8-14f805086d00",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationSaturne_inExec",
+                                "uuid": "b9c32f3e-a996-4651-8ca0-7459af0db6d5",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "17",
+                    "uuid": "ab7a1e1e-adae-4f28-ab8d-987568bcd7af",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteSaturne\"",
+                    "uuid": "a5216ac0-37b7-4a7d-b6d5-b9b34e04ac9d",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "5ee79081-8e0d-49b5-9e4c-835325f61d2f",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationSaturne_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "e46ff18e-1fea-4109-a571-4aa496e727c7",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationSaturne"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationSaturne</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -662.9771076801727,
+            "y": 423.66629285981486
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationMars",
+            "uuid": "62935b5b-27e0-4edb-a2d7-5beb17474a5b",
+            "inputs": [
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "8aa479fa-6593-41e2-9b48-a7709a161bcc",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "b34e9425-5270-4030-9da2-89918114dfb7",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationMars",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "62935b5b-27e0-4edb-a2d7-5beb17474a5b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "b34e9425-5270-4030-9da2-89918114dfb7",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationMars_inExec",
+                                "uuid": "e0605b57-a134-4827-8a87-60961d2c0dd7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Mars\"",
+                    "uuid": "e54d2cfb-6b92-4a68-8647-315fbfddc28a",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "d873d906-b439-44db-8da8-c365d0ee9799",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "11",
+                    "uuid": "aafbe5e0-97d5-4ddb-aecf-9a64e5cfb52e",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationMars_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "711b52e2-59ed-4fee-a12b-3516647a51d7",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "e34287ca-6ecf-4c9e-851d-666147f55881",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "e80036c7-3b6c-4cda-bdbf-5287cf4ffc5b",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationMars_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "d84a6507-da39-4d05-be00-0bd8a46e0595",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationMars"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationMars</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -673.4385276418622,
+            "y": -374.9991260552164
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationMercure10",
+            "uuid": "09455f50-d591-4f66-85ab-da91a33295e9",
+            "inputs": [
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "c2a7c96b-3182-49fa-b2d8-aac495f757ad",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Mars\"",
+                    "uuid": "c1c4f690-9ed7-4146-adfd-df9597af5048",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "6f6880af-4745-4c23-864e-4a83572e790d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationMercure10",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "09455f50-d591-4f66-85ab-da91a33295e9"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "6f6880af-4745-4c23-864e-4a83572e790d",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationMercure10_inExec",
+                                "uuid": "c7d17710-dad3-4fac-a088-5fe52f49d122",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "13",
+                    "uuid": "668a9ac3-3000-48d8-9ee9-865fc8e10a57",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteMars\"",
+                    "uuid": "f044d5f4-451f-4ea4-87f4-64ca11674109",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "53f67843-9459-4a99-b589-840f7d56163e",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationMercure10_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "3637e37f-40cf-4d89-8d6c-cef280c4bf4c",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationMercure10"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationMercure10</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -671.2211396600504,
+            "y": -218.870940999784
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationUranus",
+            "uuid": "54034af9-efcb-476d-86e0-9f5f30769b34",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "1ba2b13e-6fe1-4d00-81b5-276bd610d316",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationUranus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "54034af9-efcb-476d-86e0-9f5f30769b34"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "1ba2b13e-6fe1-4d00-81b5-276bd610d316",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationUranus_inExec",
+                                "uuid": "47850443-5234-4c98-b23a-799c5fd2e5be",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Uranus\"",
+                    "uuid": "f1ee20bb-25fc-4ea9-994f-86c1b1064cce",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "ecbe7ee0-9895-42fe-924b-84c418c75062",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "17",
+                    "uuid": "952cd519-a145-4606-8878-dbedc31e84e5",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationUranus_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "8f7a736e-4450-4a2f-a0bd-32c55d768c3b",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "836c422a-7708-43ba-9fb0-b6e128ea016a",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "4a45d8fb-8420-4c43-8044-9d4e668e528b",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "a87e1d15-f536-491f-8687-170c1c7fc1c0",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationUranus_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "06df6c85-13c5-4b59-a446-d84ffa3afc44",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationUranus"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationUranus</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -666.3511019571102,
+            "y": 575.0217873196971
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationUranus",
+            "uuid": "d3a60d2a-68fb-4750-bb18-d3362c85e024",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "e13a7620-4157-4a36-a8c1-0ed1531f5d05",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationUranus",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "d3a60d2a-68fb-4750-bb18-d3362c85e024"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "e13a7620-4157-4a36-a8c1-0ed1531f5d05",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationUranus_inExec",
+                                "uuid": "d8c9d226-9bb6-4b93-812b-4e345f677140",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "19",
+                    "uuid": "2b696644-8d92-4078-ba50-3b0d0c88ba50",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteUranus\"",
+                    "uuid": "1e96e799-1786-427a-b9a1-0fd97a45d86d",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "7620ac6e-4928-4fe2-997f-b7fc3d133e38",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "45e77a21-1ae2-4c5e-888c-5eb84cf281d0",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Uranus\"",
+                    "uuid": "0fd4c48f-a15e-40a6-acd6-060af04bec06",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationUranus_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "7c3fbb3c-df13-42fe-b331-1137fc77c025",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationUranus"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationUranus</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -664.1337139752985,
+            "y": 732.7960853456165
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationNetpune",
+            "uuid": "029370ff-275c-44e3-9373-b0dd5cf6ea58",
+            "inputs": [
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "2ef3029b-7d94-4647-a89e-8650d715aa8f",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "19",
+                    "uuid": "57b2bb6e-1718-49a1-a867-5c241352874e",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationNetpune_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "2dba3ff3-d2dd-43d0-826a-f3d566efcf17",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "0192cb13-8dfc-4d28-9edc-01c610ccf3c0",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "7fc418e2-1765-469a-b912-193c2982b732",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "2788e631-841c-4ec8-903b-80bcd86769c6",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "9756636a-6336-42f2-bd9b-49d9c72cbb50",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationNetpune",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "029370ff-275c-44e3-9373-b0dd5cf6ea58"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "9756636a-6336-42f2-bd9b-49d9c72cbb50",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationNetpune_inExec",
+                                "uuid": "a6263758-170a-4b6f-9385-37bff2f8f9a6",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Neptune\"",
+                    "uuid": "c25f3461-0141-416c-92d0-4d7f142f4572",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationNetpune_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "547d6abe-b1d1-4062-92eb-5fcd37ac763c",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationNetpune"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationNetpune</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -665.7024859550853,
+            "y": 866.5571169334947
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "TranslationAvecCourbeNode",
+            "owningGraphName": "root",
+            "name": "TranslationNeptune",
+            "uuid": "83a66849-e596-4c8b-9e6b-65fa22403359",
+            "inputs": [
+                {
+                    "name": "Courbe",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_Courbe",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"OrbiteNeptune\"",
+                    "uuid": "d88729e7-1c89-4a33-902a-10dea8ccc418",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Courbe",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "84a7a929-0bc2-4416-a45c-0f90c30a37a8",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "f0c0ac71-4c76-470c-9abe-1c5bfd20af8e",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Neptune\"",
+                    "uuid": "711130a3-1228-4304-b62b-b174fe4f6da6",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "4668cdf0-c3f1-42be-a0ef-a62acaa8ac08",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "TranslationNeptune",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "83a66849-e596-4c8b-9e6b-65fa22403359"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "4668cdf0-c3f1-42be-a0ef-a62acaa8ac08",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "TranslationNeptune_inExec",
+                                "uuid": "1d4311d3-7ae4-4a96-b25f-753b334ff232",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "21",
+                    "uuid": "31be8430-0f47-46a1-94e3-5eeb5c78ea68",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "TranslationNeptune_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "a0482942-6b79-433e-9568-8d9895c75c1f",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "TranslationNeptune"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">TranslationNeptune</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -664.0338022967693,
+            "y": 1022.6505229140871
+        },
+        {
+            "package": "Dalmau",
+            "lib": null,
+            "type": "RotationSurSoiMemeNode",
+            "owningGraphName": "root",
+            "name": "RotationSurSoiMemeNode",
+            "uuid": "a2aa263b-b315-4cb1-80cd-40c9c4992c89",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "afaf521b-93ff-46b2-bd54-9bf833f31589",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CommencerNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "RotationSurSoiMemeNode",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ee4b604a-8cc8-4ed6-9ec9-90c4e9c36868",
+                            "rhsNodeUid": "a2aa263b-b315-4cb1-80cd-40c9c4992c89"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d5ccc868-59cc-47f8-bbec-ee1c560eb350",
+                                "destinationUUID": "afaf521b-93ff-46b2-bd54-9bf833f31589",
+                                "sourceName": "CommencerNode_outExec",
+                                "destinationName": "RotationSurSoiMemeNode_inExec",
+                                "uuid": "8ed76f91-f10e-44e2-afca-9f58bb890fe9",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Axe de rotation",
+                    "package": "Dalmau",
+                    "fullName": "RotationSurSoiMemeNode_Axe de rotation",
+                    "dataType": "VectorPin",
+                    "direction": 0,
+                    "value": "{\"Vector\": [0.0, 0.0, 1.0]}",
+                    "uuid": "636f572a-ec66-4571-a2cc-20cbc491e4ae",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Axe de rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Boucle",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Boucle",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "d522182b-d9ab-4b79-8b8a-c599cd7a8bcc",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Boucle",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Objet",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Objet",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Soleil\"",
+                    "uuid": "55ea44c5-bbea-4590-a9a5-cbf1d44ee035",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Objet",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Duree deplacement",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Duree deplacement",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "1",
+                    "uuid": "79eb29f1-870d-4415-90ad-ee7af84d718d",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Duree deplacement",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle au debut de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Angle au debut de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "771432fa-bb49-4759-a3c3-98b701feed02",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle au debut de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Angle a la fin de la rotation",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Angle a la fin de la rotation",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "360.0",
+                    "uuid": "20ccf154-c105-4cf0-af1e-61b7a2bfe8cd",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Angle a la fin de la rotation",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Aller-retour",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_Aller-retour",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "bb6ec6a7-6b9c-4e01-97aa-e19e100edae5",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Aller-retour",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "RotationSurSoiMemeNode_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "f2424d47-6e1e-489e-9c32-9732064fc380",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "RotationSurSoiMemeNode"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RotationSurSoiMemeNode</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -662.3166364044467,
+            "y": 1185.152020903851
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "2.0.1",
+    "activeGraph": "root"
+}

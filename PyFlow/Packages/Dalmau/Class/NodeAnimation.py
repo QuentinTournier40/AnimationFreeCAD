@@ -7,5 +7,5 @@ class NodeAnimation(NodeBase):
         self.createOutputPin("outExec", "ExecPin")
         self.createInputPin("Objet", "StringPin")
         self.createInputPin("Duree deplacement", "IntPin", 1)
-        self.createInputPin("Realiser en boucle ?", "BoolPin")
-        self.createInputPin("Realiser en aller-retour", "BoolPin")
+        self.createInputPin("Boucle", "BoolPin")
+        self.createInputPin("Aller-retour", "BoolPin")

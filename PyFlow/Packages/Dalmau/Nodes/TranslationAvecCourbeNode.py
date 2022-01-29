@@ -13,8 +13,8 @@ class TranslationAvecCourbeNode(NodeAnimation):
         monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         maCourbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Courbe"))[0]
         maDuree = self.getData("Duree deplacement")
-        monEstBoucle = self.getData("Realiser en boucle ?")
-        monEstAllerRetour = self.getData("Realiser en aller-retour")
+        monEstBoucle = self.getData("Boucle")
+        monEstAllerRetour = self.getData("Aller-retour")
 
         translation = TranslationAvecCourbe(self, monObjet, maCourbe, maDuree, monEstBoucle, monEstAllerRetour)
         translation.translater()

@@ -19,8 +19,8 @@ class RotationNode(NodeAnimation):
         monAngleDebut = self.getData("Angle au debut de la rotation")
         monAngleFin = self.getData("Angle a la fin de la rotation")
         maDuree = self.getData("Duree deplacement")
-        monEstBoucle = self.getData("Realiser en boucle ?")
-        monEstAllerRetour = self.getData("Realiser en aller-retour")
+        monEstBoucle = self.getData("Boucle")
+        monEstAllerRetour = self.getData("Aller-retour")
         
         rotation = Rotation(self, monObjet, monAxeDeRotation, monCentreDeRotation, monAngleDebut, monAngleFin, maDuree, monEstBoucle, monEstAllerRetour)
         rotation.rotation()
