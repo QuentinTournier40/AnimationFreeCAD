@@ -1,21 +1,22 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 import FreeCAD
+import math
 
 
-class PlacerNode(NodeBase):
+class PlacerAngleDunObjet(NodeBase):
     def __init__(self, name):
-        super(PlacerNode, self).__init__(name)
+        super(PlacerAngleDunObjet, self).__init__(name)
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.createInputPin("Objet","StringPin")
-        self.createInputPin("Coordonnees","VectorPin")
+        self.createInputPin("Angle","FloatPin")
         self.createOutputPin("outExec", "ExecPin")
-        self.createOutputPin("Coordonnees de fin","VectorPin")
+        self.createOutputPin("Angle de fin","FloatPin")
 
     def execute(self, *args, **kwargs):
         monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
-        monObjet.Placement.Base = self.getData("Coordonnees")
-        self.setData("Coordonnees de fin", self.getData("Coordonnees"))
+        monObjet.Placement.Rotation.Angle = math.radians(self.getData("Angle"))
+        self.setData("Angle de fin", self.getData("Angle"))
         self["outExec"].call()
 
     @staticmethod
@@ -28,4 +29,4 @@ class PlacerNode(NodeBase):
 
     @staticmethod
     def description():
-        return "Place un objet aux coordonées données"
+        return "Change l'angle de base d'un objet"

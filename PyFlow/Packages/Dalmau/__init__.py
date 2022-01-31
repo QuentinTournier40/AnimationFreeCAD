@@ -23,6 +23,7 @@ from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode
 from PyFlow.Packages.Dalmau.Nodes.RotationNode import RotationNode 
 from PyFlow.Packages.Dalmau.Nodes.getValueVector import getValueVector
 from PyFlow.Packages.Dalmau.Nodes.PlacerNode import PlacerNode
+from PyFlow.Packages.Dalmau.Nodes.PlacerAngleDunObjet import PlacerAngleDunObjet
 
 # Tools
 from PyFlow.Packages.Dalmau.Tools.DemoShelfTool import DemoShelfTool
@@ -51,7 +52,8 @@ _NODES = {
 	CommencerNode.__name__: CommencerNode,
 	RotationNode.__name__: RotationNode,
 	getValueVector.__name__: getValueVector,
-	PlacerNode.__name__: PlacerNode
+	PlacerNode.__name__: PlacerNode,
+	PlacerAngleDunObjet.__name__: PlacerAngleDunObjet
 }
 _PINS = {
 	VectorPin.__name__: VectorPin
