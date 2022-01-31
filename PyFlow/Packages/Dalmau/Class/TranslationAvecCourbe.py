@@ -1,19 +1,14 @@
 import FreeCAD
+from PyFlow.Packages.Dalmau.Class.Mouvement import Mouvement
 from PySide import QtCore
 import functools
 import time
 
-class TranslationAvecCourbe():
+class TranslationAvecCourbe(Mouvement):
     
-    def __init__(self, unNode, unObjet, uneCourbe, uneDuree, estBoucle, estAllerRetour):
-        self.node = unNode
-        self.objet = unObjet
+    def __init__(self, unNode, unObjet, uneDuree, estBoucle, estAllerRetour, uneCourbe):
+        super().__init__(unNode, unObjet, uneDuree, estBoucle, estAllerRetour)
         self.courbe = uneCourbe
-        self.duree = uneDuree
-        self.estBoucle = estBoucle
-        self.estAllerRetour = estAllerRetour
-        self.etape = 0
-        self.premierePartieAllerRetour = True
         self.pointsTrajectoire = self.creerListeDePointsAvecUneCourbe(self.courbe)
 
     def creerListeDePointsAvecUneCourbe(self, uneCourbe):

@@ -16,7 +16,7 @@ class TranslationAvecCourbeNode(NodeAnimation):
         monEstBoucle = self.getData("Boucle")
         monEstAllerRetour = self.getData("Aller-retour")
 
-        translation = TranslationAvecCourbe(self, monObjet, maCourbe, maDuree, monEstBoucle, monEstAllerRetour)
+        translation = TranslationAvecCourbe(self, monObjet, maDuree, monEstBoucle, monEstAllerRetour, maCourbe)
         translation.translater()
 
     @staticmethod

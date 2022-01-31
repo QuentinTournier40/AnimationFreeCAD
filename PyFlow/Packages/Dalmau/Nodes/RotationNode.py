@@ -23,7 +23,7 @@ class RotationNode(NodeAnimation):
         monEstBoucle = self.getData("Boucle")
         monEstAllerRetour = self.getData("Aller-retour")
         
-        rotation = Rotation(self, monObjet, monAxeDeRotation, monCentreDeRotation, monAngleDebut, monAngleFin, maDuree, monEstBoucle, monEstAllerRetour)
+        rotation = Rotation(self, monObjet, maDuree, monEstBoucle, monEstAllerRetour, monAxeDeRotation, monCentreDeRotation, monAngleDebut, monAngleFin)
         rotation.rotation()
 
         self.setData("Position finale", monObjet.Placement.Base)

@@ -1,23 +1,18 @@
+from PyFlow.Packages.Dalmau.Class.Mouvement import Mouvement
 from PySide import QtCore
 import functools
 import FreeCAD
 
-class Rotation():
+class Rotation(Mouvement):
 
-    def __init__(self, unNode, unObjet, unAxeDeRotation, unCentreDeRotation, unAngleDeDebut, unAngleDeFin, uneDuree, estBoucle, estAllerRetour):
-        self.node = unNode
-        self.objet = unObjet
+    def __init__(self, unNode, unObjet, uneDuree, estBoucle, estAllerRetour, unAxeDeRotation, unCentreDeRotation, unAngleDeDebut, unAngleDeFin):
+        super().__init__(unNode, unObjet, uneDuree, estBoucle, estAllerRetour)
         self.axeDeRotation = unAxeDeRotation
         self.centreDeRotation = unCentreDeRotation
         self.angleDeDebut = unAngleDeDebut
         self.angleDeFin = unAngleDeFin
-        self.duree = uneDuree
         self.angleARepeter = (self.angleDeFin - self.angleDeDebut) / (32*self.duree)
-        self.estBoucle = estBoucle
-        self.estAllerRetour = estAllerRetour
-        self.premierePartieAllerRetour = True
-        self.etape = 0
-    
+
     def repetitionMouvement(self, unTimer):
         if(self.etape != (32*self.duree)):
             self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
