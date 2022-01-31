@@ -1,6 +1,7 @@
 import FreeCAD
 from PySide import QtCore
 import functools
+import time
 
 class TranslationAvecCourbe():
     
@@ -24,6 +25,7 @@ class TranslationAvecCourbe():
             self.etape += 1
         else:
             unTimer.stop()
+            print(time.time() - self.monTemps)
             self.etape = 0
             self.node["outExec"].call()
 
@@ -72,3 +74,4 @@ class TranslationAvecCourbe():
             repetitionMouvement = functools.partial(self.repetitionMouvement, unTimer = timer)
         timer.timeout.connect(repetitionMouvement)
         timer.start(20)
+        self.monTemps = time.time()
