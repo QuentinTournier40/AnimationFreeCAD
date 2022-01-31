@@ -6,9 +6,9 @@ class getValueVector(NodeBase):
     def __init__(self, name):
         super(getValueVector, self).__init__(name)
         self.createInputPin("Vecteur", "VectorPin")
-        self.createOutputPin("X", "FloatPin")
-        self.createOutputPin("Y", "FloatPin")
-        self.createOutputPin("Z", "FloatPin")
+        self.createOutputPin("x", "FloatPin")
+        self.createOutputPin("y", "FloatPin")
+        self.createOutputPin("z", "FloatPin")
         
     def compute(self, *args, **kwargs):
         vecteur = self.getData("Vecteur")

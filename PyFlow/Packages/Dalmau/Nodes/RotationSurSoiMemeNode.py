@@ -10,8 +10,9 @@ class RotationSurSoiMemeNode(NodeAnimation):
         self.createInputPin("Axe de rotation", "VectorPin", Vector(0,0,1))
         self.createInputPin("Angle au debut de la rotation", "FloatPin")
         self.createInputPin("Angle a la fin de la rotation", "FloatPin")
+        self.createOutputPin("Angle final", "FloatPin")
 
-    def execute(self, *args, **kwargs):
+    def compute(self, *args, **kwargs):
         monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         monAxeDeRotation = self.getData("Axe de rotation")
         monCentreDeRotation = FreeCAD.Vector(0,0,0)
@@ -23,6 +24,9 @@ class RotationSurSoiMemeNode(NodeAnimation):
         
         rotation = Rotation(self, monObjet, monAxeDeRotation, monCentreDeRotation, monAngleDebut, monAngleFin, maDuree, monEstBoucle, monEstAllerRetour)
         rotation.rotation()
+
+        self.setData("Position finale", monObjet.Placement.Base)
+        self.setData("Angle final", monAngleFin)
 
     @staticmethod
     def category():

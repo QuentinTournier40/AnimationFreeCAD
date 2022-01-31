@@ -20,4 +20,5 @@ class VectorLib(FunctionLibraryBase):
     @staticmethod
     @IMPLEMENT_NODE(returns=('VectorPin', Vector()), meta={NodeMeta.CATEGORY: 'Vector', NodeMeta.KEYWORDS: []})
     def createVector(x=('FloatPin', 0.0), y=('FloatPin', 0.0), z=('FloatPin', 0.0)):
+        """Create a Vector"""
         return Vector(x,y,z)

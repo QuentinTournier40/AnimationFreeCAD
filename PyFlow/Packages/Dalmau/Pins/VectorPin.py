@@ -19,11 +19,6 @@ class VectorDecoder(json.JSONDecoder):
 
 def setDataG(self,data):
     super(self.__class__, self).setData(data)
-    try:
-        if  self.direction == PinDirection.Input and not self.hasConnections():
-            self.owningNode().compute()
-    except:
-        pass
 
 class VectorPin(PinBase):
     def __init__(self, name, parent, direction, **kwargs):
@@ -35,7 +30,7 @@ class VectorPin(PinBase):
 
     @staticmethod
     def supportedDataTypes():
-        return ('VectorPin')
+        return ('VectorPin',)
 
     @staticmethod
     def color():
