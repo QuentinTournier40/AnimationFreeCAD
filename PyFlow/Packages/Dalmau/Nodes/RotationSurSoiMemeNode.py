@@ -1,7 +1,10 @@
 from PyFlow.Packages.Dalmau.Class.Rotation import Rotation
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
-import FreeCAD
 from FreeCAD import Vector
+from Qt.QtWidgets import *
+
+import FreeCAD
+
 
 class RotationSurSoiMemeNode(NodeAnimation):
     
@@ -13,12 +16,27 @@ class RotationSurSoiMemeNode(NodeAnimation):
         self.createOutputPin("Angle final", "FloatPin")
 
     def compute(self, *args, **kwargs):
-        monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+        try:
+            monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+        except IndexError:
+            w = MainWindow()
+            msg = QMessageBox()
+            titre = "Erreur"
+            texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
+            return msg.about(w, titre, texte)
+        
+        maDuree = self.getData("Duree deplacement")
+        if(maDuree <= 0):
+            w = MainWindow()
+            msg = QMessageBox()
+            titre = "Erreur"
+            texte = "Erreur au node " + self.name + ": \nPin : " + self.duree.name + "\n\nUne durée ce doit d'être strictement positive."
+            return msg.about(w, titre, texte)        
+            
         monAxeDeRotation = self.getData("Axe de rotation")
         monCentreDeRotation = FreeCAD.Vector(0,0,0)
         monAngleDebut = self.getData("Angle au debut de la rotation")
         monAngleFin = self.getData("Angle a la fin de la rotation")
-        maDuree = self.getData("Duree deplacement")
         monEstBoucle = self.getData("Boucle")
         monEstAllerRetour = self.getData("Aller-retour")
         
@@ -35,3 +53,7 @@ class RotationSurSoiMemeNode(NodeAnimation):
     @staticmethod
     def description():
         return "Fait tourner des bails"
+    
+class MainWindow(QMainWindow):
+    def init(self):
+        QMainWindow.init(self)
