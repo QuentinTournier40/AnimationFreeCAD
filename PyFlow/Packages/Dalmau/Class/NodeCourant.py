@@ -19,9 +19,9 @@ class NodeCourant:
 
     def ajouterNode(self,unMouvement):
         NodeCourant.__listeNodeCourant.append(unMouvement)
-        print("Ajout node ")
-
+        print("Ajout node " + str(NodeCourant.__listeNodeCourant))
 
     def enleverNode(self,unMouvement):
+        print(NodeCourant.__listeNodeCourant.index(unMouvement))
         NodeCourant.__listeNodeCourant.pop(NodeCourant.__listeNodeCourant.index(unMouvement) - 1)
-        print("Enlever node ")
+        print("Enlever node " + str(self.__listeNodeCourant))
