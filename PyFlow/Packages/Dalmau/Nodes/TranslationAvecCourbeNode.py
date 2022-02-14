@@ -1,4 +1,3 @@
-from fnmatch import translate
 from PyFlow.Packages.Dalmau.Class.TranslationAvecCourbe import TranslationAvecCourbe
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from Qt.QtWidgets import *
@@ -9,11 +8,12 @@ class TranslationAvecCourbeNode(NodeAnimation):
     
     def __init__(self, name):
         super(TranslationAvecCourbeNode, self).__init__(name)
-        self.createInputPin("Courbe", "StringPin")
+        self.courbe = self.createInputPin("Courbe", "StringPin")
+        self.duree = self.createInputPin("Duree", "FloatPin")
     
     def compute(self, *args, **kwargs):
         try:
-            monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+            FreeCAD.ActiveDocument.getObjectsByLabel(self.objet.getData())[0]
         except IndexError:
             w = MainWindow()
             msg = QMessageBox()
@@ -22,26 +22,22 @@ class TranslationAvecCourbeNode(NodeAnimation):
             return msg.about(w, titre, texte)
         
         try:
-            maCourbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Courbe"))[0]
+            FreeCAD.ActiveDocument.getObjectsByLabel(self.courbe.getData())[0]
         except IndexError:
             w = MainWindow()
             msg = QMessageBox()
             titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
+            texte = "Erreur au node " + self.name + ": \nPin : " + self.courbe.name + "\n\nAucun objet porte le nom que vous avez saisi."
             return msg.about(w, titre, texte)
-
-        maDuree = self.getData("Duree deplacement")
-        if(maDuree <= 0):
+        
+        if(self.duree.getData() <= 0):
             w = MainWindow()
             msg = QMessageBox()
             titre = "Erreur"
             texte = "Erreur au node " + self.name + ": \nPin : " + self.duree.name + "\n\nUne durée ce doit d'être strictement positive."
             return msg.about(w, titre, texte)        
 
-        monEstBoucle = self.getData("Boucle")
-        monEstAllerRetour = self.getData("Aller-retour")
-
-        translation = TranslationAvecCourbe(self, monObjet, maDuree, monEstBoucle, monEstAllerRetour, maCourbe)
+        translation = TranslationAvecCourbe(self)
         translation.translater()
 
     @staticmethod

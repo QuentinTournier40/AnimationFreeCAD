@@ -1,49 +1,50 @@
-from PyFlow.Packages.Dalmau.Class.Mouvement import Mouvement
+from PyFlow.Packages.Dalmau.Class.Mouvement import NOMBRE_D_OR, Mouvement
 from PySide import QtCore
 import functools
 import FreeCAD
 
 class Rotation(Mouvement):
 
-    def __init__(self, unNode, unObjet, uneDuree, estBoucle, estAllerRetour, unAxeDeRotation, unCentreDeRotation, unAngleDeDebut, unAngleDeFin):
-        super().__init__(unNode, unObjet, uneDuree, estBoucle, estAllerRetour)
-        self.axeDeRotation = unAxeDeRotation
-        self.centreDeRotation = unCentreDeRotation
-        self.angleDeDebut = unAngleDeDebut
-        self.angleDeFin = unAngleDeFin
-        self.angleARepeter = (self.angleDeFin - self.angleDeDebut) / (32*self.duree)
+    def __init__(self, unNode):
+        super().__init__(unNode)
+        self.axeDeRotation = unNode.axeRotation.getData()
+        self.centreDeRotation = unNode.centreRotation.getData()
+        self.angleDeDebut = unNode.angleDebut.getData()
+        self.angleDeFin = unNode.angleFin.getData()
+        self.nbrPoints = round(NOMBRE_D_OR * self.duree)
+        self.angleARepeter = (self.angleDeFin - self.angleDeDebut) / self.nbrPoints
 
-    def repetitionMouvement(self, unTimer):
-        if(self.etape != (32*self.duree)):
+    def repetitionMouvement(self):
+        if(self.etape != self.nbrPoints):
             self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
             self.etape += 1
         else:
-            unTimer.stop()
+            self.timer.stop()
             self.etape = 0
-            self.node["outExec"].call()
+            self.sortieNode.call()
 
-    def repetitionMouvementSansFin(self, unTimer):
+    def repetitionMouvementSansFin(self):
         self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
 
-    def repetitionMouvementAllerRetour(self, unTimer):
-        if(self.etape < (32*self.duree) and self.premierePartieAllerRetour):
+    def repetitionMouvementAllerRetour(self):
+        if(self.etape < self.nbrPoints and self.premierePartieAllerRetour):
             self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
             self.etape += 1
-        elif(self.etape == (32*self.duree) and self.premierePartieAllerRetour):
+        elif(self.etape == self.nbrPoints and self.premierePartieAllerRetour):
             self.premierePartieAllerRetour = False
         elif(self.etape > 0 and not(self.premierePartieAllerRetour)):
             self.etape -= 1
             self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, -self.angleARepeter)
         elif(self.etape == 0 and not(self.premierePartieAllerRetour)):
-            unTimer.stop()
+            self.timer.stop()
             self.premierePartieAllerRetour = True
-            self.node["outExec"].call()
+            self.sortieNode.call()
 
-    def repetitionMouvementSansFinEtAllerRetour(self, unTimer):
-        if(self.etape < (32*self.duree) and self.premierePartieAllerRetour):
+    def repetitionMouvementSansFinEtAllerRetour(self):
+        if(self.etape < self.nbrPoints and self.premierePartieAllerRetour):
             self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
             self.etape += 1
-        elif(self.etape == (32*self.duree) and self.premierePartieAllerRetour):
+        elif(self.etape == self.nbrPoints and self.premierePartieAllerRetour):
             self.premierePartieAllerRetour = False
         elif(self.etape > 0 and not(self.premierePartieAllerRetour)):
             self.etape -= 1
@@ -53,14 +54,13 @@ class Rotation(Mouvement):
     
     def rotation(self):
         self.objet.Placement.Rotation = FreeCAD.Rotation(self.axeDeRotation, self.angleARepeter)
-        timer = QtCore.QTimer()
         if(self.estBoucle and self.estAllerRetour):
-            repetitionMouvement = functools.partial(self.repetitionMouvementSansFinEtAllerRetour, unTimer = timer)
+            repetitionMouvement = functools.partial(self.repetitionMouvementSansFinEtAllerRetour)
         elif(self.estBoucle and not(self.estAllerRetour)):
-            repetitionMouvement = functools.partial(self.repetitionMouvementSansFin, unTimer = timer)
+            repetitionMouvement = functools.partial(self.repetitionMouvementSansFin)
         elif(self.estAllerRetour and not(self.estBoucle)):
-            repetitionMouvement = functools.partial(self.repetitionMouvementAllerRetour, unTimer = timer)
+            repetitionMouvement = functools.partial(self.repetitionMouvementAllerRetour)
         else:
-            repetitionMouvement = functools.partial(self.repetitionMouvement, unTimer = timer)
-        timer.timeout.connect(repetitionMouvement)
-        timer.start(20)
+            repetitionMouvement = functools.partial(self.repetitionMouvement)
+        self.timer.timeout.connect(repetitionMouvement)
+        self.timer.start()
