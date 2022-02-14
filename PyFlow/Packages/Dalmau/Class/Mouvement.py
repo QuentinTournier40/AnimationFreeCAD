@@ -18,6 +18,7 @@ class Mouvement(ABC):
         self.estAllerRetour = unNode.estAllerRetour.getData()
         self.duree = unNode.duree.getData()
 
+"""
     @abstractmethod
     def repetitionMouvement(self):
         pass
@@ -34,7 +35,7 @@ class Mouvement(ABC):
     def repetitionMouvementSansFinEtAllerRetour(self):
         pass
 
-    """ @abstractmethod
+    @abstractmethod
     def allerEtapeX(self,etape):
         pass
 

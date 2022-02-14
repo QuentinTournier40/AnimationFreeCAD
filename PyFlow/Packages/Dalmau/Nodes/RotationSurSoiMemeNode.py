@@ -10,14 +10,16 @@ class RotationSurSoiMemeNode(NodeAnimation):
     
     def __init__(self, name):
         super(RotationSurSoiMemeNode, self).__init__(name)
-        self.createInputPin("Axe de rotation", "VectorPin", Vector(0,0,1))
-        self.createInputPin("Angle au debut de la rotation", "FloatPin")
-        self.createInputPin("Angle a la fin de la rotation", "FloatPin")
-        self.createOutputPin("Angle final", "FloatPin")
+        self.axeRotation = self.createInputPin("Axe de rotation", "VectorPin", Vector(0,0,1))
+        self.centreRotation = Vector(0,0,0)
+        self.angleDebut = self.createInputPin("Angle au debut de la rotation", "FloatPin")
+        self.angleFin = self.createInputPin("Angle a la fin de la rotation", "FloatPin")
+        self.angleFinal = self.createOutputPin("Angle final", "FloatPin")
+        self.duree = self.createInputPin("Duree", "FloatPin")
 
     def compute(self, *args, **kwargs):
         try:
-            monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+            FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         except IndexError:
             w = MainWindow()
             msg = QMessageBox()
@@ -25,26 +27,18 @@ class RotationSurSoiMemeNode(NodeAnimation):
             texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
             return msg.about(w, titre, texte)
         
-        maDuree = self.getData("Duree deplacement")
-        if(maDuree <= 0):
+        if(self.duree.getData() <= 0):
             w = MainWindow()
             msg = QMessageBox()
             titre = "Erreur"
             texte = "Erreur au node " + self.name + ": \nPin : " + self.duree.name + "\n\nUne durée ce doit d'être strictement positive."
             return msg.about(w, titre, texte)        
-            
-        monAxeDeRotation = self.getData("Axe de rotation")
-        monCentreDeRotation = FreeCAD.Vector(0,0,0)
-        monAngleDebut = self.getData("Angle au debut de la rotation")
-        monAngleFin = self.getData("Angle a la fin de la rotation")
-        monEstBoucle = self.getData("Boucle")
-        monEstAllerRetour = self.getData("Aller-retour")
-        
-        rotation = Rotation(self, monObjet, maDuree, monEstBoucle, monEstAllerRetour, monAxeDeRotation, monCentreDeRotation, monAngleDebut, monAngleFin)
+                   
+        rotation = RotationSurSoiMeme(self)
         rotation.rotation()
 
-        self.setData("Position finale", monObjet.Placement.Base)
-        self.setData("Angle final", monAngleFin)
+        #self.setData("Position finale", monObjet.Placement.Base)
+        #self.setData("Angle final", monAngleFin)
 
     @staticmethod
     def category():

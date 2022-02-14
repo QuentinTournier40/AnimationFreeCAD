@@ -4,11 +4,10 @@ import Draft
 
 class TranslationRectiligneSansCourbe(TranslationAvecCourbe):
 
-    def __init__(self, unNode, unObjet, unePositionDeDepart, unePositionDeFin, uneDuree, estBoucle, estAllerRetour):
-        self.positionDeDepart = unePositionDeDepart
-        self.positionDeFin = unePositionDeFin
-        uneLigne = self.creerLigneAvecDeuxPoints(self.positionDeDepart, self.positionDeFin)
-        super().__init__(unNode, unObjet, uneLigne, uneDuree, estBoucle, estAllerRetour)
+    def __init__(self, unNode):
+        uneLigne = self.creerLigneAvecDeuxPoints(unNode.pointDepart.getData(), unNode.pointDeFin.getData())
+        unNode.courbe = uneLigne
+        super().__init__(unNode)
         self.supprimerCourbe(uneLigne)
 
     def creerLigneAvecDeuxPoints(self, point1, point2):

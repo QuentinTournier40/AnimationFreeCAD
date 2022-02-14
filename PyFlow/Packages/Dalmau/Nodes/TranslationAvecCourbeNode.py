@@ -8,7 +8,7 @@ class TranslationAvecCourbeNode(NodeAnimation):
     
     def __init__(self, name):
         super(TranslationAvecCourbeNode, self).__init__(name)
-        self.courbe = self.createInputPin("Courbe", "StringPin")
+        self.nomCourbe = self.createInputPin("Courbe", "StringPin")
         self.duree = self.createInputPin("Duree", "FloatPin")
     
     def compute(self, *args, **kwargs):
@@ -22,12 +22,12 @@ class TranslationAvecCourbeNode(NodeAnimation):
             return msg.about(w, titre, texte)
         
         try:
-            FreeCAD.ActiveDocument.getObjectsByLabel(self.courbe.getData())[0]
+            self.courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.nomCourbe.getData())[0]
         except IndexError:
             w = MainWindow()
             msg = QMessageBox()
             titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.courbe.name + "\n\nAucun objet porte le nom que vous avez saisi."
+            texte = "Erreur au node " + self.name + ": \nPin : " + self.nomCourbe.name + "\n\nAucun objet porte le nom que vous avez saisi."
             return msg.about(w, titre, texte)
         
         if(self.duree.getData() <= 0):
