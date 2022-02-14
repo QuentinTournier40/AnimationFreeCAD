@@ -10,7 +10,7 @@ class Mouvement(ABC):
         self.timer = QtCore.QTimer()
         self.timer.setInterval(RAFRAICHISSEMENT)
         self.etape = 0
-        self.premiereEtapeAllerRetour = True
+        self.aEteConnecte = False
 
         self.sortieNode = unNode.sortieNode
         self.objet = FreeCAD.ActiveDocument.getObjectsByLabel(unNode.objet.getData())[0]
