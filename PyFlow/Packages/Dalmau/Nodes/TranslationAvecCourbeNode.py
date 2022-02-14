@@ -1,4 +1,5 @@
 from PyFlow.Packages.Dalmau.Class.TranslationAvecCourbe import TranslationAvecCourbe
+from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from Qt.QtWidgets import *
 
@@ -15,27 +16,16 @@ class TranslationAvecCourbeNode(NodeAnimation):
         try:
             FreeCAD.ActiveDocument.getObjectsByLabel(self.objet.getData())[0]
         except IndexError:
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
-            return msg.about(w, titre, texte)
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet porte le nom que vous avez saisi.")    
         
         try:
             self.courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.nomCourbe.getData())[0]
         except IndexError:
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.nomCourbe.name + "\n\nAucun objet porte le nom que vous avez saisi."
-            return msg.about(w, titre, texte)
+            return FenetreErreur("Erreur", self.name, self.nomCourbe.name, "Aucune courbe porte le nom que vous avez saisi.")    
+
         
         if(self.duree.getData() <= 0):
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.duree.name + "\n\nUne durée ce doit d'être strictement positive."
-            return msg.about(w, titre, texte)        
+            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")    
 
         translation = TranslationAvecCourbe(self)
         translation.translater()
@@ -47,7 +37,3 @@ class TranslationAvecCourbeNode(NodeAnimation):
     @staticmethod
     def description():
         return "Fait bouger des bails en suivant la trajectoire de n'importe quel type de courbe"
-
-class MainWindow(QMainWindow):
-    def init(self):
-        QMainWindow.init(self)

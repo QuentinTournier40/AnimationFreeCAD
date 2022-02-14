@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from Qt.QtWidgets import *
 from PySide import QtCore
 import FreeCAD
 
@@ -10,13 +11,27 @@ class Mouvement(ABC):
         self.timer = QtCore.QTimer()
         self.timer.setInterval(RAFRAICHISSEMENT)
         self.etape = 0
-        self.aEteConnecte = False
+        self.estBoucleAller = False
 
         self.sortieNode = unNode.sortieNode
         self.objet = FreeCAD.ActiveDocument.getObjectsByLabel(unNode.objet.getData())[0]
         self.estBoucle = unNode.estBoucle.getData()
         self.estAllerRetour = unNode.estAllerRetour.getData()
         self.duree = unNode.duree.getData()
+
+class FenetreErreur():
+    def __init__(self, titre, nomNode, nomPin, erreur):
+        fenetre = MainWindow()
+        msg = QMessageBox()
+        texte = "Erreur au node : " + nomNode + "\nPin : " + nomPin + "\n\n" + erreur
+        return msg.about(fenetre, titre, texte)
+
+class MainWindow(QMainWindow):
+    def init(self):
+        QMainWindow.init(self)
+
+
+        
 
 """
     @abstractmethod
@@ -50,4 +65,6 @@ class Mouvement(ABC):
     @abstractmethod
     def allerEtapeSuivante(self):
         pass"""
+
+    
     

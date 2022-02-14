@@ -22,21 +22,24 @@ class TranslationAvecCourbe(Mouvement):
 
     def mouvement(self, sens, suite):
         self.objet.Placement.Base = (self.pointsTrajectoire[self.etape])
-        if(sens == True):
+        if(sens):
             self.etape += 1
             stop = self.nbrPoints
+
         else:
             self.etape -= 1
             stop = -1
+
+        print(self.etape)
         if(self.etape == stop):
             self.timer.stop()
             print(time.time() - self.monTemps)
             exec(suite)
 
-    # self.aEteConnecte : nous permet de savoir si la variable mouvement est la même qu'avant si oui on ne la reconnecte pas 
+    # self.estBoucleAller : nous permet de savoir si la variable mouvement est la même qu'avant si oui on ne la reconnecte pas 
     # sinon ca bugue pk je ne sais pas c'est très énervant 
     def mouvementSansBoucle(self, sens, paramSuite):
-        if(sens == True):
+        if(sens):
             self.etape = 0
             mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
             print("Aller")
@@ -44,21 +47,19 @@ class TranslationAvecCourbe(Mouvement):
             self.etape = self.nbrPoints - 1
             print("Retour")
             mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
-            
-        if(self.aEteConnecte == False):
-            self.timer.timeout.connect(mouvement)
-            self.aEteConnecte = True
-
+        print(paramSuite)
+        self.timer.timeout.connect(mouvement)
         self.timer.start(20)
 
-    
-    def mouvementBoucle(self, sens):
-        sortie = "self.mouvementSansBoucle(True,\"self.mouvementBoucle()\")"
-        self.mouvementSansBoucle(sens, sortie)
-        print()
+    def fctTest(self):
+        pass
 
-    def mouvementAller(self):
-        self.mouvementSansBoucle(True,"self.sortieNode.call()")
+    
+    def mouvementAllerBoucle(self):
+        self.mouvementAller("self.mouvementAllerBoucle()")
+
+    def mouvementAller(self, sortie):
+        self.mouvementSansBoucle(True,sortie)
     
     def mouvementAllerRetourSansBoucle(self, sortie):
         self.mouvementSansBoucle(True,"self.mouvementSansBoucle(False, \""+ sortie + "\")")
@@ -70,9 +71,9 @@ class TranslationAvecCourbe(Mouvement):
         if(self.estBoucle and self.estAllerRetour):
             self.mouvementAllerRetourBoucle()
         elif(self.estBoucle and not(self.estAllerRetour)):
-            self.mouvementBoucle(True)
+            self.mouvementAllerBoucle()
         elif(self.estAllerRetour and not(self.estBoucle)):
             self.mouvementAllerRetourSansBoucle("self.sortieNode.call()")
         else:
-            self.mouvementAller()
+            self.mouvementAller("self.sortieNode.call()")
         self.monTemps = time.time()
