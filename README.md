@@ -7,7 +7,9 @@ We are working on a project to graduate from computer science.
 
 We offer you a new way to create small animations on FreeCAD through visual scripting.
 
-![Image de PyFlow](./docs/img/exampleNode.png)
+![Image de PyFlow](./docs/img/exampleNode.png)<br/>
+
+![Video de presentation](./docs/img/videoPresentation.gif)
 
 # Installation
 
@@ -33,7 +35,7 @@ Install the following requirements into the local Module directory `~/FreeCAD/Mo
 You will find in the folder requirements the compressed files of its libraries `~/FreeCAD/Mod/AnimationFreeCAD/requirements`.<br/>
 Simply extract them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 
-# ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
+## ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 

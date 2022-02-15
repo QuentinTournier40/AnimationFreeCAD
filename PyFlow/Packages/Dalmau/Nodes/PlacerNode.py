@@ -5,7 +5,6 @@ from Qt.QtWidgets import *
 
 import FreeCAD
 
-
 class PlacerNode(NodeBase):
     def __init__(self, name):
         super(PlacerNode, self).__init__(name)
@@ -36,7 +35,3 @@ class PlacerNode(NodeBase):
     @staticmethod
     def description():
         return "Place un objet aux coordonées données"
-
-class MainWindow(QMainWindow):
-    def init(self):
-        QMainWindow.init(self)

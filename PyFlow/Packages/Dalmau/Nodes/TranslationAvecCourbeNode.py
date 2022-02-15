@@ -6,7 +6,6 @@ from Qt.QtWidgets import *
 import FreeCAD
 
 class TranslationAvecCourbeNode(NodeAnimation):
-    
     def __init__(self, name):
         super(TranslationAvecCourbeNode, self).__init__(name)
         self.nomCourbe = self.createInputPin("Courbe", "StringPin")
@@ -29,7 +28,7 @@ class TranslationAvecCourbeNode(NodeAnimation):
 
         translation = TranslationAvecCourbe(self)
         translation.translater()
-
+        
     @staticmethod
     def category():
         return 'Translation'

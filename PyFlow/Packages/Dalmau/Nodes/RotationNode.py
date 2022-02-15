@@ -7,7 +7,6 @@ from Qt.QtWidgets import *
 import FreeCAD
 
 class RotationNode(NodeAnimation):
-    
     def __init__(self, name):
         super(RotationNode, self).__init__(name)
         self.axeRotation = self.createInputPin("Axe de rotation", "VectorPin", Vector(0,0,1))
@@ -25,7 +24,6 @@ class RotationNode(NodeAnimation):
         
         if(self.duree.getData() <= 0):
             return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")    
-
         
         rotation = Rotation(self)
         rotation.rotation()
@@ -40,7 +38,3 @@ class RotationNode(NodeAnimation):
     @staticmethod
     def description():
         return "Fait tourner des bails"
-
-class MainWindow(QMainWindow):
-    def init(self):
-        QMainWindow.init(self)

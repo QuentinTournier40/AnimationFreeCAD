@@ -12,10 +12,10 @@ class TranslationRectiligneSansCourbe(TranslationAvecCourbe):
 
     def creerLigneAvecDeuxPoints(self, point1, point2):
         placement = FreeCAD.Placement()
-        placement.Rotation.Q = (0,0,0,1)
         placement.Base = point1
         points = [point1, point2]
         line = Draft.makeWire(points, placement=placement, closed=False, face=False, support=None)
+        Draft.autogroup(line)
         FreeCAD.ActiveDocument.recompute()
         return line
 

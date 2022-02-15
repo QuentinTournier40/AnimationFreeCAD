@@ -6,7 +6,6 @@ from Qt.QtWidgets import *
 import FreeCAD
 
 class TranslationRectiligneSansCourbeNode(NodeAnimation):
-    
     def __init__(self, name):
         super(TranslationRectiligneSansCourbeNode, self).__init__(name)
         self.pointDepart = self.createInputPin("Point de depart", "VectorPin")
@@ -25,7 +24,7 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
         translation = TranslationRectiligneSansCourbe(self)
         translation.translater()
 
-        #self.setData("Position finale", monPointDeFin)
+        self.setData("Position finale", self.pointDeFin.getData())
 
     @staticmethod
     def category():
@@ -34,7 +33,3 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
     @staticmethod
     def description():
         return "Fait bouger des bails"
-    
-class MainWindow(QMainWindow):
-    def init(self):
-        QMainWindow.init(self)

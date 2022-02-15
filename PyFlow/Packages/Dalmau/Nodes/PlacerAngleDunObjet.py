@@ -37,7 +37,3 @@ class PlacerAngleDunObjet(NodeBase):
     @staticmethod
     def description():
         return "Change l'angle de base d'un objet"
-
-class MainWindow(QMainWindow):
-    def init(self):
-        QMainWindow.init(self)

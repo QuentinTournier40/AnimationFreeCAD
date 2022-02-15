@@ -16,6 +16,7 @@ class TranslationAvecCourbe(Mouvement):
             self.nbrPoints = round(NOMBRE_D_OR * self.duree)
 
         self.pointsTrajectoire = self.creerListeDePointsAvecUneCourbe(self.courbe)
+        unNode.setData("Position finale", self.pointsTrajectoire[-1])
 
     def creerListeDePointsAvecUneCourbe(self, uneCourbe):
         return uneCourbe.Shape.discretize(self.nbrPoints)
