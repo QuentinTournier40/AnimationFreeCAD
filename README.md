@@ -1,6 +1,6 @@
 # Presentation
 
-We are 2 students from the University of Pau and the Basque Country.
+We are 2 students from the University of Pau and the Basque Country.<br/>
 We are working on a project to graduate from computer science.
 
 # The project
@@ -22,7 +22,7 @@ git clone https://github.com/QuentinTournier40/AnimationFreeCAD.git
 
 ## Requirements
 
-For this workench you must have : 
+For this workench you must have :<br/>
 Install the following requirements into the local Module directory `~/FreeCAD/Mod`
 
 1. **Qt.Py-master**
@@ -30,8 +30,14 @@ Install the following requirements into the local Module directory `~/FreeCAD/Mo
 3. **blinker-master**
 4. **docutils**
 
-You will find in the folder requirements the compressed files of its libraries `~/FreeCAD/Mod/AnimationFreeCAD/requirements`.
-
+You will find in the folder requirements the compressed files of its libraries `~/FreeCAD/Mod/AnimationFreeCAD/requirements`.<br/>
 Simply extract them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 
-# [color=#ff0000] After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. [/color]
+# ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Author
+
+[@QuentinTournier40](https://github.com/QuentinTournier40)<br/>
+[@SHaiZen](https://github.com/SHaiZen25)
