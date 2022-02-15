@@ -34,4 +34,4 @@ You will find in the folder requirements the compressed files of its libraries `
 
 Simply extract them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 
-After doing this you will need to run FreeCAD in<span style="color:red"> **administrator mode** </span>for the first time in order to properly load dependencies.
+# [color=#ff0000] After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. [/color]
