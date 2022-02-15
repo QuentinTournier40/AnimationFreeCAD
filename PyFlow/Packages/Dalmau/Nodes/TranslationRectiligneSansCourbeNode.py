@@ -1,5 +1,6 @@
 from PyFlow.Packages.Dalmau.Class.TranslationRectiligneSansCourbe import TranslationRectiligneSansCourbe
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
+from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from Qt.QtWidgets import *
 
 import FreeCAD
@@ -16,18 +17,10 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
         try:
             FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         except IndexError:
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
-            return msg.about(w, titre, texte)
-        
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
+
         if(self.duree.getData() <= 0):
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.duree.name + "\n\nUne durée ce doit d'être strictement positive."
-            return msg.about(w, titre, texte)          
+            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")    
         
         translation = TranslationRectiligneSansCourbe(self)
         translation.translater()

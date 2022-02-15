@@ -1,5 +1,6 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
+from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from Qt.QtWidgets import *
 
 import FreeCAD
@@ -18,11 +19,7 @@ class PlacerNode(NodeBase):
         try:
             monObjet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         except IndexError:
-            w = MainWindow()
-            msg = QMessageBox()
-            titre = "Erreur"
-            texte = "Erreur au node " + self.name + ": \nPin : " + self.objet.name + "\n\nAucun objet porte le nom que vous avez saisi."
-            return msg.about(w, titre, texte)
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
         
         monObjet.Placement.Base = self.getData("Coordonnees")
         self.setData("Coordonnees de fin", self.getData("Coordonnees"))

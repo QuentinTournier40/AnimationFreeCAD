@@ -16,12 +16,12 @@ class TranslationAvecCourbeNode(NodeAnimation):
         try:
             FreeCAD.ActiveDocument.getObjectsByLabel(self.objet.getData())[0]
         except IndexError:
-            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet porte le nom que vous avez saisi.")    
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
         
         try:
             self.courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.nomCourbe.getData())[0]
         except IndexError:
-            return FenetreErreur("Erreur", self.name, self.nomCourbe.name, "Aucune courbe porte le nom que vous avez saisi.")    
+            return FenetreErreur("Erreur", self.name, self.nomCourbe.name, "Aucune courbe ne porte le nom que vous avez saisi.")    
 
         
         if(self.duree.getData() <= 0):
