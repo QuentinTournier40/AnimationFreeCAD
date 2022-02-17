@@ -1,7 +1,10 @@
+from PyFlow.Packages.Dalmau.Class.AnimationParam import AnimationParam
+from PyFlow.Packages.Dalmau.Class.RotationParam import RotationParam
 from PyFlow.Packages.Dalmau.Class.Rotation import Rotation
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from FreeCAD import Vector
+from PyFlow.Packages.Dalmau.Class.rotationParam import RotationParam
 from Qt.QtWidgets import *
 
 import FreeCAD
@@ -22,9 +25,19 @@ class RotationNode(NodeAnimation):
         except IndexError:
             return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
         
-        if(self.duree.getData() <= 0):
-            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")    
-        
+        axeDeRotation = self.axeRotation.getData()        
+        centreDeRotation = self.centreRotation.getData()        
+        angleDeDebut = self.angleDebut.getData()        
+        angleDeFin = self.angleFin.getData()  
+
+        duree = self.duree.getData()        
+        estBoucle = self.estBoucle.getData()        
+        estAllerRetour = self.estAllerRetour.getData()        
+        nomNode = self.name
+
+        parametreRotation = RotationParam(axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin)
+        parametreAnimation = AnimationParam()
+
         rotation = Rotation(self)
         rotation.rotation()
 
