@@ -14,35 +14,33 @@ class Animation():
         unMouvement.setObjet(unObjet)
         if(self.estBoucle and self.estAllerRetour):
             unMouvement.executionBoucleAllerRetour()
-            print("1")
+            #print("1")
         elif(self.estBoucle and  not self.estAllerRetour):
             unMouvement.executionAllerBoucle()
-            print("2")
+            #print("2")
         elif(not self.estBoucle and self.estAllerRetour):
             unMouvement.executionAllerRetour("")
-            print("3")
+            #print("3")
         else:
             unMouvement.executionAller("")
-            print("4")
+            #print("4")
 
     def executionVitesse(self, unMouvement, unObjet, uneVitesse):
         duree = unMouvement.calculDuree(uneVitesse)
         unMouvement.calculTrajectoire(self.estAllerRetour, duree)
         unMouvement.setObjet(unObjet)
-        NodeCourant.getInstance().ajouterNode(unMouvement)
         if(self.estBoucle and self.estAllerRetour):
             unMouvement.executionBoucleAllerRetour()
-
-            print("1")
+            #print("1")
         elif(self.estBoucle and  not self.estAllerRetour):
             unMouvement.executionAllerBoucle()
-            print("2")
+            #print("2")
         elif(not self.estBoucle and self.estAllerRetour):
             unMouvement.executionAllerRetour("")
-            print("3")
+            #print("3")
         else:
             unMouvement.executionAller("")
-            print("4")
+            #print("4")
 
     
 

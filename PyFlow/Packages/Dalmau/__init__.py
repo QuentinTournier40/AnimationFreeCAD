@@ -11,13 +11,17 @@ from PyFlow.Packages.Dalmau.FunctionLibraries.VectorLib import VectorLib
 
 # Class based nodes
 from PyFlow.Packages.Dalmau.Nodes.TranslationRectiligneNode import TranslationRectiligneNode
-from PyFlow.Packages.Dalmau.Nodes.TranslationAvecCourbeNode import TranslationAvecCourbeNode 
-from PyFlow.Packages.Dalmau.Nodes.RotationSurSoiMemeNode import RotationSurSoiMemeNode 
-from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode 
-from PyFlow.Packages.Dalmau.Nodes.RotationNode import RotationNode 
+from PyFlow.Packages.Dalmau.Nodes.TranslationRectiligneVitesseNode import TranslationRectiligneVitesseNode
+from PyFlow.Packages.Dalmau.Nodes.TranslationAvecCourbeNode import TranslationAvecCourbeNode
+from PyFlow.Packages.Dalmau.Nodes.TranslationAvecCourbeVitesseNode import TranslationAvecCourbeVitesseNode
+from PyFlow.Packages.Dalmau.Nodes.RotationSurSoiMemeNode import RotationSurSoiMemeNode
+from PyFlow.Packages.Dalmau.Nodes.RotationSurSoiMemeVitesseNode import RotationSurSoiMemeVitesseNode
+from PyFlow.Packages.Dalmau.Nodes.RotationNode import RotationNode
+from PyFlow.Packages.Dalmau.Nodes.RotationVitesseNode import RotationVitesseNode
 from PyFlow.Packages.Dalmau.Nodes.getVectorValueNode import getVectorValue
 from PyFlow.Packages.Dalmau.Nodes.PlacerNode import PlacerNode
 from PyFlow.Packages.Dalmau.Nodes.setAngleObjectNode import setAngleObjectNode
+from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode 
 
 # Tools
 from PyFlow.Packages.Dalmau.Tools.StopperMouvements import StopperMouvements
@@ -43,7 +47,11 @@ _NODES = {
 	RotationNode.__name__: RotationNode,
 	getVectorValue.__name__: getVectorValue,
 	PlacerNode.__name__: PlacerNode,
-	setAngleObjectNode.__name__: setAngleObjectNode
+	setAngleObjectNode.__name__: setAngleObjectNode,
+	TranslationRectiligneVitesseNode.__name__: TranslationRectiligneVitesseNode,
+	TranslationAvecCourbeVitesseNode.__name__: TranslationAvecCourbeVitesseNode,
+	RotationSurSoiMemeVitesseNode.__name__: RotationSurSoiMemeVitesseNode,
+	RotationVitesseNode.__name__: RotationVitesseNode
 }
 _PINS = {
 	VectorPin.__name__: VectorPin
