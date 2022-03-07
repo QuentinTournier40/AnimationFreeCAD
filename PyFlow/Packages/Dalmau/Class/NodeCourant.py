@@ -23,5 +23,13 @@ class NodeCourant:
 
     def enleverNode(self,unMouvement):
         print(NodeCourant.__listeNodeCourant.index(unMouvement))
-        NodeCourant.__listeNodeCourant.pop(NodeCourant.__listeNodeCourant.index(unMouvement) - 1)
+        NodeCourant.__listeNodeCourant.pop(NodeCourant.__listeNodeCourant.index(unMouvement))
         print("Enlever node " + str(self.__listeNodeCourant))
+
+    def stopperNodesCourant(self):
+        for mouvement in self.__listeNodeCourant:
+            mouvement.stopperMouvement()
+    
+    def continuerNodesCourant(self):
+        for mouvement in self.__listeNodeCourant:
+            mouvement.activerMouvement()

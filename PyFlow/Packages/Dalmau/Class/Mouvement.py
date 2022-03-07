@@ -8,16 +8,24 @@ NOMBRE_D_OR = 32
 
 class Mouvement(ABC):
     def __init__(self, unNode):
-        self.timer = QtCore.QTimer()
-        self.timer.setInterval(RAFRAICHISSEMENT)
+        self.timer = None
+        #self.timer.setInterval(RAFRAICHISSEMENT)
         self.etape = 0
-        self.estBoucleAller = False
+        self.node = unNode
 
-        self.sortieNode = unNode.sortieNode
-        self.objet = FreeCAD.ActiveDocument.getObjectsByLabel(unNode.objet.getData())[0]
-        self.estBoucle = unNode.estBoucle.getData()
-        self.estAllerRetour = unNode.estAllerRetour.getData()
-        self.duree = unNode.duree.getData()
+    def stopperMouvement(self):
+        if(self.timer.isActive()):
+            self.timer.stop()
+        else:
+            print("He oh les timers ne sont pas actifs détends toi sale fou")
+    
+    def activerMouvement(self):
+        if(not self.timer.isActive()):
+            self.timer.start()
+        else:
+            print("He oh les timers sont actifs détends tu veux aller 2 fois plus vite ou quoi")
+        
+
 
 class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):
@@ -30,8 +38,6 @@ class MainWindow(QMainWindow):
     def init(self):
         QMainWindow.init(self)
 
-
-        
 
 """
     @abstractmethod

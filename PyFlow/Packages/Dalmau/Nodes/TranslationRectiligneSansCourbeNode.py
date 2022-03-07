@@ -1,4 +1,5 @@
-from PyFlow.Packages.Dalmau.Class.TranslationRectiligneSansCourbe import TranslationRectiligneSansCourbe
+from PyFlow.Packages.Dalmau.Class.Animation import Animation
+from PyFlow.Packages.Dalmau.Class.TranslationSansCourbe import TranslationSansCourbe
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from Qt.QtWidgets import *
@@ -14,15 +15,21 @@ class TranslationRectiligneSansCourbeNode(NodeAnimation):
 
     def compute(self, *args, **kwargs):
         try:
-            FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+            objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         except IndexError:
             return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
-
-        if(self.duree.getData() <= 0):
-            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")    
         
-        translation = TranslationRectiligneSansCourbe(self)
-        translation.translater()
+        duree = self.duree.getData()
+        if(duree <= 0):
+            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.") 
+
+        coordonnes = [self.pointDepart.getData(), self.pointDeFin.getData()] 
+        estBoucle = self.estBoucle.getData()
+        estAllerRetour = self.estAllerRetour.getData()
+        
+        translation = TranslationSansCourbe(coordonnes, self)
+        animation = Animation(estBoucle, estAllerRetour, self)
+        animation.executionDuree(translation, objet,duree)
 
         self.setData("Position finale", self.pointDeFin.getData())
 

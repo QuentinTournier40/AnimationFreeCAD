@@ -26,7 +26,8 @@ from PyFlow.Packages.Dalmau.Nodes.PlacerNode import PlacerNode
 from PyFlow.Packages.Dalmau.Nodes.PlacerAngleDunObjet import PlacerAngleDunObjet
 
 # Tools
-from PyFlow.Packages.Dalmau.Tools.DemoShelfTool import DemoShelfTool
+from PyFlow.Packages.Dalmau.Tools.StopperMouvements import StopperMouvements
+from PyFlow.Packages.Dalmau.Tools.ContinuerMouvements import ContinuerMouvements
 from PyFlow.Packages.Dalmau.Tools.DemoDockTool import DemoDockTool
 
 # Exporters
@@ -68,7 +69,8 @@ _NODES[DemoNode.__name__] = DemoNode
 
 _PINS[DemoPin.__name__] = DemoPin
 
-_TOOLS[DemoShelfTool.__name__] = DemoShelfTool
+_TOOLS[StopperMouvements.__name__] = StopperMouvements
+_TOOLS[ContinuerMouvements.__name__] = ContinuerMouvements
 _TOOLS[DemoDockTool.__name__] = DemoDockTool
 
 _EXPORTERS[DemoExporter.__name__] = DemoExporter

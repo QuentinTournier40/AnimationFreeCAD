@@ -1,10 +1,8 @@
-from PyFlow.Packages.Dalmau.Class.AnimationParam import AnimationParam
-from PyFlow.Packages.Dalmau.Class.RotationParam import RotationParam
 from PyFlow.Packages.Dalmau.Class.Rotation import Rotation
+from PyFlow.Packages.Dalmau.Class.Animation import Animation
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
 from FreeCAD import Vector
-from PyFlow.Packages.Dalmau.Class.rotationParam import RotationParam
 from Qt.QtWidgets import *
 
 import FreeCAD
@@ -21,7 +19,7 @@ class RotationNode(NodeAnimation):
 
     def compute(self, *args, **kwargs):
         try:
-            FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+            objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         except IndexError:
             return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
         
@@ -33,13 +31,10 @@ class RotationNode(NodeAnimation):
         duree = self.duree.getData()        
         estBoucle = self.estBoucle.getData()        
         estAllerRetour = self.estAllerRetour.getData()        
-        nomNode = self.name
 
-        parametreRotation = RotationParam(axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin)
-        parametreAnimation = AnimationParam()
-
-        rotation = Rotation(self)
-        rotation.rotation()
+        rotation = Rotation(axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin,self)
+        animation = Animation(estBoucle, estAllerRetour, self)
+        animation.executionDuree(rotation,objet,duree)
 
         #self.setData("Position finale", self.monObjet.Placement.Base)
         #self.setData("Angle final", monAngleFin)

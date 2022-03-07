@@ -1,45 +1,49 @@
 import FreeCAD
+import Draft
 from PyFlow.Packages.Dalmau.Class.Mouvement import NOMBRE_D_OR, Mouvement
-from PySide import QtCore
+from PySide2 import QtCore
 import functools
 import time
+from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
+from threading import Timer  
 
 class TranslationAvecCourbe(Mouvement):
-    
-    def __init__(self, unNode):
-        super().__init__(unNode)
-        self.courbe = unNode.courbe
+    def __init__(self, uneCourbe, unNode):
+        Mouvement.__init__(self,unNode)
+        self.courbe = uneCourbe
+        self.mouvementAEteBoucle = False
 
-        if(self.estAllerRetour):
-            self.nbrPoints = round(NOMBRE_D_OR * self.duree / 2)
-        else:
-            self.nbrPoints = round(NOMBRE_D_OR * self.duree)
+    def calculTrajectoire(self, estAllerRetour, duree):
+        if(estAllerRetour):
+            duree = duree / 2
+        self.nbrPoints = round(NOMBRE_D_OR * duree)
+        self.pointsTrajectoire = self.courbe.Shape.discretize(self.nbrPoints)
 
-        self.pointsTrajectoire = self.creerListeDePointsAvecUneCourbe(self.courbe)
-        unNode.setData("Position finale", self.pointsTrajectoire[-1])
+    def calculDuree(self, uneVitesse):
+        duree = self.courbe.Shape.Length / round(uneVitesse)
+        return duree
 
-    def creerListeDePointsAvecUneCourbe(self, uneCourbe):
-        return uneCourbe.Shape.discretize(self.nbrPoints)
+    def setObjet(self, objet):
+        self.objet = objet
 
     def mouvement(self, sens, suite):
-        self.objet.Placement.Base = (self.pointsTrajectoire[self.etape])
+        self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
+        
         if(sens):
             self.etape += 1
             stop = self.nbrPoints
-
         else:
             self.etape -= 1
             stop = -1
 
-        print(self.etape)
         if(self.etape == stop):
-            self.timer.stop()
             print(time.time() - self.monTemps)
+            self.timer.stop()
+            NodeCourant.getInstance().enleverNode(self)
             exec(suite)
+            
 
-    # self.estBoucleAller : nous permet de savoir si la variable mouvement est la même qu'avant si oui on ne la reconnecte pas 
-    # sinon ca bugue pk je ne sais pas c'est très énervant 
-    def mouvementSansBoucle(self, sens, paramSuite):
+    def execution(self, sens, paramSuite):
         if(sens):
             self.etape = 0
             mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
@@ -48,33 +52,29 @@ class TranslationAvecCourbe(Mouvement):
             self.etape = self.nbrPoints - 1
             print("Retour")
             mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
-        print(paramSuite)
+
+        #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
+        #Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
+        NodeCourant.getInstance().ajouterNode(self)
+
+        self.timer = QtCore.QTimer()
+        self.timer.setInterval(20)
+        
         self.timer.timeout.connect(mouvement)
-        self.timer.start(20)
+        self.timer.start()
 
-    def fctTest(self):
-        pass
-
+    def executionAller(self, sortie):
+        self.execution(True,sortie)
+        self.monTemps = time.time()
     
-    def mouvementAllerBoucle(self):
-        self.mouvementAller("self.mouvementAllerBoucle()")
+    def executionAllerRetour(self, sortie):
+        self.execution(True,"self.execution(False, \""+ sortie + "\")")
+        self.monTemps = time.time()
 
-    def mouvementAller(self, sortie):
-        self.mouvementSansBoucle(True,sortie)
-    
-    def mouvementAllerRetourSansBoucle(self, sortie):
-        self.mouvementSansBoucle(True,"self.mouvementSansBoucle(False, \""+ sortie + "\")")
+    def executionAllerBoucle(self):
+        self.execution(True, "self.executionAllerBoucle()")
+        self.monTemps = time.time()
 
-    def mouvementAllerRetourBoucle(self):
-        self.mouvementAllerRetourSansBoucle("self.mouvementAllerRetourBoucle()")
-
-    def translater(self):
-        if(self.estBoucle and self.estAllerRetour):
-            self.mouvementAllerRetourBoucle()
-        elif(self.estBoucle and not(self.estAllerRetour)):
-            self.mouvementAllerBoucle()
-        elif(self.estAllerRetour and not(self.estBoucle)):
-            self.mouvementAllerRetourSansBoucle("self.sortieNode.call()")
-        else:
-            self.mouvementAller("self.sortieNode.call()")
+    def executionBoucleAllerRetour(self):
+        self.executionAllerRetour("self.executionBoucleAllerRetour()")
         self.monTemps = time.time()

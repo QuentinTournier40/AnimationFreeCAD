@@ -1,66 +1,91 @@
 from PyFlow.Packages.Dalmau.Class.Mouvement import NOMBRE_D_OR, Mouvement
+from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
 from PySide import QtCore
 import functools
 import FreeCAD
+import time
+import math
 
 class Rotation(Mouvement):
 
-    def __init__(self, unNode):
+    def __init__(self, axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin, unNode):
         super().__init__(unNode)
-        self.axeDeRotation = unNode.axeRotation.getData()
-        self.centreDeRotation = unNode.centreRotation.getData()
-        self.angleDeDebut = unNode.angleDebut.getData()
-        self.angleDeFin = unNode.angleFin.getData()
-        self.nbrPoints = round(NOMBRE_D_OR * self.duree)
+        self.axeDeRotation = axeDeRotation
+        self.centreDeRotation = centreDeRotation
+        self.angleDeDebut = angleDeDebut
+        self.angleDeFin = angleDeFin
+        self.mouvementAEteBoucle = False
+
+    def calculTrajectoire(self, estAllerRetour, duree):
+        if(estAllerRetour):
+            duree = duree / 2
+        self.nbrPoints = round(NOMBRE_D_OR * duree)
         self.angleARepeter = (self.angleDeFin - self.angleDeDebut) / self.nbrPoints
 
-    def repetitionMouvement(self):
-        if(self.etape != self.nbrPoints):
-            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
+    def calculDuree(self, uneVitesse):
+        duree =  (self.angleDeFin - self.angleDeDebut) / round(uneVitesse)
+        return duree
+
+    def setObjet(self, objet):
+        self.objet = objet
+
+    def mouvement(self, sens, suite):
+        self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
+        if(sens):
             self.etape += 1
+            stop = self.nbrPoints
+            print("Sale fdp")
+
         else:
+            self.etape -= 1
+            stop = -1
+        
+        print("Etape : "+ str(self.etape))
+
+        if(self.etape == stop):
+            print(time.time() - self.monTemps)
             self.timer.stop()
+            NodeCourant.getInstance().enleverNode(self)
+            exec(suite)
+            
+
+    def execution(self, sens, paramSuite):
+        if(sens):
             self.etape = 0
-            self.sortieNode.call()
+            self.objet.Placement.Rotation.Angle = math.radians(self.angleDeDebut)
+            mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
+            print("Aller")
+            self.angleARepeterCourant = self.angleARepeter
 
-    def repetitionMouvementSansFin(self):
-        self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
-
-    def repetitionMouvementAllerRetour(self):
-        if(self.etape < self.nbrPoints and self.premierePartieAllerRetour):
-            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
-            self.etape += 1
-        elif(self.etape == self.nbrPoints and self.premierePartieAllerRetour):
-            self.premierePartieAllerRetour = False
-        elif(self.etape > 0 and not(self.premierePartieAllerRetour)):
-            self.etape -= 1
-            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, -self.angleARepeter)
-        elif(self.etape == 0 and not(self.premierePartieAllerRetour)):
-            self.timer.stop()
-            self.premierePartieAllerRetour = True
-            self.sortieNode.call()
-
-    def repetitionMouvementSansFinEtAllerRetour(self):
-        if(self.etape < self.nbrPoints and self.premierePartieAllerRetour):
-            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeter)
-            self.etape += 1
-        elif(self.etape == self.nbrPoints and self.premierePartieAllerRetour):
-            self.premierePartieAllerRetour = False
-        elif(self.etape > 0 and not(self.premierePartieAllerRetour)):
-            self.etape -= 1
-            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, -self.angleARepeter)
-        elif(self.etape == 0 and not(self.premierePartieAllerRetour)):
-            self.premierePartieAllerRetour = True
-    
-    def rotation(self):
-        self.objet.Placement.Rotation = FreeCAD.Rotation(self.axeDeRotation, self.angleARepeter)
-        if(self.estBoucle and self.estAllerRetour):
-            repetitionMouvement = functools.partial(self.repetitionMouvementSansFinEtAllerRetour)
-        elif(self.estBoucle and not(self.estAllerRetour)):
-            repetitionMouvement = functools.partial(self.repetitionMouvementSansFin)
-        elif(self.estAllerRetour and not(self.estBoucle)):
-            repetitionMouvement = functools.partial(self.repetitionMouvementAllerRetour)
         else:
-            repetitionMouvement = functools.partial(self.repetitionMouvement)
-        self.timer.timeout.connect(repetitionMouvement)
+            self.etape = self.nbrPoints - 1
+            self.objet.Placement.Rotation.Angle = math.radians(self.angleDeFin)
+            self.angleARepeterCourant = -self.angleARepeter
+            print("Retour")
+            mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
+
+        #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
+        #Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
+        NodeCourant.getInstance().ajouterNode(self)
+        
+        self.timer = QtCore.QTimer()
+        self.timer.setInterval(20)
+
+        self.timer.timeout.connect(mouvement)
         self.timer.start()
+
+    def executionAller(self, sortie):
+        self.execution(True,sortie)
+        self.monTemps = time.time()
+    
+    def executionAllerRetour(self, sortie):
+        self.execution(True,"self.execution(False, \""+ sortie + "\")")
+        self.monTemps = time.time()
+
+    def executionAllerBoucle(self):
+        self.execution(True, "self.executionAllerBoucle()")
+        self.monTemps = time.time()
+
+    def executionBoucleAllerRetour(self):
+        self.executionAllerRetour("self.executionBoucleAllerRetour()")
+        self.monTemps = time.time()
