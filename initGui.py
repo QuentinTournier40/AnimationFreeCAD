@@ -1,34 +1,11 @@
+import os
+
 class testPyFlow (Workbench):
-
-
-    Icon = """
-    /* XPM */
-    static char * basic1_xpm[] = {
-    "16 16 4 1",
-    " 	c None",
-    ".	c #FFFFFF",
-    "@	c #e1350e",
-    "#	c #074dd8",
-    "......@@@@......",
-    "......@##@......",
-    ".....@#@#@@.....",
-    ".....@#@@#@.....",
-    ".....@#.@#@.....",
-    "....@#@..@#@....",
-    "....@#@..@#@....",
-    "...@@#...@#@....",
-    "...@#@....##@...",
-    "...@#@@@@@@#@...",
-    "..@#########@...",
-    "..@#@@@@@@@@#@..",
-    "..@#@......@#@..",
-    ".@#@.......@##@.",
-    ".@@@........@@@.",
-    "................"};
-    """
+    path = os.getcwd()
 
     MenuText = "Animation"
     ToolTip = "Faire des animations"
+    Icon = path + "/../Mod/AnimationFreeCAD/icons/clapCinema.svg"
 
     def Initialize(self):
         """This function is executed when FreeCAD starts"""

@@ -26,7 +26,7 @@ class PlacerNode(NodeBase):
 
     @staticmethod
     def category():
-        return 'Autre'
+        return 'Placement|Base'
 
     @staticmethod
     def keywords():

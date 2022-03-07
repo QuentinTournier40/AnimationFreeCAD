@@ -28,7 +28,7 @@ class setAngleObjectNode(NodeBase):
 
     @staticmethod
     def category():
-        return 'Autre'
+        return 'Placement|Angle'
 
     @staticmethod
     def keywords():

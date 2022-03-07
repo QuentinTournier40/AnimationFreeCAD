@@ -4,6 +4,8 @@ from PyFlow.Core.Common import Direction
 from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
 from Qt import QtGui
 
+import os 
+scriptDir = os.path.dirname(os.path.realpath(__file__))
 
 class StopperMouvements(ShelfTool):
     """docstring for StopperMouvements."""
@@ -16,7 +18,8 @@ class StopperMouvements(ShelfTool):
 
     @staticmethod
     def getIcon():
-        return QtGui.QIcon(":brick.png")
+        path = "../../../../icons/boutonPause.svg"
+        return QtGui.QIcon(scriptDir + os.path.sep + path)
 
     @staticmethod
     def name():
