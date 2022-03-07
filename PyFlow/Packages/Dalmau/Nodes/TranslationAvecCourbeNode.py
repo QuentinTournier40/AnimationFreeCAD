@@ -38,7 +38,7 @@ class TranslationAvecCourbeNode(NodeAnimation):
         
     @staticmethod
     def category():
-        return 'Translation'
+        return 'Translation|Durée'
 
     @staticmethod
     def description():

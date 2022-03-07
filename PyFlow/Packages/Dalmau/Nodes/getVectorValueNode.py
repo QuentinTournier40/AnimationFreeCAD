@@ -2,9 +2,9 @@ from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 
 
-class getValueVector(NodeBase):
+class getVectorValue(NodeBase):
     def __init__(self, name):
-        super(getValueVector, self).__init__(name)
+        super(getVectorValue, self).__init__(name)
         self.createInputPin("Vecteur", "VectorPin")
         self.createOutputPin("x", "FloatPin")
         self.createOutputPin("y", "FloatPin")

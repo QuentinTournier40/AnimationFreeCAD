@@ -7,9 +7,9 @@ import FreeCAD
 import math
 
 
-class PlacerAngleDunObjet(NodeBase):
+class setAngleObjectNode(NodeBase):
     def __init__(self, name):
-        super(PlacerAngleDunObjet, self).__init__(name)
+        super(setAngleObjectNode, self).__init__(name)
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.objet = self.createInputPin("Objet","StringPin")
         self.angle = self.createInputPin("Angle","FloatPin")

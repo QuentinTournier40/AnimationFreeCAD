@@ -2,9 +2,6 @@ import FreeCAD
 import Draft
 from PyFlow.Packages.Dalmau.Class.TranslationAvecCourbe import NOMBRE_D_OR, TranslationAvecCourbe
 from PySide2 import QtCore
-import functools
-import time
-from threading import Timer  
 
 class TranslationSansCourbe(TranslationAvecCourbe):
     def __init__(self, coordonnes, unNode):

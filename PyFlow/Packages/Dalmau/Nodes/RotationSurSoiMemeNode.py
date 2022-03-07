@@ -43,7 +43,7 @@ class RotationSurSoiMemeNode(NodeAnimation):
 
     @staticmethod
     def category():
-        return 'Rotation'
+        return 'Rotation|Durée'
 
     @staticmethod
     def description():

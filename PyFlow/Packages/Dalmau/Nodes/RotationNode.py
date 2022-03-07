@@ -41,7 +41,7 @@ class RotationNode(NodeAnimation):
 
     @staticmethod
     def category():
-        return 'Rotation'
+        return 'Rotation|Durée'
 
     @staticmethod
     def description():
