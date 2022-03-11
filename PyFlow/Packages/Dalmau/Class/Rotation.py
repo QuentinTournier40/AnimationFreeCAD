@@ -1,8 +1,8 @@
-from PyFlow.Packages.Dalmau.Class.Mouvement import NOMBRE_D_OR, Mouvement
+from PyFlow.Packages.Dalmau.Class.Mouvement import *
 from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
 from PySide import QtCore
+
 import functools
-import FreeCAD
 import time
 import math
 
@@ -34,20 +34,16 @@ class Rotation(Mouvement):
         if(sens):
             self.etape += 1
             stop = self.nbrPoints
-            print("Sale fdp")
-
         else:
             self.etape -= 1
             stop = -1
-        
         print("Etape : "+ str(self.etape))
 
         if(self.etape == stop):
             print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
-            exec(suite)
-            
+            exec(suite)   
 
     def execution(self, sens, paramSuite):
         if(sens):

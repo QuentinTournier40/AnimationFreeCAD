@@ -4,7 +4,9 @@ from collections import OrderedDict
 from PyFlow.UI.UIInterfaces import IPackage
 
 # Pins
-from PyFlow.Packages.Dalmau.Pins.VectorPin import VectorPin 
+from PyFlow.Packages.Dalmau.Pins.VectorPin import VectorPin
+from PyFlow.Packages.Dalmau.Pins.ObjectPin import ObjectPin
+from PyFlow.Packages.Dalmau.Pins.CurvePin import CurvePin
 
 # Function based nodes
 from PyFlow.Packages.Dalmau.FunctionLibraries.VectorLib import VectorLib
@@ -21,7 +23,7 @@ from PyFlow.Packages.Dalmau.Nodes.RotationVitesseNode import RotationVitesseNode
 from PyFlow.Packages.Dalmau.Nodes.getVectorValueNode import getVectorValue
 from PyFlow.Packages.Dalmau.Nodes.PlacerNode import PlacerNode
 from PyFlow.Packages.Dalmau.Nodes.setAngleObjectNode import setAngleObjectNode
-from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode 
+from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode
 
 # Tools
 from PyFlow.Packages.Dalmau.Tools.StopperMouvements import StopperMouvements
@@ -54,7 +56,9 @@ _NODES = {
 	RotationVitesseNode.__name__: RotationVitesseNode
 }
 _PINS = {
-	VectorPin.__name__: VectorPin
+	VectorPin.__name__: VectorPin,
+	ObjectPin.__name__: ObjectPin,
+	CurvePin.__name__: CurvePin
 }
 _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()

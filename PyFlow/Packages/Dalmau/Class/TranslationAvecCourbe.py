@@ -1,11 +1,9 @@
-import FreeCAD
-import Draft
-from PyFlow.Packages.Dalmau.Class.Mouvement import NOMBRE_D_OR, Mouvement
+from PyFlow.Packages.Dalmau.Class.Mouvement import *
+from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
 from PySide2 import QtCore
+
 import functools
 import time
-from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
-from threading import Timer  
 
 class TranslationAvecCourbe(Mouvement):
     def __init__(self, uneCourbe, unNode):
@@ -40,8 +38,7 @@ class TranslationAvecCourbe(Mouvement):
             print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
-            exec(suite)
-            
+            exec(suite)           
 
     def execution(self, sens, paramSuite):
         if(sens):

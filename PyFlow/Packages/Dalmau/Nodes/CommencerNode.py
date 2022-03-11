@@ -1,7 +1,6 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 
-
 class CommencerNode(NodeBase):
     def __init__(self, name):
         super(CommencerNode, self).__init__(name)
@@ -21,4 +20,4 @@ class CommencerNode(NodeBase):
 
     @staticmethod
     def description():
-        return "Lance plusieurs node en meme temps"
+        return "Lance plusieurs node en meme temps."

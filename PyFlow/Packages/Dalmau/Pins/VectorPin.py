@@ -57,5 +57,4 @@ class VectorPin(PinBase):
         return VectorPin.internalDataStructure()(data)
 
     def setData(self, data):
-        setDataG(self, data)
-
+        setDataG(self, data)    

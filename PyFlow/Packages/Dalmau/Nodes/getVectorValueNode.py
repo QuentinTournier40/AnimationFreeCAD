@@ -1,7 +1,6 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 
-
 class getVectorValue(NodeBase):
     def __init__(self, name):
         super(getVectorValue, self).__init__(name)
@@ -26,4 +25,4 @@ class getVectorValue(NodeBase):
 
     @staticmethod
     def description():
-        return "..."
+        return "Eclate un vecteur en retournant ses trois composantes."

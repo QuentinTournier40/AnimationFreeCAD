@@ -1,6 +1,6 @@
 import os
 
-class testPyFlow (Workbench):
+class AnimationFreeCAD(Workbench):
     path = os.getcwd()
 
     MenuText = "Animation"
@@ -18,6 +18,4 @@ class testPyFlow (Workbench):
         self.appendMenu(str(QtCore.QT_TRANSLATE_NOOP("basic1", "basic1")), self.list)
         self.appendMenu(str(QtCore.QT_TRANSLATE_NOOP("basic2", "basic2")), self.list)
 
-       
-
-Gui.addWorkbench(testPyFlow())
+Gui.addWorkbench(AnimationFreeCAD())

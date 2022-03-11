@@ -1,14 +1,12 @@
 from PyFlow.Core.Common import *
-from Qt import QtCore
-from Qt.QtWidgets import *
 from PyFlow.Core.Common import *
 from PyFlow.UI.Widgets.InputWidgets import *
 from PyFlow.UI.Widgets.QtSliders import *
+from PyFlow.Packages.Dalmau.Class.Mouvement import DEFAULT_VALUE_OBJECT_PIN
+from Qt import QtCore
+from Qt.QtWidgets import *
+
 import FreeCAD
-
-FLOAT_SINGLE_STEP = 0.01
-FLOAT_DECIMALS = 5
-
 
 class DemoInputWidget(InputWidgetSingle):
     """Boolean data input widget"""
@@ -28,10 +26,73 @@ class DemoInputWidget(InputWidgetSingle):
         else:
             self.cb.setCheckState(QtCore.Qt.Unchecked)
 
+class LabelInputWidget(InputWidgetRaw):
+    def __init__(self, **kwds):
+        super(LabelInputWidget, self).__init__(**kwds)
+        self.setLayout(QtWidgets.QHBoxLayout(self))
+        self.combo = QtWidgets.QComboBox()  
+        self.populateCombo()
+        self.combo.currentTextChanged.connect(self._onDataChangedComboBox)
+        self.layout().addWidget(self.combo)
+
+    @staticmethod
+    def populateCombo(self):
+        pass
+
+    def blockWidgetSignals(self, bLocked):
+        self.combo.blockSignals(bLocked)
+    
+    def _onDataChangedComboBox(self, val):
+        self.dataSetCallback(val)
+    
+    def setWidgetValue(self, val):
+        if(len(FreeCAD.ActiveDocument.getObjectsByLabel(val)) == 0 and val != DEFAULT_VALUE_OBJECT_PIN):
+            self._onDataChangedComboBox(DEFAULT_VALUE_OBJECT_PIN)
+        else:
+            self.combo.setCurrentText(val)
+
+class ObjectInputWidget(LabelInputWidget):
+    def __init__(self, **kwds):
+        super(ObjectInputWidget, self).__init__(**kwds)
+        
+    def populateCombo(self):
+        objects = FreeCAD.ActiveDocument.Objects
+        liste = []
+        if(len(objects) != 0):
+            for object in objects:
+                liste.append(object.Label)
+            liste.sort()           
+            liste.insert(0, DEFAULT_VALUE_OBJECT_PIN)
+            self.combo.addItems(liste)
+        else:
+            liste.append(DEFAULT_VALUE_OBJECT_PIN)
+            self.combo.addItems(liste)
+
+class CurveInputWidget(LabelInputWidget):
+    def __init__(self, **kwds):
+        super(CurveInputWidget, self).__init__(**kwds)
+        
+    def populateCombo(self):
+        objects = FreeCAD.ActiveDocument.Objects
+        liste = []
+        if(len(objects) != 0):
+            for object in objects:
+                if(self.has_method(object.Shape, "discretize")):
+                    liste.append(object.Label)
+            liste.sort()           
+            liste.insert(0, DEFAULT_VALUE_OBJECT_PIN)
+            self.combo.addItems(liste)
+        else:
+            liste.append(DEFAULT_VALUE_OBJECT_PIN)
+            self.combo.addItems(liste)
+
+    def has_method(self, o, name):
+        return callable(getattr(o, name, None))
+    
 class VectorInputWidget(InputWidgetRaw):
     def __init__(self, **kwds):
         super(VectorInputWidget, self).__init__(**kwds)
-        self.setLayout(QtWidgets.QGridLayout())
+        self.setLayout(QtWidgets.QGridLayout()) 
         self.x = valueBox(None, "float", True)
         self.y = valueBox(None, "float", True)
         self.z = valueBox(None, "float", True)
@@ -53,11 +114,8 @@ class VectorInputWidget(InputWidgetRaw):
         self.z.valueChanged.connect(self._onDataChangedZ)
 
     def blockWidgetSignals(self, bLocked):
-        try:
-            for i in [self.x, self.y, self.z]:
-                i.blockSignals(bLocked)
-        except:
-            pass
+        for i in [self.x, self.y, self.z]:
+            i.blockSignals(bLocked)
 
     def asDataTypeClass(self):
         return FreeCAD.Vector([self.x.value(), self.y.value(), self.z.value()])
@@ -87,4 +145,7 @@ def getInputWidget(dataType, dataSetter, defaultValue, widgetVariant=DEFAULT_WID
         return DemoInputWidget(dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
     if dataType == 'VectorPin':
         return VectorInputWidget(dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
-
+    if dataType == 'ObjectPin':
+        return ObjectInputWidget(dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
+    if dataType == 'CurvePin':
+        return CurveInputWidget(dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)

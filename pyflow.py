@@ -17,8 +17,6 @@ import sys
 from PyFlow.App import PyFlow
 from Qt.QtWidgets import QApplication
 
-
-
 def main():
     app = QApplication(sys.argv)
 
@@ -31,7 +29,6 @@ def main():
             sys.exit(app.exec_())
         except Exception as e:
             print(e)
-
 
 if __name__ == '__main__':
     main()

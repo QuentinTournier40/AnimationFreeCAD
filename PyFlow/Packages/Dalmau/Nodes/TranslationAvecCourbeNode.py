@@ -1,40 +1,36 @@
 from PyFlow.Packages.Dalmau.Class.TranslationAvecCourbe import TranslationAvecCourbe
-from PyFlow.Packages.Dalmau.Class.Mouvement import FenetreErreur
+from PyFlow.Packages.Dalmau.Class.Mouvement import *
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from PyFlow.Packages.Dalmau.Class.Animation import Animation
-from Qt.QtWidgets import *
 
 import FreeCAD
 
 class TranslationAvecCourbeNode(NodeAnimation):
     def __init__(self, name):
         super(TranslationAvecCourbeNode, self).__init__(name)
-        self.nomCourbe = self.createInputPin("Courbe", "StringPin")
+        self.courbe = self.createInputPin("Courbe", "CurvePin", DEFAULT_VALUE_OBJECT_PIN)
         self.duree = self.createInputPin("Duree", "FloatPin")
     
     def compute(self, *args, **kwargs):
-        try:
-            objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.objet.getData())[0]
-        except IndexError:
-            return FenetreErreur("Erreur", self.name, self.objet.name, "Aucun objet ne porte le nom que vous avez saisi.")    
-        
-        try:
-            courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.nomCourbe.getData())[0]
-        except IndexError:
-            return FenetreErreur("Erreur", self.name, self.nomCourbe.name, "Aucune courbe ne porte le nom que vous avez saisi.")    
+        if(self.getData("Objet") == DEFAULT_VALUE_OBJECT_PIN):
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Veuillez choisir un objet à mouvoir.")
+        if(self.getData("Courbe") == DEFAULT_VALUE_OBJECT_PIN):
+            return FenetreErreur("Erreur", self.name, self.courbe.name, "Veuillez choisir une courbe à suivre.")  
+        if(self.getData("Duree") <= 0):
+            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")
 
+        objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
+        courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Courbe"))[0]
+        duree = self.getData("Duree")
+        estAllerRetour = self.getData("Aller-retour")  
+        estBoucle = self.getData("Boucle")
         
-        if(self.duree.getData() <= 0):
-            return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")  
-
-        duree = self.duree.getData()
-        estAllerRetour = self.estAllerRetour.getData()  
-        estBoucle = self.estBoucle.getData()
-        
-
         translation = TranslationAvecCourbe(courbe, self)
         animation = Animation(estBoucle, estAllerRetour, self)
         animation.executionDuree(translation, objet, duree)
+
+        self.setData("Position finale", objet.Placement.Base)
+        self.setData("Objet use", objet.Label)
         
     @staticmethod
     def category():
@@ -42,4 +38,4 @@ class TranslationAvecCourbeNode(NodeAnimation):
 
     @staticmethod
     def description():
-        return "Fait bouger des bails en suivant la trajectoire de n'importe quel type de courbe"
+        return "Fait bouger des objets le long d'unr courbe à vitesse uniforme."

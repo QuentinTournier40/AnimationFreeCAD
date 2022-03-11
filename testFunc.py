@@ -1,18 +1,10 @@
-from PySide import QtCore, QtGui
+from PySide import QtCore
+from PyFlow.App import PyFlow
+
 import FreeCAD
 import FreeCADGui
-
-import sys
 import PySide2
-from PyFlow.App import PyFlow
-from Qt.QtWidgets import QApplication
-from PySide2.QtWidgets import QApplication, QWidget, QMainWindow
-
 import os 
-
-import sys
-from PyFlow import graphUiParser
-
 
 app = PySide2.QtWidgets.QApplication
 

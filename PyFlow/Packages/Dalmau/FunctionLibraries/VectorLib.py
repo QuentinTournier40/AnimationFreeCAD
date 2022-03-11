@@ -1,4 +1,3 @@
-from sre_constants import CATEGORY
 from PyFlow.Core.Common import *
 from PyFlow.Core import FunctionLibraryBase
 from PyFlow.Core import IMPLEMENT_NODE
