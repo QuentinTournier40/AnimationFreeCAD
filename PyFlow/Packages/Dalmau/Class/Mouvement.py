@@ -18,6 +18,12 @@ class Mouvement(ABC):
     def activerMouvement(self):
         if(not self.timer.isActive()):
             self.timer.start()
+    
+    def getEtape(self):
+        return self.etape
+
+    def getEtapeMax(self):
+        return self.nbrPoints
   
 class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):

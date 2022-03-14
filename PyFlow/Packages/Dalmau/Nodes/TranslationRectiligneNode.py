@@ -24,9 +24,9 @@ class TranslationRectiligneNode(NodeAnimation):
         estBoucle = self.getData("Boucle")
         estAllerRetour = self.getData("Aller-retour")
         
-        translation = TranslationSansCourbe(coordonnes, self)
+        self.mouvement = TranslationSansCourbe(coordonnes, self)
         animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionDuree(translation, objet, duree)
+        animation.executionDuree(self.mouvement, objet, duree)
 
         self.setData("Position finale", self.getData("Point de fin"))
         self.setData("Objet use", objet.Label)

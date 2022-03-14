@@ -11,3 +11,4 @@ class NodeAnimation(NodeBase):
         self.createInputPin("Aller-retour", "BoolPin")
         self.createOutputPin("Objet use", "ObjectPin", DEFAULT_VALUE_OBJECT_PIN)
         self.createOutputPin("Position finale", "VectorPin")
+        self.mouvement = None

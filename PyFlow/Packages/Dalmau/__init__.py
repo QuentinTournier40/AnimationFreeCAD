@@ -24,6 +24,7 @@ from PyFlow.Packages.Dalmau.Nodes.getVectorValueNode import getVectorValue
 from PyFlow.Packages.Dalmau.Nodes.PlacerNode import PlacerNode
 from PyFlow.Packages.Dalmau.Nodes.setAngleObjectNode import setAngleObjectNode
 from PyFlow.Packages.Dalmau.Nodes.CommencerNode import CommencerNode
+from PyFlow.Packages.Dalmau.Nodes.testFonctionNode import testFonctionNode
 
 # Tools
 from PyFlow.Packages.Dalmau.Tools.StopperMouvements import StopperMouvements
@@ -53,7 +54,8 @@ _NODES = {
 	TranslationRectiligneVitesseNode.__name__: TranslationRectiligneVitesseNode,
 	TranslationAvecCourbeVitesseNode.__name__: TranslationAvecCourbeVitesseNode,
 	RotationSurSoiMemeVitesseNode.__name__: RotationSurSoiMemeVitesseNode,
-	RotationVitesseNode.__name__: RotationVitesseNode
+	RotationVitesseNode.__name__: RotationVitesseNode,
+	testFonctionNode.__name__: testFonctionNode
 }
 _PINS = {
 	VectorPin.__name__: VectorPin,

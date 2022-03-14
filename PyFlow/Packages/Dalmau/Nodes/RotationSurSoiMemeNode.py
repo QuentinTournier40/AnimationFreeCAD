@@ -31,9 +31,9 @@ class RotationSurSoiMemeNode(NodeAnimation):
         estBoucle = self.getData("Boucle")        
         estAllerRetour = self.getData("Aller-retour")        
 
-        rotation = Rotation(axeDeRotation, self.centreRotation, angleDeDebut, angleDeFin,self)
+        self.mouvement = Rotation(axeDeRotation, self.centreRotation, angleDeDebut, angleDeFin,self)
         animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionDuree(rotation,objet,duree)   
+        animation.executionDuree(self.mouvement,objet,duree)   
 
         self.setData("Position finale", objet.Placement.Base)
         self.setData("Angle final", angleDeFin)

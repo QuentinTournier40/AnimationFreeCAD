@@ -50,14 +50,11 @@ class Rotation(Mouvement):
             self.etape = 0
             self.objet.Placement.Rotation.Angle = math.radians(self.angleDeDebut)
             mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
-            print("Aller")
             self.angleARepeterCourant = self.angleARepeter
-
         else:
             self.etape = self.nbrPoints - 1
             self.objet.Placement.Rotation.Angle = math.radians(self.angleDeFin)
             self.angleARepeterCourant = -self.angleARepeter
-            print("Retour")
             mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
 
         #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
@@ -85,3 +82,10 @@ class Rotation(Mouvement):
     def executionBoucleAllerRetour(self):
         self.executionAllerRetour("self.executionBoucleAllerRetour()")
         self.monTemps = time.time()
+    
+    def allerALEtape(self, etape):
+        deltaEtape = self.etape - etape
+        angle = self.objet.Placement.Rotation.Angle
+        nouvelleAngle = angle + self.angleARepeter * deltaEtape
+        self.objet.Placement.Rotation.Angle = nouvelleAngle
+        self.etape = etape

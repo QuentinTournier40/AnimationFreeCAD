@@ -29,6 +29,7 @@ import random
 from Qt import QtGui
 from Qt import QtCore
 from Qt.QtWidgets import *
+from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
 
 from PyFlow import GET_PACKAGES
 from PyFlow.Core.Common import currentProcessorTime
@@ -513,12 +514,14 @@ class PyFlow(QMainWindow):
 
     def closeEvent(self, event):
 
+        NodeCourant.getInstance().stopperNodesCourant()
         shouldSave = self.shouldSave()
         if shouldSave == QMessageBox.Yes:
             if not self.save():
                 event.ignore()
                 return
         elif shouldSave == QMessageBox.Discard:
+            NodeCourant.getInstance().continuerNodesCourant()
             event.ignore()
             return
 

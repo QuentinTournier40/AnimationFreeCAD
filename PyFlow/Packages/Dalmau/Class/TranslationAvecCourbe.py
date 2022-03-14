@@ -75,3 +75,8 @@ class TranslationAvecCourbe(Mouvement):
     def executionBoucleAllerRetour(self):
         self.executionAllerRetour("self.executionBoucleAllerRetour()")
         self.monTemps = time.time()
+    
+    def allerALEtape(self, etape):
+        self.etape = int(etape)
+        print(self.etape)
+        self.objet.Placement.Base = self.pointsTrajectoire[self.etape]

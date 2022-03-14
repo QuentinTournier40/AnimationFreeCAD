@@ -25,9 +25,9 @@ class TranslationAvecCourbeNode(NodeAnimation):
         estAllerRetour = self.getData("Aller-retour")  
         estBoucle = self.getData("Boucle")
         
-        translation = TranslationAvecCourbe(courbe, self)
+        self.mouvement = TranslationAvecCourbe(courbe, self)
         animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionDuree(translation, objet, duree)
+        animation.executionDuree(self.mouvement, objet, duree)
 
         self.setData("Position finale", objet.Placement.Base)
         self.setData("Objet use", objet.Label)

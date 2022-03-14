@@ -21,6 +21,7 @@ from Qt import QtSvg
 from Qt.QtWidgets import *
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Core.Common import *
+from PyFlow.UI.Widgets.QtSliders import *
 from PyFlow.UI.Canvas.UIPinBase import (
     UIPinBase,
     getUIPinInstance,
@@ -35,11 +36,11 @@ from PyFlow.UI.UIInterfaces import IPropertiesViewSupport
 from PyFlow.UI.UIInterfaces import IUINode
 from PyFlow.UI.Canvas.NodeActionButton import NodeActionButtonBase
 from PyFlow.UI.Utils.stylesheet import Colors
+from functools import partial
 
 from collections import OrderedDict
 
 UI_NODES_FACTORIES = {}
-
 
 class CollapseNodeActionButton(NodeActionButtonBase):
     """docstring for CollapseNodeActionButton."""
@@ -54,12 +55,10 @@ class CollapseNodeActionButton(NodeActionButtonBase):
         else:
             self.svgIcon.setElementId("Collapse")
 
-
 class NodeNameValidator(QtGui.QRegExpValidator):
     """docstring for NodeNameValidator."""
     def __init__(self, parent=None):
         super(NodeNameValidator, self).__init__(QtCore.QRegExp('^[a-zA-Z][a-zA-Z0-9_]*$'), parent)
-
 
 class InputTextField(QGraphicsTextItem):
     editingFinished = QtCore.Signal(bool)
@@ -161,10 +160,8 @@ class InputTextField(QGraphicsTextItem):
         self.prepareGeometryChange()
         self.setPos(rect.topLeft())
 
-
 class NodeName(QGraphicsWidget):
     """docstring for NodeName"""
-
     def __init__(self, parent=None):
         super(NodeName, self).__init__(parent)
         self.setAcceptHoverEvents(True)
@@ -233,7 +230,6 @@ class NodeName(QGraphicsWidget):
         super(QGraphicsWidget, self).setGeometry(rect)
         self.setPos(rect.topLeft())
         self.labelItem.setGeometry(rect)
-
 
 class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
     """
@@ -501,6 +497,36 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
 
     def getName(self):
         return self._rawNode.getName()
+
+    def allerALEtape(self, etape):
+        print("test")
+        mouvement = self.getMouvement()
+        if(mouvement != False):
+            mouvement.allerALEtape(etape - 1)
+        else:
+            print("Impossible")
+
+    def getEtape(self):
+        mouvement = self.getMouvement()
+        if(mouvement != False):
+            print(mouvement.getEtape())
+            return mouvement.getEtape()
+        else:
+            print("Pas de mouvement")
+            return(-1)
+    
+    def getEtapeMax(self):
+        mouvement = self.getMouvement()
+        if(mouvement != False):
+            return mouvement.getEtapeMax()
+        else:
+            print("Pas de mouvement")
+            return(-1)
+            
+    def getMouvement(self):
+        if self._rawNode.mouvement is not None:
+            return self._rawNode.mouvement
+        return False
 
     def setName(self, name):
         self._rawNode.setName(name)
@@ -1313,7 +1339,7 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
         return new_node
 
     def createPropertiesWidget(self, propertiesWidget):
-        baseCategory = CollapsibleFormWidget(headName="Base")
+        """baseCategory = CollapsibleFormWidget(headName="Base")
 
         le_name = QLineEdit(self.getName())
         le_name.setReadOnly(True)
@@ -1331,7 +1357,36 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
         leType.setReadOnly(True)
         baseCategory.addWidget("Type", leType)
 
-        propertiesWidget.addWidget(baseCategory)
+        propertiesWidget.addWidget(baseCategory)"""
+
+        if(self.getMouvement() != False):
+            Etape = CollapsibleFormWidget(headName="Etape")
+            self.etape = QSpinBox()
+            self.etape.setValue(self.getEtape())
+            self.avancement = QSpinBox()
+
+            Etape.addWidget("Nbr d'étapes : "+ str(self.getEtapeMax())  +"            Etape ", self.etape)
+            self.etape.setMinimum(1)
+            self.etape.setMaximum(self.getEtapeMax())
+
+            self.etape.valueChanged.connect(print("test"))
+
+            Etape.addWidget("Avancement ", self.avancement)
+            self.avancement.setMinimum(1)
+
+            self.buttonEtape = QPushButton()
+            self.buttonAvancement = QPushButton()
+
+            self.buttonEtape.setText("Aller à l'étape")
+            self.buttonAvancement.setText("Nouvelle Avancement")
+
+            self.buttonEtape.clicked.connect(lambda :self.allerALEtape(self.etape.value()))
+            self.buttonAvancement.clicked.connect(lambda :self.etape.setSingleStep(self.avancement.value()))
+
+            Etape.addWidget("Fonctions", self.buttonEtape)
+            Etape.addWidget("Fonctions", self.buttonAvancement)
+
+            propertiesWidget.addWidget(Etape)
 
         inputsCategory = CollapsibleFormWidget(headName="Inputs")
         self.createInputWidgets(inputsCategory)
@@ -1529,7 +1584,6 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
 def REGISTER_UI_NODE_FACTORY(packageName, factory):
     if packageName not in UI_NODES_FACTORIES:
         UI_NODES_FACTORIES[packageName] = factory
-
 
 def getUINodeInstance(raw_instance):
     packageName = raw_instance.packageName
