@@ -15,9 +15,5 @@ class CommencerNode(NodeBase):
         return 'Autre'
 
     @staticmethod
-    def keywords():
-        return []
-
-    @staticmethod
     def description():
         return "Lance plusieurs node en meme temps."

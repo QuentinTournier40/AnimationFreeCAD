@@ -29,6 +29,7 @@ from PyFlow.Packages.Dalmau.Nodes.testFonctionNode import testFonctionNode
 # Tools
 from PyFlow.Packages.Dalmau.Tools.StopperMouvements import StopperMouvements
 from PyFlow.Packages.Dalmau.Tools.ContinuerMouvements import ContinuerMouvements
+from PyFlow.Packages.Dalmau.Tools.ArreterTousLesMouvements import ArreterTousLesMouvements
 from PyFlow.Packages.Dalmau.Tools.DemoDockTool import DemoDockTool
 
 # Exporters
@@ -68,7 +69,8 @@ _EXPORTERS = OrderedDict()
 
 _TOOLS[StopperMouvements.__name__] = StopperMouvements
 _TOOLS[ContinuerMouvements.__name__] = ContinuerMouvements
-_TOOLS[DemoDockTool.__name__] = DemoDockTool
+_TOOLS[ArreterTousLesMouvements.__name__] = ArreterTousLesMouvements
+_TOOLS[DemoDockTool.__name__] = DemoDockTool 
 
 _EXPORTERS[DemoExporter.__name__] = DemoExporter
 

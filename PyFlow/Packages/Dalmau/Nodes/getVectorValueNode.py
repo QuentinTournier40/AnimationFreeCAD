@@ -20,9 +20,5 @@ class getVectorValue(NodeBase):
         return 'Vector'
 
     @staticmethod
-    def keywords():
-        return []
-
-    @staticmethod
     def description():
         return "Eclate un vecteur en retournant ses trois composantes."

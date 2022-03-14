@@ -29,9 +29,5 @@ class PlacerNode(NodeBase):
         return 'Placement|Base'
 
     @staticmethod
-    def keywords():
-        return []
-
-    @staticmethod
     def description():
         return "Place un objet aux coordonées données."

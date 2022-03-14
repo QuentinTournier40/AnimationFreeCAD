@@ -47,6 +47,12 @@ class Mouvement(ABC):
         self.executionAllerRetour("self.executionBoucleAllerRetour()")
         self.monTemps = time.time()
 
+    def memeMouvement(self,unMouvement):
+        resultat = False
+        if(self.objet == unMouvement.objet):
+            resultat = True
+        return resultat
+
 class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):
         fenetre = MainWindow()

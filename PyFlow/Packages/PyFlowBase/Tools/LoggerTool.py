@@ -28,6 +28,7 @@ import logging
 import json
 import os
 import subprocess
+import FreeCAD
 
 
 REDIRECT = ConfigManager().shouldRedirectOutput()
@@ -106,6 +107,8 @@ class SignalHandler(QtCore.QObject):
             if msg != '\n':
                 self.text = msg
                 logger.info(str(msg))
+                FreeCAD.Console.PrintMessage(str(msg))
+            FreeCAD.Console.PrintMessage(msg)
 
     def flush(self):
         print('flusing from handler')
