@@ -12,8 +12,6 @@ class translationFormuleMathematiques(TranslationAvecCourbe):
         self.t = 0
         self.duree = duree
         self.objet = objet
-        self.stop = self.duree
-        print("Stop : "  + str(self.stop))
 
     def calculerPoint(self):
         t = self.t
@@ -30,7 +28,7 @@ class translationFormuleMathematiques(TranslationAvecCourbe):
         self.t += 0.0319
         print("t : "  + str(self.t))
 
-        if(self.t >= self.stop):
+        if(self.t >= self.duree):
             self.timer.stop()
             print(time.time() - self.temps)
 

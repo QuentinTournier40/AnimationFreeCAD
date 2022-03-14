@@ -27,14 +27,12 @@ class RotationVitesseNode(NodeAnimation):
         centreDeRotation = self.getData("Centre de rotation")        
         angleDeDebut = self.getData("Angle au debut de la rotation")        
         angleDeFin = self.getData("Angle a la fin de la rotation")  
+        vitesse = self.getData("Vitesse")
 
-        vitesse = self.getData("Vitesse")        
-        estBoucle = self.getData("Boucle")        
-        estAllerRetour = self.getData("Aller-retour")        
+        super().compute()        
 
         self.mouvement = Rotation(axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin,self)
-        animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionVitesse(self.mouvement,objet,vitesse)
+        self.animation.executionVitesse(self.mouvement,objet, vitesse)
 
         self.setData("Position finale", objet.Placement.Base)
         self.setData("Angle final", angleDeFin)

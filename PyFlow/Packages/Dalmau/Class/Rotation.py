@@ -26,9 +26,6 @@ class Rotation(Mouvement):
         duree =  (self.angleDeFin - self.angleDeDebut) / round(uneVitesse)
         return duree
 
-    def setObjet(self, objet):
-        self.objet = objet
-
     def mouvement(self, sens, suite):
         self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
         if(sens):
@@ -67,22 +64,6 @@ class Rotation(Mouvement):
         self.timer.timeout.connect(mouvement)
         self.timer.start()
 
-    def executionAller(self, sortie):
-        self.execution(True,sortie)
-        self.monTemps = time.time()
-    
-    def executionAllerRetour(self, sortie):
-        self.execution(True,"self.execution(False, \""+ sortie + "\")")
-        self.monTemps = time.time()
-
-    def executionAllerBoucle(self):
-        self.execution(True, "self.executionAllerBoucle()")
-        self.monTemps = time.time()
-
-    def executionBoucleAllerRetour(self):
-        self.executionAllerRetour("self.executionBoucleAllerRetour()")
-        self.monTemps = time.time()
-    
     def allerALEtape(self, etape):
         deltaEtape = self.etape - etape
         angle = self.objet.Placement.Rotation.Angle

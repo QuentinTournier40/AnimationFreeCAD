@@ -1,6 +1,8 @@
 from abc import ABC
 from Qt.QtWidgets import *
 
+import time
+
 RAFRAICHISSEMENT = 20
 NOMBRE_D_OR = 32
 DEFAULT_VALUE_OBJECT_PIN = "---Select object---"
@@ -10,6 +12,7 @@ class Mouvement(ABC):
         self.timer = None
         self.etape = 0
         self.node = unNode
+        self.objet = None
 
     def stopperMouvement(self):
         if(self.timer.isActive()):
@@ -24,7 +27,26 @@ class Mouvement(ABC):
 
     def getEtapeMax(self):
         return self.nbrPoints
-  
+
+    def setObjet(self, objet):
+        self.objet = objet
+
+    def executionAller(self, sortie):
+        self.execution(True,sortie)
+        self.monTemps = time.time()
+    
+    def executionAllerRetour(self, sortie):
+        self.execution(True,"self.execution(False, \""+ sortie + "\")")
+        self.monTemps = time.time()
+
+    def executionAllerBoucle(self):
+        self.execution(True, "self.executionAllerBoucle()")
+        self.monTemps = time.time()
+
+    def executionBoucleAllerRetour(self):
+        self.executionAllerRetour("self.executionBoucleAllerRetour()")
+        self.monTemps = time.time()
+
 class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):
         fenetre = MainWindow()

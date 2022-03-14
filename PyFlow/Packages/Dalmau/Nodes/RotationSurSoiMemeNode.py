@@ -25,15 +25,13 @@ class RotationSurSoiMemeNode(NodeAnimation):
         objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         axeDeRotation = self.getData("Axe de rotation")               
         angleDeDebut = self.getData("Angle au debut de la rotation")        
-        angleDeFin = self.getData("Angle a la fin de la rotation")  
+        angleDeFin = self.getData("Angle a la fin de la rotation")
+        duree = self.getData("Duree")
 
-        duree = self.getData("Duree")        
-        estBoucle = self.getData("Boucle")        
-        estAllerRetour = self.getData("Aller-retour")        
+        super().compute()       
 
         self.mouvement = Rotation(axeDeRotation, self.centreRotation, angleDeDebut, angleDeFin,self)
-        animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionDuree(self.mouvement,objet,duree)   
+        self.animation.executionDuree(self.mouvement,objet,duree)   
 
         self.setData("Position finale", objet.Placement.Base)
         self.setData("Angle final", angleDeFin)

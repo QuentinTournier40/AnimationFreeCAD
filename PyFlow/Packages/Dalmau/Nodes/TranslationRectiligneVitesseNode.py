@@ -21,12 +21,11 @@ class TranslationRectiligneVitesseNode(NodeAnimation):
         objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         coordonnes = [self.getData("Point de depart"), self.getData("Point de fin")] 
         vitesse = self.getData("Vitesse")
-        estBoucle = self.getData("Boucle")
-        estAllerRetour = self.getData("Aller-retour")
+        
+        super().compute()        
         
         self.mouvement = TranslationSansCourbe(coordonnes, self)
-        animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionVitesse(self.mouvement, objet, vitesse)
+        self.animation.executionVitesse(self.mouvement, objet, vitesse)
 
         self.setData("Position finale", self.getData("Point de fin"))
         self.setData("Objet use", objet.Label)

@@ -508,6 +508,7 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
 
     def getEtape(self):
         mouvement = self.getMouvement()
+        print(mouvement)
         if(mouvement != False):
             print(mouvement.getEtape())
             return mouvement.getEtape()
@@ -524,9 +525,14 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
             return(-1)
             
     def getMouvement(self):
-        if self._rawNode.mouvement is not None:
-            return self._rawNode.mouvement
-        return False
+        try: 
+            self._rawNode.mouvement 
+            if self._rawNode.mouvement is not None:
+                return self._rawNode.mouvement
+            else:
+                return False
+        except AttributeError:
+            return False
 
     def setName(self, name):
         self._rawNode.setName(name)

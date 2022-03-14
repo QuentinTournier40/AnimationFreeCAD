@@ -22,12 +22,11 @@ class TranslationAvecCourbeNode(NodeAnimation):
         objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
         courbe = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Courbe"))[0]
         duree = self.getData("Duree")
-        estAllerRetour = self.getData("Aller-retour")  
-        estBoucle = self.getData("Boucle")
+        
+        super().compute() 
         
         self.mouvement = TranslationAvecCourbe(courbe, self)
-        animation = Animation(estBoucle, estAllerRetour, self)
-        animation.executionDuree(self.mouvement, objet, duree)
+        self.animation.executionDuree(self.mouvement, objet, duree)
 
         self.setData("Position finale", objet.Placement.Base)
         self.setData("Objet use", objet.Label)
