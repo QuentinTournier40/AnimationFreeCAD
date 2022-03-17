@@ -18,7 +18,7 @@ class Animation():
             elif(not self.estBoucle and self.estAllerRetour):
                 unMouvement.executionAllerRetour("")
             else:
-                unMouvement.executionAller("")
+                unMouvement.executionAller("") 
 
     def executionVitesse(self, unMouvement, unObjet, uneVitesse):
         duree = unMouvement.calculDuree(uneVitesse)

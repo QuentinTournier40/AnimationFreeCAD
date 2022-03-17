@@ -1,3 +1,4 @@
+from PyFlow.Packages.Dalmau.Class.Animation import Animation
 from PyFlow.Packages.Dalmau.Class.NodeAnimation import NodeAnimation
 from PyFlow.Packages.Dalmau.Class.Mouvement import *
 from PyFlow.Packages.Dalmau.Class.translationFormuleMathematiques import translationFormuleMathematiques
@@ -13,6 +14,7 @@ class testFonctionNode(NodeAnimation):
         self.duree = self.createInputPin("Duree","FloatPin")
 
     def compute(self, *args, **kwargs):
+        super().compute()
         if(self.getData("Objet") == DEFAULT_VALUE_OBJECT_PIN):
             return FenetreErreur("Erreur", self.name, self.objet.name, "Veuillez choisir un objet à mouvoir.")  
         if(self.getData("Duree") <= 0):
@@ -24,8 +26,8 @@ class testFonctionNode(NodeAnimation):
         equationZ = self.getData("equation en z")
         duree = self.getData("Duree")
         
-        mouvement = translationFormuleMathematiques(equationX, equationY, equationZ, duree, objet)
-        mouvement.lancerTimer()     #lance le timer qui gère l'exécution
+        self.mouvement = translationFormuleMathematiques(equationX, equationY, equationZ, self)
+        self.animation.executionDuree(self.mouvement, objet, duree)    #lance le timer qui gère l'exécution
 
     @staticmethod
     def category():

@@ -13,6 +13,7 @@ class Mouvement(ABC):
         self.etape = 0
         self.node = unNode
         self.objet = None
+        self.sortieNode = unNode.sortieNode
 
     def stopperMouvement(self):
         if(self.timer.isActive()):

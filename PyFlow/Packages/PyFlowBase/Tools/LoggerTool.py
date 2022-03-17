@@ -108,7 +108,9 @@ class SignalHandler(QtCore.QObject):
                 self.text = msg
                 logger.info(str(msg))
                 FreeCAD.Console.PrintMessage(str(msg))
-            FreeCAD.Console.PrintMessage(msg)
+            else:
+                FreeCAD.Console.PrintMessage("\n")
+
 
     def flush(self):
         print('flusing from handler')

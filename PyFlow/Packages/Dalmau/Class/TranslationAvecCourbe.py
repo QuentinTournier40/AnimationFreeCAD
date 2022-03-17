@@ -9,7 +9,7 @@ class TranslationAvecCourbe(Mouvement):
     def __init__(self, uneCourbe, unNode):
         Mouvement.__init__(self,unNode)
         self.courbe = uneCourbe
-        self.mouvementAEteBoucle = False
+
 
     def calculTrajectoire(self, estAllerRetour, duree):
         if(estAllerRetour):
@@ -22,6 +22,7 @@ class TranslationAvecCourbe(Mouvement):
         return duree
 
     def mouvement(self, sens, suite):
+        print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
         
         if(sens):
@@ -31,24 +32,30 @@ class TranslationAvecCourbe(Mouvement):
             self.etape -= 1
             stop = -1
 
+        print(self.etape)
+
         if(self.etape == stop):
             print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
-            exec(suite)           
+            if(suite == ""):
+                self.sortieNode.call()
+            else:
+                exec(suite)           
 
-    def execution(self, sens, paramSuite):
-        if(sens):
-            self.etape = 0
-            mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
-            print("Aller")
+    def execution(self, sens, paramSuite, etape = -1):
+        if(etape == -1):
+            if(sens):
+                self.etape = 0
+                print("Aller")
+            else:
+                self.etape = self.nbrPoints - 1
+                print("Retour")
         else:
-            self.etape = self.nbrPoints - 1
-            print("Retour")
-            mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
-
+            self.etape = etape
         #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
         #Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
+        mouvement = functools.partial(self.mouvement, sens = sens, suite = paramSuite)
         NodeCourant.getInstance().ajouterNode(self)
 
         self.timer = QtCore.QTimer()
@@ -61,3 +68,4 @@ class TranslationAvecCourbe(Mouvement):
         self.etape = int(etape)
         print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
+    

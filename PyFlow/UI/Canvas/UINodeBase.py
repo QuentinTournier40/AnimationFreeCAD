@@ -18,6 +18,7 @@ import logging
 from Qt import QtCore
 from Qt import QtGui
 from Qt import QtSvg
+from PyFlow.Packages.Dalmau.Class.Mouvement import Mouvement
 from Qt.QtWidgets import *
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Core.Common import *
@@ -505,6 +506,13 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
             mouvement.allerALEtape(etape - 1)
         else:
             print("Impossible")
+
+    def lancerMouvement(self, etape):
+        mouvement = self.getMouvement()
+        if(etape != self.getEtapeMax()):
+            if(mouvement != False):
+                mouvement.execution(True, "", etape - 1)
+
 
     def getEtape(self):
         mouvement = self.getMouvement()
@@ -1368,29 +1376,23 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
         if(self.getMouvement() != False):
             Etape = CollapsibleFormWidget(headName="Etape")
             self.etape = QSpinBox()
+            self.etape.setRange(1,self.getEtapeMax())
             self.etape.setValue(self.getEtape())
             self.avancement = QSpinBox()
 
             Etape.addWidget("Nbr d'étapes : "+ str(self.getEtapeMax())  +"            Etape ", self.etape)
-            self.etape.setMinimum(1)
-            self.etape.setMaximum(self.getEtapeMax())
 
-            self.etape.valueChanged.connect(print("test"))
+            self.etape.valueChanged.connect(lambda :self.allerALEtape(self.etape.value()))
+            self.avancement.valueChanged.connect(lambda :self.etape.setSingleStep(self.avancement.value()))
 
             Etape.addWidget("Avancement ", self.avancement)
             self.avancement.setMinimum(1)
 
-            self.buttonEtape = QPushButton()
-            self.buttonAvancement = QPushButton()
+            self.buttonLancerMouvement = QPushButton()
+            self.buttonLancerMouvement.setText("Lancer mouvement")
+            self.buttonLancerMouvement.clicked.connect(lambda :self.lancerMouvement(self.etape.value()))
 
-            self.buttonEtape.setText("Aller à l'étape")
-            self.buttonAvancement.setText("Nouvelle Avancement")
-
-            self.buttonEtape.clicked.connect(lambda :self.allerALEtape(self.etape.value()))
-            self.buttonAvancement.clicked.connect(lambda :self.etape.setSingleStep(self.avancement.value()))
-
-            Etape.addWidget("Fonctions", self.buttonEtape)
-            Etape.addWidget("Fonctions", self.buttonAvancement)
+            Etape.addWidget("Fonctions", self.buttonLancerMouvement)
 
             propertiesWidget.addWidget(Etape)
 

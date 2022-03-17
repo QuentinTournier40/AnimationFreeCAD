@@ -34,25 +34,33 @@ class Rotation(Mouvement):
         else:
             self.etape -= 1
             stop = -1
+
         print("Etape : "+ str(self.etape))
 
         if(self.etape == stop):
             print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
-            exec(suite)   
+            if(suite == ""):
+                self.sortieNode.call()
+            else:
+                exec(suite)
 
-    def execution(self, sens, paramSuite):
+    def execution(self, sens, paramSuite, etape = -1):
+        if(etape == -1):
+            if(sens):
+                self.etape = 0
+                self.objet.Placement.Rotation.Angle = math.radians(self.angleDeDebut)
+            else:
+                self.etape = self.nbrPoints - 1
+                self.objet.Placement.Rotation.Angle = math.radians(self.angleDeFin)
+        
         if(sens):
-            self.etape = 0
-            self.objet.Placement.Rotation.Angle = math.radians(self.angleDeDebut)
-            mouvement = functools.partial(self.mouvement, sens = True, suite = paramSuite)
             self.angleARepeterCourant = self.angleARepeter
         else:
-            self.etape = self.nbrPoints - 1
-            self.objet.Placement.Rotation.Angle = math.radians(self.angleDeFin)
             self.angleARepeterCourant = -self.angleARepeter
-            mouvement = functools.partial(self.mouvement, sens = False, suite = paramSuite)
+            
+        mouvement = functools.partial(self.mouvement, sens = sens, suite = paramSuite)
 
         #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
         #Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
@@ -66,7 +74,8 @@ class Rotation(Mouvement):
 
     def allerALEtape(self, etape):
         deltaEtape = self.etape - etape
-        angle = self.objet.Placement.Rotation.Angle
-        nouvelleAngle = angle + self.angleARepeter * deltaEtape
-        self.objet.Placement.Rotation.Angle = nouvelleAngle
+        if(deltaEtape >= 0):
+            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, -self.angleARepeterCourant)
+        else:
+            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
         self.etape = etape
