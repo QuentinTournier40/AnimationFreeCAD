@@ -1,30 +1,30 @@
+from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
-from PyFlow.Core.Common import Direction
 from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
 from Qt import QtGui
 
 import os 
 scriptDir = os.path.dirname(os.path.realpath(__file__))
 
-class StopperMouvements(ShelfTool):
-    """docstring for StopperMouvements."""
+class ResetPosition(ShelfTool):
+    """docstring for ResetPosition."""
     def __init__(self):
-        super(StopperMouvements, self).__init__()
+        super(ResetPosition, self).__init__()
 
     @staticmethod
     def toolTip():
-        return "Stopper tous les mouvements en cours"
+        return "Réinitialisation des positions des objets"
 
     @staticmethod
     def getIcon():
-        path = "../../../../icons/boutonPause.svg"
+        path = "../../../../icons/boutonReset.svg"
         return QtGui.QIcon(scriptDir + os.path.sep + path)
 
     @staticmethod
     def name():
-        return str("StopperMouvements")
+        return str("ResetPosition")
 
     def do(self):
         print("Est ce que ça marche ?")
-        NodeCourant.getInstance().stopperNodesCourant()
+        Coordonnees.getInstance().positionner()

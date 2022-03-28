@@ -31,8 +31,12 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.testAccelerer import testAccelerer
 from PyFlow.Packages.AnimationFreeCAD.Nodes.Attendre import Attendre
 
 # Tools
-from PyFlow.Packages.AnimationFreeCAD.Tools.StopperMouvements import StopperMouvements
+from PyFlow.Packages.AnimationFreeCAD.Tools.MettreEnPause import MettreEnPause
 from PyFlow.Packages.AnimationFreeCAD.Tools.ContinuerMouvements import ContinuerMouvements
+from PyFlow.Packages.AnimationFreeCAD.Tools.ResetPosition import ResetPosition
+from PyFlow.Packages.AnimationFreeCAD.Tools.AjouterEtape import AjouterEtape
+from PyFlow.Packages.AnimationFreeCAD.Tools.EtapePrecedente import EtapePrecedente
+from PyFlow.Packages.AnimationFreeCAD.Tools.EtapeSuivante import EtapeSuivante
 from PyFlow.Packages.AnimationFreeCAD.Tools.ArreterTousLesMouvements import ArreterTousLesMouvements
 from PyFlow.Packages.AnimationFreeCAD.Tools.DemoDockTool import DemoDockTool
 
@@ -74,10 +78,14 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_TOOLS[StopperMouvements.__name__] = StopperMouvements
+_TOOLS[MettreEnPause.__name__] = MettreEnPause
 _TOOLS[ContinuerMouvements.__name__] = ContinuerMouvements
 _TOOLS[ArreterTousLesMouvements.__name__] = ArreterTousLesMouvements
-_TOOLS[DemoDockTool.__name__] = DemoDockTool 
+_TOOLS[ResetPosition.__name__] = ResetPosition
+_TOOLS[AjouterEtape.__name__] = AjouterEtape
+_TOOLS[EtapePrecedente.__name__] = EtapePrecedente
+_TOOLS[EtapeSuivante.__name__] = EtapeSuivante
+_TOOLS[DemoDockTool.__name__] = DemoDockTool
 
 _EXPORTERS[DemoExporter.__name__] = DemoExporter
 

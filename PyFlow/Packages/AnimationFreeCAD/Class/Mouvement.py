@@ -15,7 +15,7 @@ class Mouvement(ABC):
         self.objet = None
         self.sortieNode = unNode.sortieNode
 
-    def stopperMouvement(self):
+    def mettreEnPause(self):
         if(self.timer.isActive()):
             self.timer.stop()
     

@@ -5,10 +5,11 @@ from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
 from Qt import QtGui
 
 import os 
+
 scriptDir = os.path.dirname(os.path.realpath(__file__))
 
 class ContinuerMouvements(ShelfTool):
-    """docstring for StopperMouvements."""
+    """docstring for mettreEnPause."""
     def __init__(self):
         super(ContinuerMouvements, self).__init__()
 

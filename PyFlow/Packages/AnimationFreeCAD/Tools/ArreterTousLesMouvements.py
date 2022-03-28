@@ -4,6 +4,9 @@ from PyFlow.Core.Common import Direction
 from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
 from Qt import QtGui
 
+import os
+
+scriptDir = os.path.dirname(os.path.realpath(__file__))
 
 class ArreterTousLesMouvements(ShelfTool):
     """docstring for ArreterTousLesMouvements."""
@@ -16,7 +19,8 @@ class ArreterTousLesMouvements(ShelfTool):
 
     @staticmethod
     def getIcon():
-        return QtGui.QIcon(":brick.png")
+        path = "../../../../icons/boutonStop.svg"
+        return QtGui.QIcon(scriptDir + os.path.sep + path)
 
     @staticmethod
     def name():
