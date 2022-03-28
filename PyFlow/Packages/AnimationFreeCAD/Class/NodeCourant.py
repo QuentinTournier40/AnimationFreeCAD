@@ -9,21 +9,22 @@ class NodeCourant:
 
     def getInstance():
         if NodeCourant.__instance is None:
-            print("Création de l'instance")
+            #print("Création de l'instance")
             NodeCourant.__instance = NodeCourant()
         else:
-            print("Déja créé")
+            #print("Déja créé")
+            pass
 
         return NodeCourant.__instance
 
     def ajouterNode(self,unMouvement):
         NodeCourant.__listeNodeCourant.append(unMouvement)
-        print("Ajout node " + str(NodeCourant.__listeNodeCourant))
+        #print("Ajout node " + str(NodeCourant.__listeNodeCourant))
 
     def enleverNode(self,unMouvement):
-        print(NodeCourant.__listeNodeCourant.index(unMouvement))
+        #print(NodeCourant.__listeNodeCourant.index(unMouvement))
         NodeCourant.__listeNodeCourant.pop(NodeCourant.__listeNodeCourant.index(unMouvement))
-        print("Enlever node " + str(self.__listeNodeCourant))
+        #print("Enlever node " + str(self.__listeNodeCourant))
 
     def stopperNodesCourant(self):
         for mouvement in self.__listeNodeCourant:
@@ -44,5 +45,5 @@ class NodeCourant:
             if(mouvement.memeMouvement(unMouvement)):
                 resultat = True
                 break
-        print(resultat)
+        #print(resultat)
         return resultat

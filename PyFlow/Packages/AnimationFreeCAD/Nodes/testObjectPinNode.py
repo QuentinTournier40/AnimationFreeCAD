@@ -15,8 +15,8 @@ class testObjectPinNode(NodeBase):
     def execute(self, *args, **kwargs):
         truc = self.getData("Object")
         truc2 = self.getData("Curve")
-        print(truc)
-        print(truc2)
+        #print(truc)
+        #print(truc2)
         self["outExec"].call()
 
     @staticmethod

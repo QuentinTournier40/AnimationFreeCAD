@@ -38,8 +38,8 @@ class testDeceler(NodeBase):
 
     def truc(self):
         distance = - (1 / 2 * self.acc * (self.compteur * self.compteur)) + self.vitesseInit * self.compteur
-        print("Temps : " + str(self.compteur))
-        print("Distance Parcourue : " + str(distance))
+        #print("Temps : " + str(self.compteur))
+        #print("Distance Parcourue : " + str(distance))
         if(distance > self.courbe.Shape.LastParameter):
             distance = self.courbe.Shape.LastParameter
             self.timer.stop()

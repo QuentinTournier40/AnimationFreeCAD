@@ -22,7 +22,7 @@ class TranslationAvecCourbe(Mouvement):
         return duree
 
     def mouvement(self, sens, suite):
-        print(self.etape)
+        #print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
         
         if(sens):
@@ -32,10 +32,10 @@ class TranslationAvecCourbe(Mouvement):
             self.etape -= 1
             stop = -1
 
-        print(self.etape)
+        #print(self.etape)
 
         if(self.etape >= stop):
-            print(time.time() - self.monTemps)
+            #print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
             if(suite == ""):
@@ -47,10 +47,10 @@ class TranslationAvecCourbe(Mouvement):
         if(etape == -1):
             if(sens):
                 self.etape = 0
-                print("Aller")
+                #print("Aller")
             else:
                 self.etape = self.nbrPoints - 1
-                print("Retour")
+                #print("Retour")
         else:
             self.etape = etape
         #Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
@@ -66,6 +66,6 @@ class TranslationAvecCourbe(Mouvement):
     
     def allerALEtape(self, etape):
         self.etape = int(etape)
-        print(self.etape)
+        #print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
     

@@ -35,10 +35,10 @@ class Rotation(Mouvement):
             self.etape -= 1
             stop = -1
 
-        print("Etape : "+ str(self.etape))
+        #print("Etape : "+ str(self.etape))
 
         if(self.etape == stop):
-            print(time.time() - self.monTemps)
+            #print(time.time() - self.monTemps)
             self.timer.stop()
             NodeCourant.getInstance().enleverNode(self)
             if(suite == ""):

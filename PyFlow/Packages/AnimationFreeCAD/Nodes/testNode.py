@@ -56,8 +56,8 @@ class testNode(NodeBase):
         self.mouvementEstAccelere = False
 
     def truc(self):
-        print("Temps : " + str(self.compteur))
-        print("Distance Parcourue : " + str(self.distanceParcourue))
+        #print("Temps : " + str(self.compteur))
+        #print("Distance Parcourue : " + str(self.distanceParcourue))
 
         if(self.distanceParcourue < self.debutAcc):
             self.distanceParcourue = self.calculDistance(False)  
@@ -70,11 +70,11 @@ class testNode(NodeBase):
             self.temps[1] = self.compteur
 
         elif(self.distanceParcourue >= self.finAcc):
-            print("3")
+            #print("3")
             self.distanceParcourue = self.vitesseInit * (self.compteur - self.temps[1]) + self.distanceParcourue2[1]
             
             if(self.distanceParcourue > self.courbe.Shape.LastParameter):
-                print("fin")
+                #print("fin")
                 self.timer.stop()
 
         self.objet.Placement.Base = self.courbe.Shape.valueAt(self.distanceParcourue)

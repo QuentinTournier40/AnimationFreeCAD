@@ -21,7 +21,7 @@ class translationFormuleMathematiques(Mouvement):
             self.pas = self.pas * 2
         self.duree = duree
         self.nbrPoints = round(self.duree / self.pas)
-        print(self.nbrPoints)
+        #print(self.nbrPoints)
 
     def calculPoints(self):
         t = self.t
@@ -39,14 +39,14 @@ class translationFormuleMathematiques(Mouvement):
         else: 
             self.t -= self.pas
             self.etape -= 1
-        print("t : "  + str(self.t))
+        #print("t : "  + str(self.t))
 
-        print(suite)
+        #print(suite)
 
         if(sens):
             if(self.t >= self.duree):
                 self.timer.stop()
-                print(time.time() - self.temps)
+                #print(time.time() - self.temps)
                 NodeCourant.getInstance().enleverNode(self)
                 if(suite == ""):
                     self.sortieNode.call()
@@ -55,7 +55,7 @@ class translationFormuleMathematiques(Mouvement):
         else:
             if(self.t <= 0):
                 self.timer.stop()
-                print(time.time() - self.temps)
+                #print(time.time() - self.temps)
                 NodeCourant.getInstance().enleverNode(self)
                 if(suite == ""):
                     self.sortieNode.call()
