@@ -3,7 +3,7 @@ import os
 class AnimationFreeCAD(Workbench):
     path = os.getcwd()
 
-    MenuText = "Animation"
+    MenuText = "AnimationFreeCAD"
     ToolTip = "Faire des animations"
     Icon = path + "/../Mod/AnimationFreeCAD/icons/clapCinema.svg"
 
@@ -15,7 +15,5 @@ class AnimationFreeCAD(Workbench):
 
         self.list = ["OpenPyFlowCmd"] # A list of command names created in the line above
         self.appendToolbar(str(QtCore.QT_TRANSLATE_NOOP("basic1", "basic1")), self.list)
-        self.appendMenu(str(QtCore.QT_TRANSLATE_NOOP("basic1", "basic1")), self.list)
-        self.appendMenu(str(QtCore.QT_TRANSLATE_NOOP("basic2", "basic2")), self.list)
 
 Gui.addWorkbench(AnimationFreeCAD())
