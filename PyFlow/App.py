@@ -514,7 +514,7 @@ class PyFlow(QMainWindow):
 
     def closeEvent(self, event):
 
-        NodeCourant.getInstance().stopperNodesCourant()
+        NodeCourant.getInstance().mettreEnPause()
         shouldSave = self.shouldSave()
         if shouldSave == QMessageBox.Yes:
             if not self.save():

@@ -35,7 +35,7 @@ class NodeCourant:
             mouvement.activerMouvement()
 
     def arreterLAnimation(self):
-        self.stopperNodesCourant()
+        self.mettreEnPause()
         for i in range(0, len(self.__listeNodeCourant)):
             del(self.__listeNodeCourant[0])
 

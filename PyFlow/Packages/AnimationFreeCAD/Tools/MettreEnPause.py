@@ -27,4 +27,4 @@ class MettreEnPause(ShelfTool):
 
     def do(self):
         print("Est ce que ça marche ?")
-        NodeCourant.getInstance().stopperNodesCourant()
+        NodeCourant.getInstance().mettreEnPause()
