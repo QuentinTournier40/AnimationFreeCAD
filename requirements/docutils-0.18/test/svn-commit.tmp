@@ -1,0 +1,4 @@
+make functional/tests/misc_rst_html4css1.py pass
+-- Diese und die folgenden Zeilen werden ignoriert --
+
+AM   test_parsers/test_rst/includes/include14.txt

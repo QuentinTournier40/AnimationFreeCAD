@@ -1,0 +1,43 @@
+###
+mwe
+###
+a minimal example
+#################
+:Date: October 13, 2021
+:Manual section: 1
+:Manual group: Testing Docutils
+:Version: mwe 0.1.0
+
+Synopsis
+========
+| mwe [**-aq**] [**-b** *file*] [**\--long-long** *which*] *file \...*
+
+Description
+===========
+To find the common attributes of a variety of objects, it is necessary
+to begin, by surveying the *objects* themselves in the concrete. Let us
+therefore advert successively to the various modes of action, and
+arrangements of human affairs, which are classed, by universal or widely
+spread opinion, as Just or as Unjust. The things well known to excite
+the sentiments associated with those names, are of a very multifarious
+character. I shall pass them rapidly in review, without studying any
+particular arrangement.
+The previous line will have been spaced with two spaces.
+
+Options
+=======
+Its arguments are as follows:
+
+-a                         Do all.
+-q                         Be quiet.
+-b file                    Do everything to *file*.
+--long-meme which          Chooses the long named *which*.
+
+Environment
+===========
+mwe is not affected by environment variables.
+
+Exit status
+===========
+mwe exits 0 on success.
+

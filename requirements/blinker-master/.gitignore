@@ -1,0 +1,15 @@
+*.py?
+*$py.class
+.coverage
+.tox
+build
+dist
+MANIFEST
+docs/text
+docs/html
+docs/doctrees
+docs/doctest
+docs/pickles
+docs/source/_static
+docs/source/_template
+docs/website

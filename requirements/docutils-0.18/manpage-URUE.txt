@@ -1,0 +1,18 @@
+
+link adr in .UR .UE
+
+embedded in a paragraph
+
+- at line start
+- in line
+- at eol
+
+at start of paragraph
+
+- followed by text
+- at eol
+
+at end of paragraph
+
+
+
