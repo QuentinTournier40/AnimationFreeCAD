@@ -18,7 +18,7 @@ import logging
 from Qt import QtCore
 from Qt import QtGui
 from Qt import QtSvg
-from PyFlow.Packages.Dalmau.Class.Mouvement import Mouvement
+from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import Mouvement
 from Qt.QtWidgets import *
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Core.Common import *

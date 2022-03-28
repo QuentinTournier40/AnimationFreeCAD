@@ -29,7 +29,7 @@ import random
 from Qt import QtGui
 from Qt import QtCore
 from Qt.QtWidgets import *
-from PyFlow.Packages.Dalmau.Class.NodeCourant import NodeCourant
+from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
 
 from PyFlow import GET_PACKAGES
 from PyFlow.Core.Common import currentProcessorTime
