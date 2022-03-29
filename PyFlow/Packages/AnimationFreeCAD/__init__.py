@@ -37,7 +37,8 @@ from PyFlow.Packages.AnimationFreeCAD.Tools.ResetPosition import ResetPosition
 from PyFlow.Packages.AnimationFreeCAD.Tools.AjouterEtape import AjouterEtape
 from PyFlow.Packages.AnimationFreeCAD.Tools.EtapePrecedente import EtapePrecedente
 from PyFlow.Packages.AnimationFreeCAD.Tools.EtapeSuivante import EtapeSuivante
-from PyFlow.Packages.AnimationFreeCAD.Tools.ArreterTousLesMouvements import ArreterTousLesMouvements
+from PyFlow.Packages.AnimationFreeCAD.Tools.ArreterTousLesMouvements import ArreterTousLesMouvements 
+from PyFlow.Packages.AnimationFreeCAD.Tools.ExportationVideo import ExportationVideo 
 from PyFlow.Packages.AnimationFreeCAD.Tools.DemoDockTool import DemoDockTool
 
 # Exporters
@@ -84,7 +85,8 @@ _TOOLS[ArreterTousLesMouvements.__name__] = ArreterTousLesMouvements
 _TOOLS[ResetPosition.__name__] = ResetPosition
 _TOOLS[AjouterEtape.__name__] = AjouterEtape
 _TOOLS[EtapePrecedente.__name__] = EtapePrecedente
-_TOOLS[EtapeSuivante.__name__] = EtapeSuivante
+_TOOLS[EtapeSuivante.__name__] = EtapeSuivante 
+_TOOLS[ExportationVideo.__name__] = ExportationVideo 
 _TOOLS[DemoDockTool.__name__] = DemoDockTool
 
 _EXPORTERS[DemoExporter.__name__] = DemoExporter
