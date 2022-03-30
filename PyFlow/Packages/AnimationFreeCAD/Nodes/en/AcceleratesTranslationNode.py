@@ -17,7 +17,7 @@ class AcceleratesTranslationNode(NodeBase):
 
         self.createInputPin("Curve", "CurvePin", "---Select object---")
         self.createInputPin("Object", "ObjectPin", "---Select object---")
-
+        self._experimental = True
 
     def execute(self, *args, **kwargs):
         self.vitesseInit = self.getData("Initial speed")

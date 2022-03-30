@@ -6,9 +6,9 @@ from PySide import QtCore
 import FreeCAD
 
 
-class testDecelerer(NodeBase):
+class TranslationDecelere(NodeBase):
     def __init__(self, name):
-        super(testDecelerer, self).__init__(name)
+        super(TranslationDecelere, self).__init__(name)
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.createOutputPin("outExec", "ExecPin")
 
@@ -17,7 +17,7 @@ class testDecelerer(NodeBase):
 
         self.createInputPin("Courbe", "CurvePin", "---Select object---")
         self.createInputPin("Objet", "ObjectPin", "---Select object---")
-
+        self._experimental = True
 
     def execute(self, *args, **kwargs):
         self.vitesseInit = self.getData("vitesseInit")

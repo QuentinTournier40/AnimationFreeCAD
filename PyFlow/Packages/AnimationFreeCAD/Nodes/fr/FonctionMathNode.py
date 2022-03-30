@@ -5,13 +5,14 @@ from PyFlow.Packages.AnimationFreeCAD.Class.translationFormuleMathematiques impo
 
 import FreeCAD
 
-class testFonctionNode(NodeAnimation):
+class FonctionMathNode(NodeAnimation):
     def __init__(self,name):
-        super(testFonctionNode,self).__init__(name)
+        super(FonctionMathNode,self).__init__(name)
         self.createInputPin("equation en x","StringPin")
         self.createInputPin("equation en y","StringPin")
         self.createInputPin("equation en z","StringPin")
         self.duree = self.createInputPin("Duree","FloatPin")
+        self._experimental = True
 
     def compute(self, *args, **kwargs):
         super().compute()

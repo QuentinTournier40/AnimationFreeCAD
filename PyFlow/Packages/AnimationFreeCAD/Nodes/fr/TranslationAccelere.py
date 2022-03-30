@@ -6,9 +6,9 @@ from PySide import QtCore
 import FreeCAD
 
 
-class testAccelerer(NodeBase):
+class TranslationAccelere(NodeBase):
     def __init__(self, name):
-        super(testAccelerer, self).__init__(name)
+        super(TranslationAccelere, self).__init__(name)
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.createOutputPin("outExec", "ExecPin")
 
@@ -17,7 +17,7 @@ class testAccelerer(NodeBase):
 
         self.createInputPin("Courbe", "CurvePin", "---Select object---")
         self.createInputPin("Objet", "ObjectPin", "---Select object---")
-
+        self._experimental = True
 
     def execute(self, *args, **kwargs):
         self.vitesseInit = self.getData("vitesseInit")

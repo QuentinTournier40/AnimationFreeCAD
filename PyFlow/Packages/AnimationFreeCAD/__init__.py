@@ -23,9 +23,9 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.getValeurVecteurNode import getVa
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.PlacerNode import PlacerNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.setAngleObjectNode import setAngleObjectNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CommencerNode import CommencerNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testFonctionNode import testFonctionNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testAccelerer import testAccelerer
-from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testDecelerer import testDecelerer
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.FonctionMathNode import FonctionMathNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationAccelere import TranslationAccelere
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationDecelere import TranslationDecelere
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.Attendre import Attendre
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CreateVecteurNode import CreateVecteurNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.MakeVecteurNode import MakeVecteurNode
@@ -83,9 +83,9 @@ _NODES = {
 	TranslationAvecCourbeVitesseNode.__name__: TranslationAvecCourbeVitesseNode,
 	RotationSurSoiMemeVitesseNode.__name__: RotationSurSoiMemeVitesseNode,
 	RotationVitesseNode.__name__: RotationVitesseNode,
-	testFonctionNode.__name__: testFonctionNode,
-	testDecelerer.__name__: testDecelerer,
-	testAccelerer.__name__: testAccelerer,
+	FonctionMathNode.__name__: FonctionMathNode,
+	TranslationDecelere.__name__: TranslationDecelere,
+	TranslationAccelere.__name__: TranslationAccelere,
 	Attendre.__name__: Attendre,
 	CreateVecteurNode.__name__: CreateVecteurNode,
 	MakeVecteurNode.__name__: MakeVecteurNode,
