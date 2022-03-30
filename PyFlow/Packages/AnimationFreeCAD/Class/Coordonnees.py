@@ -1,6 +1,3 @@
-from abc import ABC, abstractmethod
-from pickle import FALSE
-from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import Mouvement
 from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
 from PyFlow.Packages.AnimationFreeCAD.Class.Pile import Pile
 from Qt.QtWidgets import *

@@ -58,7 +58,7 @@ class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):
         fenetre = MainWindow()
         msg = QMessageBox()
-        texte = "Erreur au node : " + nomNode + "\nPin : " + nomPin + "\n\n" + erreur
+        texte = "Node : " + nomNode + "\nPin : " + nomPin + "\n\n" + erreur
         return msg.about(fenetre, titre, texte)
 
 class MainWindow(QMainWindow):

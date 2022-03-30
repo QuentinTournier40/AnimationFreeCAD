@@ -9,26 +9,44 @@ from PyFlow.Packages.AnimationFreeCAD.Pins.ObjectPin import ObjectPin
 from PyFlow.Packages.AnimationFreeCAD.Pins.CurvePin import CurvePin
 
 # Function based nodes
-from PyFlow.Packages.AnimationFreeCAD.FunctionLibraries.VectorLib import VectorLib
 
 # Class based nodes
-from PyFlow.Packages.AnimationFreeCAD.Nodes.TranslationRectiligneNode import TranslationRectiligneNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.TranslationRectiligneVitesseNode import TranslationRectiligneVitesseNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.TranslationAvecCourbeNode import TranslationAvecCourbeNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.TranslationAvecCourbeVitesseNode import TranslationAvecCourbeVitesseNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.RotationSurSoiMemeNode import RotationSurSoiMemeNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.RotationSurSoiMemeVitesseNode import RotationSurSoiMemeVitesseNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.RotationNode import RotationNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.RotationVitesseNode import RotationVitesseNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.getVectorValueNode import getVectorValue
-from PyFlow.Packages.AnimationFreeCAD.Nodes.PlacerNode import PlacerNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.setAngleObjectNode import setAngleObjectNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.CommencerNode import CommencerNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.testFonctionNode import testFonctionNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.testNode import testNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.testAccelerer import testAccelerer
-#from PyFlow.Packages.AnimationFreeCAD.Nodes.testDecelerer import testDecelerer
-from PyFlow.Packages.AnimationFreeCAD.Nodes.Attendre import Attendre
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationRectiligneNode import TranslationRectiligneNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationRectiligneVitesseNode import TranslationRectiligneVitesseNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationAvecCourbeNode import TranslationAvecCourbeNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationAvecCourbeVitesseNode import TranslationAvecCourbeVitesseNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationSurSoiMemeNode import RotationSurSoiMemeNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationSurSoiMemeVitesseNode import RotationSurSoiMemeVitesseNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationNode import RotationNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationVitesseNode import RotationVitesseNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.getValeurVecteurNode import getValeurVecteurNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.PlacerNode import PlacerNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.setAngleObjectNode import setAngleObjectNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CommencerNode import CommencerNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testFonctionNode import testFonctionNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testAccelerer import testAccelerer
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.testDecelerer import testDecelerer
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.Attendre import Attendre
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CreateVecteurNode import CreateVecteurNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.MakeVecteurNode import MakeVecteurNode
+
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationNode import RectilinearTranslationNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationBySpeedNode import RectilinearTranslationBySpeedNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.TranslationWithCurveNode import TranslationWithCurveNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.TranslationWithCurveBySpeedNode import TranslationWithCurveBySpeedNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinAroundNode import SpinAroundNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinAroundBySpeedNode import SpinAroundBySpeedNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinNode import SpinNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinBySpeedNode import SpinBySpeedNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.getVectorValueNode import getVectorValue
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.PlaceNode import PlaceNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.setAngleObjectNode import setAngleObjectNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.StartNode import StartNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.AcceleratesTranslationNode import AcceleratesTranslationNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.DeceleratesTranslationNode import DeceleratesTranslationNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.WaitNode import WaitNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.CreateVectorNode import CreateVectorNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.MakeVectorNode import MakeVectorNode
 
 # Tools
 from PyFlow.Packages.AnimationFreeCAD.Tools.MettreEnPause import MettreEnPause
@@ -50,15 +68,15 @@ from PyFlow.Packages.AnimationFreeCAD.Factories.PinInputWidgetFactory import get
 from PyFlow.Packages.AnimationFreeCAD.PrefsWidgets.DemoPrefs import DemoPrefs
 
 _FOO_LIBS = {
-	VectorLib.__name__: VectorLib(PACKAGE_NAME)
 }
+
 _NODES = {
 	TranslationRectiligneNode.__name__: TranslationRectiligneNode,
 	TranslationAvecCourbeNode.__name__: TranslationAvecCourbeNode,
 	RotationSurSoiMemeNode.__name__: RotationSurSoiMemeNode,
 	CommencerNode.__name__: CommencerNode,
 	RotationNode.__name__: RotationNode,
-	getVectorValue.__name__: getVectorValue,
+	getValeurVecteurNode.__name__: getValeurVecteurNode,
 	PlacerNode.__name__: PlacerNode,
 	setAngleObjectNode.__name__: setAngleObjectNode,
 	TranslationRectiligneVitesseNode.__name__: TranslationRectiligneVitesseNode,
@@ -66,10 +84,31 @@ _NODES = {
 	RotationSurSoiMemeVitesseNode.__name__: RotationSurSoiMemeVitesseNode,
 	RotationVitesseNode.__name__: RotationVitesseNode,
 	testFonctionNode.__name__: testFonctionNode,
-	testNode.__name__: testNode,
+	testDecelerer.__name__: testDecelerer,
 	testAccelerer.__name__: testAccelerer,
-	Attendre.__name__: Attendre
+	Attendre.__name__: Attendre,
+	CreateVecteurNode.__name__: CreateVecteurNode,
+	MakeVecteurNode.__name__: MakeVecteurNode,
+	
+	RectilinearTranslationNode.__name__: RectilinearTranslationNode,
+	RectilinearTranslationBySpeedNode.__name__: RectilinearTranslationBySpeedNode,
+	TranslationWithCurveNode.__name__: TranslationWithCurveNode,
+	TranslationWithCurveBySpeedNode.__name__: TranslationWithCurveBySpeedNode,
+	SpinAroundNode.__name__: SpinAroundNode,
+	SpinAroundBySpeedNode.__name__: SpinAroundBySpeedNode,
+	SpinNode.__name__: SpinNode,
+	SpinBySpeedNode.__name__: SpinBySpeedNode,
+	getVectorValue.__name__: getVectorValue,
+	PlaceNode.__name__: PlaceNode,
+	setAngleObjectNode.__name__: setAngleObjectNode,
+	StartNode.__name__: StartNode,
+	AcceleratesTranslationNode.__name__: AcceleratesTranslationNode,
+	DeceleratesTranslationNode.__name__: DeceleratesTranslationNode,
+	WaitNode.__name__: WaitNode,
+	CreateVectorNode.__name__: CreateVectorNode,
+	MakeVectorNode.__name__: MakeVectorNode
 }
+
 _PINS = {
 	VectorPin.__name__: VectorPin,
 	ObjectPin.__name__: ObjectPin,

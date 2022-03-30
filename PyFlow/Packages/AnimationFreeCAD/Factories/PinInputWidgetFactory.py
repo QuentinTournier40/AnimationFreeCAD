@@ -87,7 +87,7 @@ class CurveInputWidget(LabelInputWidget):
             self.combo.addItems(liste)
 
     def has_method(self, o, name):
-        return callable(getattr(o, name, None))
+        return callable(getattr(o, name, None)) 
     
 class VectorInputWidget(InputWidgetRaw):
     def __init__(self, **kwds):
