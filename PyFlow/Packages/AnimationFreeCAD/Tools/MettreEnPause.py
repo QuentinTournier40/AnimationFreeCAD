@@ -1,7 +1,7 @@
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
 from PyFlow.Core.Common import Direction
-from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
+from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 from Qt import QtGui
 
 import os 
@@ -27,4 +27,4 @@ class MettreEnPause(ShelfTool):
 
     def do(self):
         print("Est ce que ça marche ?")
-        NodeCourant.getInstance().mettreEnPause()
+        MouvementEnCours.getInstance().mettreEnPause()

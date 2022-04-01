@@ -26,11 +26,24 @@ class DemoInputWidget(InputWidgetSingle):
         else:
             self.cb.setCheckState(QtCore.Qt.Unchecked)
 
+class MyQComboBox(QtWidgets.QComboBox):
+    def __init__(self, scrollWidget = None, *args, **kwargs):
+        super(MyQComboBox, self).__init__(*args, **kwargs)
+        self.scrollWidget = scrollWidget
+        self.setFocusPolicy(QtCore.Qt.StrongFocus)
+
+    def wheelEvent(self, *args, **kwargs):
+        if self.hasFocus():
+            return QtGui.QComboBox.wheelEvent(self, *args, **kwargs)
+        else:
+            return self.scrollWidget.wheelEvent(*args, **kwargs)                
+
+
 class LabelInputWidget(InputWidgetRaw):
     def __init__(self, **kwds):
         super(LabelInputWidget, self).__init__(**kwds)
         self.setLayout(QtWidgets.QHBoxLayout(self))
-        self.combo = QtWidgets.QComboBox()  
+        self.combo = MyQComboBox()  
         self.populateCombo()
         self.combo.currentTextChanged.connect(self._onDataChangedComboBox)
         self.layout().addWidget(self.combo)

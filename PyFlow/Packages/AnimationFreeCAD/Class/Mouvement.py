@@ -11,8 +11,8 @@ class Mouvement(ABC):
     def __init__(self, unNode):
         self.timer = None
         self.etape = 0
-        self.node = unNode
         self.objet = None
+        
         self.sortieNode = unNode.sortieNode
 
     def mettreEnPause(self):
@@ -32,11 +32,11 @@ class Mouvement(ABC):
     def setObjet(self, objet):
         self.objet = objet
 
-    def executionAller(self, sortie):
+    def executionAller(self, sortie=""):
         self.execution(True,sortie)
         self.monTemps = time.time()
     
-    def executionAllerRetour(self, sortie):
+    def executionAllerRetour(self, sortie=""):
         self.execution(True,"self.execution(False, \""+ sortie + "\")")
         self.monTemps = time.time()
 

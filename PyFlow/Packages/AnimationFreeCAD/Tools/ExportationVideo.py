@@ -2,7 +2,7 @@ from PyFlow.UI.Tool.Tool import ShelfTool
 from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
-from PyFlow.Packages.AnimationFreeCAD.Class.NodeCourant import NodeCourant
+from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 from Qt import QtGui
 
 
