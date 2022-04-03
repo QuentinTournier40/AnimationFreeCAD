@@ -29,6 +29,9 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationDecelere import Transl
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.Attendre import Attendre
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CreateVecteurNode import CreateVecteurNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.MakeVecteurNode import MakeVecteurNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationXNode import RotationXNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationYNode import RotationYNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationZNode import RotationZNode
 
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationNode import RectilinearTranslationNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationBySpeedNode import RectilinearTranslationBySpeedNode
@@ -89,6 +92,9 @@ _NODES = {
 	Attendre.__name__: Attendre,
 	CreateVecteurNode.__name__: CreateVecteurNode,
 	MakeVecteurNode.__name__: MakeVecteurNode,
+	RotationXNode.__name__: RotationXNode,
+	RotationYNode.__name__: RotationYNode,
+	RotationZNode.__name__: RotationZNode,
 	
 	RectilinearTranslationNode.__name__: RectilinearTranslationNode,
 	RectilinearTranslationBySpeedNode.__name__: RectilinearTranslationBySpeedNode,
