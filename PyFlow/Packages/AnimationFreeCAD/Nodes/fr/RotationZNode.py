@@ -65,7 +65,6 @@ class RotationZNode(NodeAnimation):
         trace = m.A11 + m.A22 + m.A33 + 1
         return trace
 
-
     def matrixToQ(self, m):
         trace = self.getTrace(m)
         if(trace > 0 ):

@@ -12,7 +12,6 @@ class Mouvement(ABC):
         self.timer = None
         self.etape = 0
         self.objet = None
-        
         self.sortieNode = unNode.sortieNode
 
     def mettreEnPause(self):

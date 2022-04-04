@@ -3,8 +3,6 @@ from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnC
 from PySide2 import QtCore
 
 import functools
-import time
-
 
 class TranslationAvecCourbe(Mouvement):
     def __init__(self, uneCourbe, unNode):
@@ -22,9 +20,7 @@ class TranslationAvecCourbe(Mouvement):
         return duree
 
     def mouvement(self, sens, suite):
-        # print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
-
         if(sens):
             self.etape += 1
             stop = self.nbrPoints
@@ -32,10 +28,7 @@ class TranslationAvecCourbe(Mouvement):
             self.etape -= 1
             stop = -1
 
-        # print(self.etape)
-
         if(self.etape == stop):
-            #print(time.time() - self.monTemps)
             self.timer.stop()
             MouvementEnCours.getInstance().enleverNode(self)
             if(suite == ""):
@@ -47,16 +40,13 @@ class TranslationAvecCourbe(Mouvement):
         if(etape == -1):
             if(sens):
                 self.etape = 0
-                # print("Aller")
             else:
                 self.etape = self.nbrPoints - 1
-                # print("Retour")
         else:
             self.etape = etape
         # Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
         # Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
-        mouvement = functools.partial(
-            self.mouvement, sens=sens, suite=paramSuite)
+        mouvement = functools.partial(self.mouvement, sens=sens, suite=paramSuite)
         MouvementEnCours.getInstance().ajouterNode(self)
 
         self.timer = QtCore.QTimer()
@@ -67,5 +57,4 @@ class TranslationAvecCourbe(Mouvement):
 
     def allerALEtape(self, etape):
         self.etape = int(etape)
-        # print(self.etape)
         self.objet.Placement.Base = self.pointsTrajectoire[self.etape]

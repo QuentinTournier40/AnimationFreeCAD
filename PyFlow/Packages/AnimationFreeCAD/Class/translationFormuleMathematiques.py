@@ -5,7 +5,6 @@ import FreeCAD
 import time
 from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 
-
 class translationFormuleMathematiques(Mouvement):
     def __init__(self, equationX, equationY, equationZ, unNode):
         Mouvement.__init__(self, unNode)
@@ -21,10 +20,8 @@ class translationFormuleMathematiques(Mouvement):
             self.pas = self.pas * 2
         self.duree = duree
         self.nbrPoints = round(self.duree / self.pas)
-        # print(self.nbrPoints)
 
     def calculPoints(self):
-        t = self.t
         posX = eval(self.equationX)
         posY = eval(self.equationY)
         posZ = eval(self.equationZ)
@@ -39,14 +36,10 @@ class translationFormuleMathematiques(Mouvement):
         else:
             self.t -= self.pas
             self.etape -= 1
-        #print("t : "  + str(self.t))
-
-        # print(suite)
 
         if(sens):
             if(self.t >= self.duree):
                 self.timer.stop()
-                #print(time.time() - self.temps)
                 MouvementEnCours.getInstance().enleverNode(self)
                 if(suite == ""):
                     self.sortieNode.call()
@@ -55,7 +48,6 @@ class translationFormuleMathematiques(Mouvement):
         else:
             if(self.t <= 0):
                 self.timer.stop()
-                #print(time.time() - self.temps)
                 MouvementEnCours.getInstance().enleverNode(self)
                 if(suite == ""):
                     self.sortieNode.call()
@@ -73,8 +65,7 @@ class translationFormuleMathematiques(Mouvement):
         else:
             self.allerALEtape(etape)
 
-        mouvement = functools.partial(
-            self.mouvement, sens=sens, suite=paramSuite)
+        mouvement = functools.partial(self.mouvement, sens=sens, suite=paramSuite)
         # Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
         # Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
         MouvementEnCours.getInstance().ajouterNode(self)

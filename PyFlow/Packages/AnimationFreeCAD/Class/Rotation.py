@@ -3,7 +3,6 @@ from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnC
 from PySide import QtCore
 
 import functools
-import time
 import math
 
 
@@ -30,18 +29,14 @@ class Rotation(Mouvement):
 
     def mouvement(self, sens, suite):
         self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
-        self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
         if(sens):
             self.etape += 1
             stop = self.nbrPoints
         else:
             self.etape -= 1
             stop = -1
-
-        #print("Etape : "+ str(self.etape))
-
+            
         if(self.etape == stop):
-            #print(time.time() - self.monTemps)
             self.timer.stop()
             MouvementEnCours.getInstance().enleverNode(self)
             if(suite == ""):
@@ -49,36 +44,14 @@ class Rotation(Mouvement):
             else:
                 exec(suite)
 
-    """def mouvement(self, sens, suite):
-        self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
-        if(sens):
-            self.etape += 1
-            stop = self.nbrPoints
-        else:
-            self.etape -= 1
-            stop = -1
-
-        #print("Etape : "+ str(self.etape))
-
-        if(self.etape == stop):
-            #print(time.time() - self.monTemps)
-            self.timer.stop()
-            MouvementEnCours.getInstance().enleverNode(self)
-            if(suite == ""):
-                self.sortieNode.call()
-            else:
-                exec(suite)"""
-
     def execution(self, sens, paramSuite, etape=-1):
         if(etape == -1):
             if(sens):
                 self.etape = 0
-                self.objet.Placement.Rotation.Angle = math.radians(
-                    self.angleDeDebut)
+                self.objet.Placement.Rotation.Angle = math.radians(self.angleDeDebut)
             else:
                 self.etape = self.nbrPoints - 1
-                self.objet.Placement.Rotation.Angle = math.radians(
-                    self.angleDeFin)
+                self.objet.Placement.Rotation.Angle = math.radians(self.angleDeFin)
 
         if(sens):
             self.angleARepeterCourant = self.angleARepeter
@@ -101,9 +74,7 @@ class Rotation(Mouvement):
     def allerALEtape(self, etape):
         deltaEtape = self.etape - etape
         if(deltaEtape >= 0):
-            self.objet.Placement.rotate(
-                self.centreDeRotation, self.axeDeRotation, -self.angleARepeterCourant)
+            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, -self.angleARepeterCourant)
         else:
-            self.objet.Placement.rotate(
-                self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
+            self.objet.Placement.rotate(self.centreDeRotation, self.axeDeRotation, self.angleARepeterCourant)
         self.etape = etape

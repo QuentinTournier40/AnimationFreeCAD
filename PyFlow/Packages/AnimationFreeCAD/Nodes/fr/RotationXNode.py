@@ -63,7 +63,6 @@ class RotationXNode(NodeAnimation):
         trace = m.A11 + m.A22 + m.A33 + 1
         return trace
 
-
     def matrixToQ(self, m):
         """https://jeux.developpez.com/faq/math/?page=quaternions"""
         trace = self.getTrace(m)

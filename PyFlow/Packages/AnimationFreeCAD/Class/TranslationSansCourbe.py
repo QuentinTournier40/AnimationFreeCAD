@@ -3,7 +3,6 @@ from PyFlow.Packages.AnimationFreeCAD.Class.TranslationAvecCourbe import Transla
 import FreeCAD
 import Draft
 
-
 class TranslationSansCourbe(TranslationAvecCourbe):
     def __init__(self, coordonnes, unNode):
         courbe = self.creerLigneAvecDeuxPoints(coordonnes[0], coordonnes[1])
@@ -13,8 +12,7 @@ class TranslationSansCourbe(TranslationAvecCourbe):
         placement = FreeCAD.Placement()
         placement.Base = point1
         points = [point1, point2]
-        line = Draft.makeWire(points, placement=placement,
-                              closed=False, face=False, support=None)
+        line = Draft.makeWire(points, placement=placement,closed=False, face=False, support=None)
         Draft.autogroup(line)
         FreeCAD.ActiveDocument.recompute()
         FreeCAD.ActiveDocument.Line.Visibility = False

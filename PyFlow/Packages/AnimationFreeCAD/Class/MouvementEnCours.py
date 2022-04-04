@@ -9,7 +9,6 @@ class MouvementEnCours:
 
     def getInstance():
         if MouvementEnCours.__instance is None:
-            #print("Création de l'instance")
             MouvementEnCours.__instance = MouvementEnCours()
 
         return MouvementEnCours.__instance

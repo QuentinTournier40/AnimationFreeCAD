@@ -5,7 +5,6 @@ from PySide2 import QtCore
 import functools
 import time
 
-
 class TranslationTest(Mouvement):
     def __init__(self, uneCourbe, unNode):
         Mouvement.__init__(self, unNode)
@@ -30,7 +29,6 @@ class TranslationTest(Mouvement):
         return duree
 
     def mouvement(self, sens, suite):
-        # print(self.etape)
         distanceParcouru = self.pas * self.t
         try:
             placement = self.courbe.Shape.valueAt(distanceParcouru)
@@ -46,10 +44,8 @@ class TranslationTest(Mouvement):
             stop = -1
 
         self.t += 0.0319
-        # print(self.etape)
 
         if(distanceParcouru >= self.longueur):
-            print(time.time() - self.monTemps)
             self.timer.stop()
             placement = self.courbe.Shape.valueAt(distanceParcouru)
             self.objet.Placement.Base = placement
@@ -63,16 +59,13 @@ class TranslationTest(Mouvement):
         if(etape == -1):
             if(sens):
                 self.etape = 0
-                print("Aller")
             else:
                 self.etape = self.nbrPoints - 1
-                print("Retour")
         else:
             self.etape = etape
         # Bug de timer lorsque le mouvement est un aller boucle, il se mets à avancer de plus en vite
         # Test : Lorsqu'on fait 2 aller à la suite le 2ème est accéléré, pourquoi ?
-        mouvement = functools.partial(
-            self.mouvement, sens=sens, suite=paramSuite)
+        mouvement = functools.partial(self.mouvement, sens=sens, suite=paramSuite)
         MouvementEnCours.getInstance().ajouterNode(self)
 
         self.timer = QtCore.QTimer()
