@@ -32,6 +32,7 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.MakeVecteurNode import MakeVecteu
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationXNode import RotationXNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationYNode import RotationYNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationZNode import RotationZNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.GetPlacement import GetPlacement
 
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationNode import RectilinearTranslationNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.RectilinearTranslationBySpeedNode import RectilinearTranslationBySpeedNode
@@ -95,6 +96,7 @@ _NODES = {
 	RotationXNode.__name__: RotationXNode,
 	RotationYNode.__name__: RotationYNode,
 	RotationZNode.__name__: RotationZNode,
+	GetPlacement.__name__: GetPlacement,
 	
 	RectilinearTranslationNode.__name__: RectilinearTranslationNode,
 	RectilinearTranslationBySpeedNode.__name__: RectilinearTranslationBySpeedNode,
