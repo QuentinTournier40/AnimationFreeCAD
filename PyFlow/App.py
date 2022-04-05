@@ -29,7 +29,6 @@ import random
 from Qt import QtGui
 from Qt import QtCore
 from Qt.QtWidgets import *
-from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 
 from PyFlow import GET_PACKAGES
 from PyFlow.Core.Common import currentProcessorTime
@@ -50,6 +49,7 @@ from PyFlow.UI.Tool import REGISTER_TOOL
 from PyFlow.UI.Utils.stylesheet import editableStyleSheet
 from PyFlow.UI.ContextMenuGenerator import ContextMenuGenerator
 from PyFlow.UI.Widgets.PreferencesWindow import PreferencesWindow
+from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 try:
     from PyFlow.Packages.PyFlowBase.Tools.PropertiesTool import PropertiesTool
 except:
@@ -133,6 +133,7 @@ class PyFlow(QMainWindow):
         self.tick_timer = QtCore.QTimer()
         self._currentFileName = ''
         self.currentFileName = None
+        Coordonnees.getInstance().ajouterEtape()
 
     def historyStatePushed(self, state):
         if state.modifiesData():

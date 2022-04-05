@@ -1,7 +1,7 @@
 # Presentation
 
-This FreeCAD module allows users to animate any object easily through visual scripting Nodes.
-    
+This FreeCAD module allows users to animate any object easily through visual scripting Nodes using [PyFlow](https://github.com/wonderworks-software/PyFlow).
+
 Documentation can be found at `~AnimationFreeCAD/docs/guide`
 
 # The project
@@ -38,6 +38,13 @@ Simply copy them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 ## ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
 
 -----------------------------------------------------------------------------------------------------
+
+# Thanks
+
+Thanks to:
+[@microelly2](https://github.com/microelly2)
+[@microelly2/NodeEditor](https://github.com/microelly2/NodeEditor)
+[PyFlow](https://github.com/wonderworks-software/PyFlow)
 
 # Author
 
