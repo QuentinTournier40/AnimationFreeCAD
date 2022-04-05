@@ -1,7 +1,8 @@
 # Presentation
 
-We are 2 students from the University of Pau and the Basque Country.<br/>
-We are working on a project to graduate from computer science.
+This FreeCAD module allows users to animate any object easily through visual scripting Nodes.
+    
+Documentation can be found at `~AnimationFreeCAD/docs/guide`
 
 # The project
 
@@ -36,9 +37,12 @@ Simply copy them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 
 ## ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 
 # Author
+
+We are 2 students from the University of Pau and the Basque Country.<br/>
+We are working on a project to graduate from computer science.
 
 [@QuentinTournier40](https://github.com/QuentinTournier40)<br/>
 [@SHaiZen](https://github.com/SHaiZen25)

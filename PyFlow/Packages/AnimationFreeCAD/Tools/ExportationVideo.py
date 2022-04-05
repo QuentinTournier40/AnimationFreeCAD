@@ -1,8 +1,7 @@
+from PyFlow.Packages.AnimationFreeCAD.Class.Exportation import Exportation
 from PyFlow.UI.Tool.Tool import ShelfTool
-from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
-from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 from Qt import QtGui
 
 
@@ -28,4 +27,4 @@ class ExportationVideo(ShelfTool):
       return str("L'exportation video")
 
   def do(self):
-      pass
+      Exportation.getInstance().lancer()
