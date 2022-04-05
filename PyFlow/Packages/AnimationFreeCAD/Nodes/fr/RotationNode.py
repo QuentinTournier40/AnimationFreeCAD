@@ -1,11 +1,10 @@
+import FreeCAD
+
 from PyFlow.Packages.AnimationFreeCAD.Class.Rotation import Rotation
-from PyFlow.Packages.AnimationFreeCAD.Class.Animation import Animation
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 from FreeCAD import Vector
 from Qt.QtWidgets import *
-
-import FreeCAD
 
 class RotationNode(NodeAnimation):
     def __init__(self, name):

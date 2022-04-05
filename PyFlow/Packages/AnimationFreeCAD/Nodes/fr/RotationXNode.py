@@ -1,12 +1,11 @@
+import math
+import FreeCAD
+
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 import functools
 from PySide import QtCore
-import math
 from math import *
-
-
-import FreeCAD
 
 class RotationXNode(NodeAnimation):
     def __init__(self, name):
@@ -28,9 +27,7 @@ class RotationXNode(NodeAnimation):
               
         self.nbrAngle = round(NOMBRE_D_OR * self.duree)
         self.angleParEtape = self.angle/self.nbrAngle
-       
         self.compteur = 0
-
         self.timer = QtCore.QTimer()
         self.timer.setInterval(20)
 

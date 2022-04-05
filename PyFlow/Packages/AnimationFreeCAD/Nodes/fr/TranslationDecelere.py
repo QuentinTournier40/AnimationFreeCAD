@@ -1,9 +1,11 @@
-from dis import dis
 import functools
+import FreeCAD
+
+from PyFlow.Packages.AnimationFreeCAD.Class.FenetreErreur import FenetreErreur
+from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 from PySide import QtCore
-import FreeCAD
 
 
 class TranslationDecelere(NodeBase):
@@ -12,14 +14,19 @@ class TranslationDecelere(NodeBase):
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.createOutputPin("outExec", "ExecPin")
 
+        self.createInputPin("Objet", "ObjectPin", "---Select object---")
+        self.createInputPin("Courbe", "CurvePin", "---Select object---")
+
         self.createInputPin("vitesseInit", "FloatPin")
         self.createInputPin("Acc", "FloatPin")
-
-        self.createInputPin("Courbe", "CurvePin", "---Select object---")
-        self.createInputPin("Objet", "ObjectPin", "---Select object---")
         self._experimental = True
 
     def execute(self, *args, **kwargs):
+        if(self.getData("Objet") == DEFAULT_VALUE_OBJECT_PIN):
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Veuillez choisir un objet à mouvoir.")
+        if(self.getData("Courbe") == DEFAULT_VALUE_OBJECT_PIN):
+            return FenetreErreur("Erreur", self.name, self.courbe.name, "Veuillez choisir une courbe à suivre.")  
+
         self.vitesseInit = self.getData("vitesseInit")
         self.acc = self.getData("Acc")
 
@@ -42,7 +49,7 @@ class TranslationDecelere(NodeBase):
             distance = self.courbe.Shape.LastParameter
             self.timer.stop()
         self.objet.Placement.Base = self.courbe.Shape.valueAt(distance)
-        self.compteur += 0.032
+        self.compteur += NOMBRE_D_OR / 1000
 
     @staticmethod
     def category():

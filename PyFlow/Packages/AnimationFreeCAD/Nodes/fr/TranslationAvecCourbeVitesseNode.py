@@ -1,7 +1,6 @@
 from PyFlow.Packages.AnimationFreeCAD.Class.TranslationAvecCourbe import TranslationAvecCourbe
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
-from PyFlow.Packages.AnimationFreeCAD.Class.Animation import Animation
 
 import FreeCAD
 

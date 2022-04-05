@@ -1,5 +1,4 @@
 from abc import ABC
-from Qt.QtWidgets import *
 
 import time
 
@@ -52,6 +51,9 @@ class Mouvement(ABC):
         if(self.objet == unMouvement.objet):
             resultat = True
         return resultat
+    
+from Qt.QtWidgets import *
+
 
 class FenetreErreur():
     def __init__(self, titre, nomNode, nomPin, erreur):

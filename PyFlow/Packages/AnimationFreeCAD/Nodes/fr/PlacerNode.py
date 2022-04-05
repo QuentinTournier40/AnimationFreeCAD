@@ -11,8 +11,8 @@ class PlacerNode(NodeBase):
         self.objet = self.createInputPin("Objet","ObjectPin", DEFAULT_VALUE_OBJECT_PIN)
         self.coordonnees = self.createInputPin("Coordonnees","VectorPin")
         self.createOutputPin("outExec", "ExecPin")
+        self.createOutputPin("Objet use","ObjectPin")
         self.createOutputPin("Coordonnees de fin","VectorPin")
-        self.createOutputPin("Objet use","ObjectPin", DEFAULT_VALUE_OBJECT_PIN)
 
     def execute(self, *args, **kwargs):
         if(self.getData("Objet") == DEFAULT_VALUE_OBJECT_PIN):

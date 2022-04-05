@@ -1,9 +1,9 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
+from PyFlow.Packages.AnimationFreeCAD.Class.FenetreErreur import FenetreErreur
 
 import FreeCAD
-from PyFlow.Packages.AnimationFreeCAD.Pins.ObjectPin import ObjectPin
 
 class GetPlacement(NodeBase):
     def __init__(self, name):

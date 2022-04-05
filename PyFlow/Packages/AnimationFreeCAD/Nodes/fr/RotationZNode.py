@@ -1,6 +1,5 @@
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
-from FreeCAD import Vector
 from Qt.QtWidgets import *
 import functools
 from PySide import QtCore

@@ -1,6 +1,6 @@
-from PyFlow.Packages.AnimationFreeCAD.Class.Animation import Animation
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
+from PyFlow.Packages.AnimationFreeCAD.Class.FenetreErreur import FenetreErreur
 from PyFlow.Packages.AnimationFreeCAD.Class.translationFormuleMathematiques import translationFormuleMathematiques
 
 import FreeCAD
@@ -8,9 +8,9 @@ import FreeCAD
 class FonctionMathNode(NodeAnimation):
     def __init__(self,name):
         super(FonctionMathNode,self).__init__(name)
-        self.createInputPin("equation en x","StringPin")
-        self.createInputPin("equation en y","StringPin")
-        self.createInputPin("equation en z","StringPin")
+        self.createInputPin("equation en x","StringPin", "t*t+48")
+        self.createInputPin("equation en y","StringPin", "t*t+48")
+        self.createInputPin("equation en z","StringPin", "t*t+48")
         self.duree = self.createInputPin("Duree","FloatPin")
         self._experimental = True
 
@@ -28,7 +28,7 @@ class FonctionMathNode(NodeAnimation):
         duree = self.getData("Duree")
         
         self.mouvement = translationFormuleMathematiques(equationX, equationY, equationZ, self)
-        self.animation.executionDuree(self.mouvement, objet, duree)    #lance le timer qui gère l'exécution
+        self.animation.executionDuree(self.mouvement, objet, duree)
 
     @staticmethod
     def category():
