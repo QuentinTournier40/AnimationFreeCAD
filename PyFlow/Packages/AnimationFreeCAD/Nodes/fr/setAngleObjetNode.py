@@ -5,9 +5,9 @@ from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 import FreeCAD
 import math
 
-class setAngleObjectNode(NodeBase):
+class setAngleObjetNode(NodeBase):
     def __init__(self, name):
-        super(setAngleObjectNode, self).__init__(name)
+        super(setAngleObjetNode, self).__init__(name)
         self.createInputPin("inExec","ExecPin", None, self.execute)
         self.objet = self.createInputPin("Objet","ObjectPin", DEFAULT_VALUE_OBJECT_PIN)
         self.createInputPin("Angle","FloatPin")

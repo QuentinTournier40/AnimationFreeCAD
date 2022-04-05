@@ -21,7 +21,7 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationNode import RotationNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.RotationVitesseNode import RotationVitesseNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.getValeurVecteurNode import getValeurVecteurNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.PlacerNode import PlacerNode
-from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.setAngleObjectNode import setAngleObjectNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.setAngleObjetNode import setAngleObjetNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.CommencerNode import CommencerNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.FonctionMathNode import FonctionMathNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.TranslationAccelere import TranslationAccelere
@@ -87,7 +87,7 @@ _NODES = {
 	RotationNode.__name__: RotationNode,
 	getValeurVecteurNode.__name__: getValeurVecteurNode,
 	PlacerNode.__name__: PlacerNode,
-	setAngleObjectNode.__name__: setAngleObjectNode,
+	setAngleObjetNode.__name__: setAngleObjetNode,
 	TranslationRectiligneVitesseNode.__name__: TranslationRectiligneVitesseNode,
 	TranslationAvecCourbeVitesseNode.__name__: TranslationAvecCourbeVitesseNode,
 	RotationSurSoiMemeVitesseNode.__name__: RotationSurSoiMemeVitesseNode,
