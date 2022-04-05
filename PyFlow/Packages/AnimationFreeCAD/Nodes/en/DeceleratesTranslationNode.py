@@ -1,4 +1,3 @@
-from dis import dis
 import functools
 from PyFlow.Core import NodeBase
 from PyFlow.Core.Common import *
@@ -48,7 +47,7 @@ class DeceleratesTranslationNode(NodeBase):
 
     @staticmethod
     def category():
-        return 'en|Other'
+        return 'en|Translation|Experimental'
 
     @staticmethod
     def description():

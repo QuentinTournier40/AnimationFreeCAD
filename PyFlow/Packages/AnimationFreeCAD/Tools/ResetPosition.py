@@ -27,4 +27,4 @@ class ResetPosition(ShelfTool):
 
     def do(self):
         print("Est ce que ça marche ?")
-        Coordonnees.getInstance().positionner()
+        Coordonnees.getInstance().positionnerEtape() 

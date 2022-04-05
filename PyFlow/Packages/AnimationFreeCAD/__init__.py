@@ -51,6 +51,11 @@ from PyFlow.Packages.AnimationFreeCAD.Nodes.en.DeceleratesTranslationNode import
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.WaitNode import WaitNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.CreateVectorNode import CreateVectorNode
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.MakeVectorNode import MakeVectorNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.MathTranslation import MathTranslation
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinXNode import SpinXNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinYNode import SpinYNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.SpinZNode import SpinZNode
+from PyFlow.Packages.AnimationFreeCAD.Nodes.en.GetPosition import GetPosition
 
 # Tools
 from PyFlow.Packages.AnimationFreeCAD.Tools.MettreEnPause import MettreEnPause
@@ -114,7 +119,12 @@ _NODES = {
 	DeceleratesTranslationNode.__name__: DeceleratesTranslationNode,
 	WaitNode.__name__: WaitNode,
 	CreateVectorNode.__name__: CreateVectorNode,
-	MakeVectorNode.__name__: MakeVectorNode
+	MakeVectorNode.__name__: MakeVectorNode,
+  MathTranslation.__name__: MathTranslation,
+  SpinXNode.__name__: SpinXNode,
+  SpinYNode.__name__: SpinYNode,
+  SpinZNode.__name__: SpinZNode,
+  GetPosition.__name__: GetPosition
 }
 
 _PINS = {

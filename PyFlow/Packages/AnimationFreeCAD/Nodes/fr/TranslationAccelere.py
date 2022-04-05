@@ -46,7 +46,7 @@ class TranslationAccelere(NodeBase):
 
     @staticmethod
     def category():
-        return 'fr|Autre'
+        return 'fr|Translation|Experimental'
 
     @staticmethod
     def description():

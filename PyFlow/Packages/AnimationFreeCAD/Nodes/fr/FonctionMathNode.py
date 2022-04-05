@@ -32,7 +32,7 @@ class FonctionMathNode(NodeAnimation):
 
     @staticmethod
     def category():
-        return 'fr|Autre'
+        return 'fr|Translation|Experimental'
 
     @staticmethod
     def description():

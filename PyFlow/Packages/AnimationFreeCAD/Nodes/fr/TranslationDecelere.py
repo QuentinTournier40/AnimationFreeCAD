@@ -38,8 +38,6 @@ class TranslationDecelere(NodeBase):
 
     def mouvementDeceleration(self):
         distance = - (1 / 2 * self.acc * (self.compteur * self.compteur)) + self.vitesseInit * self.compteur
-        #print("Temps : " + str(self.compteur))
-        #print("Distance Parcourue : " + str(distance))
         if(distance > self.courbe.Shape.LastParameter):
             distance = self.courbe.Shape.LastParameter
             self.timer.stop()
@@ -48,7 +46,7 @@ class TranslationDecelere(NodeBase):
 
     @staticmethod
     def category():
-        return 'fr|Autre'
+        return 'fr|Translation|Experimental'
 
     @staticmethod
     def description():
