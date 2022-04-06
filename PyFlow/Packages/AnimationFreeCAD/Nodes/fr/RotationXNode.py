@@ -30,6 +30,8 @@ class RotationXNode(NodeAnimation):
         self.compteur = 0
         self.timer = QtCore.QTimer()
         self.timer.setInterval(20)
+        self.m = self.objet.Placement.Rotation.Matrix
+        self.matriceDeFin = self.m.rotateX(float(format(math.radians(self.angle), ".18f")))
 
         mouvement = functools.partial(self.mouvementRotationX)
 
@@ -41,9 +43,11 @@ class RotationXNode(NodeAnimation):
 
     def mouvementRotationX(self):
       if(self.compteur >= self.nbrAngle):
+          q = self.matrixToQ(self.matriceDeFin)
+          self.objet.Placement.Rotation = q
           self.timer.stop()
       m = self.objet.Placement.Rotation.Matrix
-      m.rotateX(math.radians(self.angleParEtape))
+      m.rotateX(float(format(math.radians(self.angleParEtape), ".18f")))
       q = self.matrixToQ(m)
       self.objet.Placement.Rotation = q
       self.compteur += 1

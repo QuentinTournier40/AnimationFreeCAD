@@ -1,5 +1,6 @@
 from PySide import QtCore
 from PyFlow.App import PyFlow
+from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 
 import FreeCAD
 import FreeCADGui
@@ -20,6 +21,7 @@ def OpenPyFlowCmd():
         instancePyFlow.instance(software="standalone")        
         app.setActiveWindow(instancePyFlow.appInstance)
         instancePyFlow.appInstance.show()
+        Coordonnees.getInstance().ajouterEtape()
     else:
         app.setActiveWindow(instancePyFlow.appInstance)
 
@@ -28,8 +30,7 @@ class _OpenPyFlowCmd:
     """Command to create a box"""
     
     def Activated(self):
-        # what is done when the command is clicked
-        print("démarrage")
+        # what is done when the command is clickede
         OpenPyFlowCmd()
 
     def GetResources(self):

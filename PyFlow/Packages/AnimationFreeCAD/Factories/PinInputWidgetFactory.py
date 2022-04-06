@@ -36,7 +36,7 @@ class MyQComboBox(QtWidgets.QComboBox):
         if self.hasFocus():
             return QtGui.QComboBox.wheelEvent(self, *args, **kwargs)
         else:
-            return self.scrollWidget.wheelEvent(*args, **kwargs)                
+            pass
 
 
 class LabelInputWidget(InputWidgetRaw):
@@ -90,8 +90,11 @@ class CurveInputWidget(LabelInputWidget):
         liste = []
         if(len(objects) != 0):
             for object in objects:
-                if(self.has_method(object.Shape, "discretize")):
-                    liste.append(object.Label)
+                try:
+                    if(self.has_method(object.Shape, "discretize")):
+                        liste.append(object.Label)
+                except AttributeError:
+                    pass
             liste.sort()           
             liste.insert(0, DEFAULT_VALUE_OBJECT_PIN)
             self.combo.addItems(liste)

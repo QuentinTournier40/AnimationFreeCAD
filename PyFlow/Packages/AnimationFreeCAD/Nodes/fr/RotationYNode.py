@@ -46,7 +46,7 @@ class RotationYNode(NodeAnimation):
       if(self.compteur >= self.nbrAngle):
           self.timer.stop()
       m = self.objet.Placement.Rotation.Matrix
-      m.rotateY(math.radians(self.angleParEtape))
+      m.rotateY(float(format(math.radians(self.angleParEtape), ".18f")))
       q = self.matrixToQ(m)
       self.objet.Placement.Rotation = q
       self.compteur += 1

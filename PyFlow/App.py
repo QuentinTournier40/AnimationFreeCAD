@@ -133,7 +133,6 @@ class PyFlow(QMainWindow):
         self.tick_timer = QtCore.QTimer()
         self._currentFileName = ''
         self.currentFileName = None
-        Coordonnees.getInstance().ajouterEtape()
 
     def historyStatePushed(self, state):
         if state.modifiesData():

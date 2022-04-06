@@ -4,6 +4,8 @@ This FreeCAD module allows users to animate any object easily through visual scr
 
 Documentation can be found at `~AnimationFreeCAD/docs/guide`
 
+This module use an modified version of PyFlow
+
 # The project
 
 We offer you a new way to create small animations on FreeCAD through visual scripting.
