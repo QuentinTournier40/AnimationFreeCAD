@@ -19,23 +19,6 @@ class TranslationAvecCourbe(Mouvement):
         duree = self.courbe.Shape.Length / round(uneVitesse)
         return duree
 
-    def mouvement(self, sens, suite):
-        self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
-        if(sens):
-            self.etape += 1
-            stop = self.nbrPoints
-        else:
-            self.etape -= 1
-            stop = -1
-
-        if(self.etape == stop):
-            self.timer.stop()
-            MouvementEnCours.getInstance().enleverNode(self)
-            if(suite == ""):
-                self.sortieNode.call()
-            else:
-                exec(suite)
-
     def execution(self, sens, paramSuite, etape=-1):
         if(etape == -1):
             if(sens):
@@ -54,6 +37,23 @@ class TranslationAvecCourbe(Mouvement):
 
         self.timer.timeout.connect(mouvement)
         self.timer.start()
+
+    def mouvement(self, sens, suite):
+        self.objet.Placement.Base = self.pointsTrajectoire[self.etape]
+        if(sens):
+            self.etape += 1
+            stop = self.nbrPoints
+        else:
+            self.etape -= 1
+            stop = -1
+
+        if(self.etape == stop):
+            self.timer.stop()
+            MouvementEnCours.getInstance().enleverNode(self)
+            if(suite == ""):
+                self.sortieNode.call()
+            else:
+                exec(suite)
 
     def allerALEtape(self, etape):
         self.etape = int(etape)

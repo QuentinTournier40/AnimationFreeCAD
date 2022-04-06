@@ -22,6 +22,7 @@ class translationFormuleMathematiques(Mouvement):
         self.nbrPoints = round(self.duree / self.pas)
 
     def calculPoints(self):
+        t = self.t
         posX = eval(self.equationX)
         posY = eval(self.equationY)
         posZ = eval(self.equationZ)
