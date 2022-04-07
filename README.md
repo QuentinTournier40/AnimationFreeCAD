@@ -4,7 +4,7 @@ This FreeCAD module allows users to animate any object easily through visual scr
 
 Documentation can be found at `~AnimationFreeCAD/docs/guide`
 
-This module use an modified version of PyFlow
+This module use a modified version of PyFlow
 
 # The project
 
@@ -50,8 +50,10 @@ Thanks to:
 
 # Author
 
-We are 2 students from the University of Pau and the Basque Country.<br/>
+We are 4 students from the University of Pau and the Basque Country.<br/>
 We are working on a project to graduate from computer science.
 
 [@QuentinTournier40](https://github.com/QuentinTournier40)<br/>
 [@SHaiZen](https://github.com/SHaiZen25)
+[@AimFried](https://github.com/AimFried)
+[@nvacher](https://github.com/nvacher)
