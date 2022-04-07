@@ -54,6 +54,6 @@ We are 4 students from the University of Pau and the Basque Country.<br/>
 We are working on a project to graduate from computer science.
 
 [@QuentinTournier40](https://github.com/QuentinTournier40)<br/>
-[@SHaiZen](https://github.com/SHaiZen25)
-[@AimFried](https://github.com/AimFried)
-[@nvacher](https://github.com/nvacher)
+[@SHaiZen](https://github.com/SHaiZen25)<br/>
+[@AimFried](https://github.com/AimFried)<br/>
+[@nvacher](https://github.com/nvacher)<br/>
