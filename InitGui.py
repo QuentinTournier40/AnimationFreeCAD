@@ -1,11 +1,17 @@
 import os
+import FreeCAD as App
+import FreeCADGui as Gui
 
 class AnimationFreeCAD(Workbench):
-    path = os.getcwd()
+    def __init__(self):
+        path = os.getcwd()
 
-    MenuText = "AnimationFreeCAD"
-    ToolTip = "Faire des animations"
-    Icon = path + "/../Mod/AnimationFreeCAD/icons/clapCinema.svg"
+        self.__class__.MenuText = "AnimationFreeCAD"
+        self.__class__.ToolTip = "Faire des animations"
+        self.__class__.Icon = os.path.join(App.getResourceDir(),"../"
+                                           "Mod", "AnimationFreeCAD",
+                                           "icons",
+                                           "clapCinema.svg")
 
     def Initialize(self):
         """This function is executed when FreeCAD starts"""
