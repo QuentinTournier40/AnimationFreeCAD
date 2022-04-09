@@ -22,10 +22,20 @@ Install the following packages into the local Module directory : <br/>
 Exemple For Linux : `/usr/share/freecad/Mod/` <br>
 Exemple for Windows : `C:/Program Files/FreeCD 0.19/Mod/` <br/>
 using the following command:<br/>
+
+#With git command
 (You may have to run your CLI in Administrator mode if you are on Windows)
 ```bash
 git clone https://github.com/QuentinTournier40/AnimationFreeCAD.git
 ```
+
+#With download zip
+Unzip the project in the `Mod` folder
+Make sure that the unzipped folder has not generated a sub-folder that contains the contents of the unzipped folder
+
+Example: <br/>
+AnimationFreeCAD/AnimationFreeCAD/{Files} :x: <br/>
+AnimationFreeCAD/{Files} :white_check_mark: <br/>
 
 ## Requirements
 
