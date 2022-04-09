@@ -2,7 +2,7 @@
 
 This FreeCAD module allows users to animate any object easily through visual scripting Nodes using [PyFlow](https://github.com/wonderworks-software/PyFlow).
 
-Documentation can be found at `~AnimationFreeCAD/docs/guide`
+Documentation can be found at `{Your FreeCAD installation folder}/AnimationFreeCAD/docs/guide`
 
 This module use a modified version of PyFlow
 
@@ -18,7 +18,7 @@ We offer you a new way to create small animations on FreeCAD through visual scri
 
 ## Install
 
-Install the following packages into the local Module directory `~/FreeCAD/Mod` using the following command:<br/>
+Install the following packages into the local Module directory `{Your FreeCAD installation folder}/FreeCAD/Mod` using the following command:<br/>
 (You may have to run your CLI in Administrator mode)
 ```bash
 git clone https://github.com/QuentinTournier40/AnimationFreeCAD.git
@@ -27,15 +27,15 @@ git clone https://github.com/QuentinTournier40/AnimationFreeCAD.git
 ## Requirements
 
 For this workench you must have:<br/>
-Install the following requirements into the local Module directory `~/FreeCAD/Mod`
+Install the following requirements into the local Module directory `{Your FreeCAD installation folder}/FreeCAD/Mod`
 
 1. **Qt.Py-master**
 2. **nine**
 3. **blinker-master**
 4. **docutils**
 
-You will find in the folder requirements the files of its libraries `~/FreeCAD/Mod/AnimationFreeCAD/requirements`.<br/>
-Simply copy them in the mod folder of FreeCAD `~FreeCAD/Mod`.
+You will find in the folder requirements the files of its libraries `{Your FreeCAD installation folder}/FreeCAD/Mod/AnimationFreeCAD/requirements`.<br/>
+Simply copy them in the mod folder of FreeCAD `{Your FreeCAD installation folder}/FreeCAD/Mod`.
 
 ## ⚠️⚠️ After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
 
@@ -44,9 +44,9 @@ Simply copy them in the mod folder of FreeCAD `~FreeCAD/Mod`.
 # Thanks
 
 Thanks to:
-[@microelly2](https://github.com/microelly2)
-[@microelly2/NodeEditor](https://github.com/microelly2/NodeEditor)
-[PyFlow](https://github.com/wonderworks-software/PyFlow)
+[@microelly2](https://github.com/microelly2)<br/>
+[@microelly2/NodeEditor](https://github.com/microelly2/NodeEditor)<br/>
+[PyFlow](https://github.com/wonderworks-software/PyFlow)<br/>
 
 # Author
 
