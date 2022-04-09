@@ -1,4 +1,3 @@
-from PyFlow.Packages.AnimationFreeCAD.Class.Exportation import Exportation
 from PyFlow.UI.Tool.Tool import ShelfTool
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
