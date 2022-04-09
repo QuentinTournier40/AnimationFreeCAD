@@ -18,8 +18,11 @@ We offer you a new way to create small animations on FreeCAD through visual scri
 
 ## Install
 
-Install the following packages into the local Module directory `{Your FreeCAD installation folder}/FreeCAD/Mod` using the following command:<br/>
-(You may have to run your CLI in Administrator mode)
+Install the following packages into the local Module directory :
+Exemple For Linux : `/usr/share/freecad/Mod/`
+Exemple for Windows : `C:/Program Files/FreeCD 0.19/Mod/`
+using the following command:<br/>
+(You may have to run your CLI in Administrator mode if you are on Windows)
 ```bash
 git clone https://github.com/QuentinTournier40/AnimationFreeCAD.git
 ```
