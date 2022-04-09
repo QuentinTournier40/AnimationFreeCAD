@@ -2,7 +2,7 @@
 
 This FreeCAD module allows users to animate any object easily through visual scripting Nodes using [PyFlow](https://github.com/wonderworks-software/PyFlow).
 
-Documentation can be found at `{Your FreeCAD installation folder}/AnimationFreeCAD/docs/guide`
+Documentation can be found at `AnimationFreeCAD/docs/guide`
 
 This module use a modified version of PyFlow
 
