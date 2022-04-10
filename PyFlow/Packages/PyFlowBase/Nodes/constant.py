@@ -66,8 +66,8 @@ class constant(NodeBase):
     def onPinConected(self,other):
         self.changeType(other.dataType)
 
-    def overrideTypeChanged(self,toogle):
-        if bool(toogle):
+    def overrideTypeChanged(self,toggle):
+        if bool(toggle):
             self.input.enableOptions(PinOptions.ChangeTypeOnConnection)
             self.output.enableOptions(PinOptions.ChangeTypeOnConnection)
         else:
