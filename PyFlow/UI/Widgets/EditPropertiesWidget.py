@@ -13,7 +13,7 @@
 ## limitations under the License.
 
 
-from Qt import QtWidgets, QtCore
+from PySide2 import QtWidgets, QtCore
 import sys
 import collections
 

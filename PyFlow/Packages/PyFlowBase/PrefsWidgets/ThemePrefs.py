@@ -18,8 +18,8 @@ import inspect
 import json
 from collections import defaultdict
 
-from Qt.QtWidgets import *
-from Qt import QtGui
+from PySide2.QtWidgets import *
+from PySide2 import QtGui
 
 from PyFlow.UI.Widgets.PropertiesFramework import CollapsibleFormWidget, PropertiesWidget
 from PyFlow.UI.Canvas.UICommon import clearLayout

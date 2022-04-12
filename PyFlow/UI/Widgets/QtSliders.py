@@ -16,7 +16,7 @@
 from copy import copy
 import sys
 import struct
-from Qt import QtGui, QtCore, QtWidgets
+from PySide2 import QtGui, QtCore, QtWidgets
 
 from PyFlow.UI.Canvas.UICommon import SessionDescriptor
 from PyFlow.UI.Utils.stylesheet import editableStyleSheet, Colors

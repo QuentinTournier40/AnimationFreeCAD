@@ -16,8 +16,8 @@
 from nine import str
 from PyFlow.UI.Canvas.UICommon import clearLayout
 from PyFlow.UI.Widgets.EditPropertiesWidget import EditPropertiesTreeWidget
-from Qt import QtWidgets
-from Qt import QtCore, QtGui
+from PySide2 import QtWidgets
+from PySide2 import QtCore, QtGui
 
 
 # Framework
@@ -397,7 +397,7 @@ class PropertiesWidget(QtWidgets.QWidget):
         folders = {}
         for i in range(count):
             item = self.contentLayout.itemAt(i)
-            w = item.widget()        
+            w = item.widget()
             if w:
                 if w.title() in  ["Inputs"]:
                     for key,group in w.groups.items():

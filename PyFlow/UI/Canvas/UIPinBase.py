@@ -15,14 +15,14 @@
 
 import weakref
 
-from Qt import QtCore
-from Qt import QtGui
-from Qt.QtWidgets import QApplication
-from Qt.QtWidgets import QGraphicsWidget
-from Qt.QtWidgets import QMenu
-from Qt.QtWidgets import QInputDialog
-from Qt.QtWidgets import QSizePolicy
-from Qt.QtWidgets import QPlainTextEdit
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2.QtWidgets import QApplication
+from PySide2.QtWidgets import QGraphicsWidget
+from PySide2.QtWidgets import QMenu
+from PySide2.QtWidgets import QInputDialog
+from PySide2.QtWidgets import QSizePolicy
+from PySide2.QtWidgets import QPlainTextEdit
 
 from PyFlow.Core.Common import *
 from PyFlow.UI.Utils.stylesheet import Colors, editableStyleSheet

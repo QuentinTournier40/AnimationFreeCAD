@@ -26,9 +26,9 @@ import shutil
 from string import ascii_letters
 import random
 
-from Qt import QtGui
-from Qt import QtCore
-from Qt.QtWidgets import *
+from PySide2 import QtGui
+from PySide2 import QtCore
+from PySide2.QtWidgets import *
 
 from PyFlow import GET_PACKAGES
 from PyFlow.Core.Common import currentProcessorTime
@@ -616,7 +616,7 @@ class PyFlow(QMainWindow):
         # Tools
         for packageName, registeredToolSet in GET_TOOLS().items():
             for ToolClass in registeredToolSet:
-                
+
                 if issubclass(ToolClass, ShelfTool):
                     ToolInstance = ToolClass()
                     # prevent to be garbage collected
@@ -630,13 +630,13 @@ class PyFlow(QMainWindow):
                     action.triggered.connect(ToolInstance.do)
                     # check if context menu data available
                     menuBuilder = ToolInstance.contextMenuBuilder()
-                    
+
                     if menuBuilder:
                         menuGenerator = ContextMenuGenerator(menuBuilder)
                         menu = menuGenerator.generate()
                         action.setMenu(menu)
                     toolbar.addAction(action)
-            
+
                     # step to ShelfTools/ToolName group and pass settings inside
                     settings.beginGroup("ShelfTools")
                     settings.beginGroup(ToolClass.name())
@@ -669,7 +669,7 @@ class PyFlow(QMainWindow):
                         instance.invokeDockToolByName(packageName, toolName, settings)
                         settings.endGroup()
                     settings.endGroup()
-                    
+
         # Fin tools
         PyFlow.appInstance = instance
         EditorHistory().saveState("New file")

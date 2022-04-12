@@ -8,12 +8,12 @@ import cv2
 import glob
 import FreeCADGui
 from PySide import QtGui, QtCore
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 
 
 class Exportation():
     __instance = None
-       
+
     def __init__(self):
         if Exportation.__instance is not None :
             raise Exception("Utiliser la méthode get_instance() pour obtenir une instance de l'exportation")
@@ -27,7 +27,7 @@ class Exportation():
 
         return Exportation.__instance
 
-    
+
     def lancer(self):
         #Récupération des informations
         folder = QtGui.QFileDialog.getExistingDirectory()
@@ -35,7 +35,7 @@ class Exportation():
             FenetreErreurExportation("Aucun dossier sélectionné !")
         else:
             nameVideo = QtGui.QInputDialog.getText(None, "Exportation de l'animation","Entrer le nom de la vidéo:")
-            name = nameVideo[0] 
+            name = nameVideo[0]
             name = ''.join(filter(str.isalnum, name))
             if name == '':
                 FenetreErreurExportation("Nom de la vidéo incorrecte !")
@@ -47,12 +47,12 @@ class Exportation():
                 else:
                     ListeFormat = ("mp4", "avi")
                     format= QtGui.QInputDialog.getItem(None, "Exportation de l'animation","Listes des formats vidéo disponibles",ListeFormat)
-                    
+
                     ListeFond = ("current", "black", "white", "Transparent")
                     fond= QtGui.QInputDialog.getItem(None, "Exportation de l'animation","Listes des arrières plan disponible",ListeFond)
-                    
+
                     print("[Exportation] Démarrage")
-            
+
                     fps = 27 #Nombre d'image(s) par seconde(s)
                     resolutionX = 1920
                     resolutionY = 1080
@@ -70,7 +70,7 @@ class Exportation():
                         if cpt == 5:
                             print("[Exportation] "+str(int((i*100)/nbrImages))+" %")
                             cpt = 0
-                    
+
                     print("[Exportation] Finalisation")
                     img_array = []
                     for i in range(0,nbrImages):
@@ -82,19 +82,19 @@ class Exportation():
 
                     #Injection des paramétres vidéo
                     out = cv2.VideoWriter(os.path.join(str(folder), str(name)+"."+str(format[0])),cv2.VideoWriter_fourcc(*'DIVX'),fps, size)
-                    
+
                     #Ecriture des images dans la vidéo
                     for i in range(len(img_array)):
                         out.write(img_array[i])
                     out.release()
-                    
+
                     #Suppression des images
                     for f in glob.glob('../../../../ExportationFreeCAD/*.jpg'):
                         os.remove(f)
-                        
+
                     print("[Exportation] Terminer -> "+str(folder)+"/"+str(name)+"."+str(format[0]))
 
-   
+
 class FenetreErreurExportation():
     def __init__(self,message):
         fenetre = MainWindow()
@@ -103,6 +103,6 @@ class FenetreErreurExportation():
         msg.setIcon(QMessageBox.Warning)
         msg.setStandardButtons(QMessageBox.Ok)
         msg.setText(message)
-        x = msg.exec_()  
-    
-        
+        x = msg.exec_()
+
+

@@ -1,6 +1,6 @@
 from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
 from PyFlow.Packages.AnimationFreeCAD.Class.Pile import Pile
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 import FreeCAD
 
 class Coordonnees():
@@ -23,7 +23,7 @@ class Coordonnees():
         if(Coordonnees.estArriere):
             Coordonnees.pileSuivante = Pile()
         Coordonnees.estArriere = False
-        
+
     def etape(self):
         etapeCourante = [[],[],[]]
         for i in FreeCAD.ActiveDocument.Objects:        #enregistre le nom et les paramètres de placement / rotation de chaque objet

@@ -2,9 +2,9 @@ from PyFlow.Packages.AnimationFreeCAD.Class.Coordonnees import Coordonnees
 from nine import str
 from PyFlow.UI.Tool.Tool import ShelfTool
 from PyFlow.Packages.AnimationFreeCAD.Class.MouvementEnCours import MouvementEnCours
-from Qt import QtGui
+from PySide2 import QtGui
 
-import os 
+import os
 scriptDir = os.path.dirname(os.path.realpath(__file__))
 
 class EtapeSuivante(ShelfTool):

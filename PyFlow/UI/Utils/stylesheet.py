@@ -24,7 +24,7 @@ if IS_PYTHON2:
 else:
     from enum import IntEnum
 
-from Qt import QtGui, QtWidgets, QtCore
+from PySide2 import QtGui, QtWidgets, QtCore
 
 from PyFlow.Core.Common import SingletonDecorator
 from PyFlow.ConfigManager import ConfigManager
@@ -322,7 +322,7 @@ class editableStyleSheet():
         }
         """ % "rgba%s" % str(self.MainColor.getRgb()),
             "timeStyleSheet": """
-        QSlider,QSlider:disabled,QSlider:focus{  
+        QSlider,QSlider:disabled,QSlider:focus{
                                   background: qcolor(0,0,0,0);   }
          QSlider::groove:horizontal {
             border: 1px solid #999999;
@@ -331,7 +331,7 @@ class editableStyleSheet():
         QSlider::handle:horizontal {
             background:  %s;
             width: 3px;
-         } 
+         }
         """ % "rgba%s" % str(self.MainColor.getRgb())
         }
         return Styles[name]

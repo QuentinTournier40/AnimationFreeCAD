@@ -13,9 +13,9 @@
 ## limitations under the License.
 
 
-from Qt import QtCore
-from Qt import QtGui
-from Qt.QtWidgets import QComboBox, QCheckBox
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2.QtWidgets import QComboBox, QCheckBox
 
 from PyFlow.UI.Utils.stylesheet import Colors
 from PyFlow.UI.Canvas.UINodeBase import UINodeBase

@@ -16,7 +16,7 @@
 import json
 from collections import defaultdict
 
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Input import InputAction, InputManager

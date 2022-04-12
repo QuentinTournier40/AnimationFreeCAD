@@ -1,6 +1,6 @@
 from PyFlow.Packages.AnimationFreeCAD.Nodes.fr.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 import functools
 from PySide import QtCore
 import math
@@ -15,21 +15,21 @@ class RotationZNode(NodeAnimation):
         self.createInputPin("Angle", "FloatPin")
         self.duree = self.createInputPin("Duree", "FloatPin")
 
-    def compute(self, *args, **kwargs):  
+    def compute(self, *args, **kwargs):
         if(self.getData("Objet") == DEFAULT_VALUE_OBJECT_PIN):
-            return FenetreErreur("Erreur", self.name, self.objet.name, "Veuillez choisir un objet à mouvoir.")  
+            return FenetreErreur("Erreur", self.name, self.objet.name, "Veuillez choisir un objet à mouvoir.")
         if(self.getData("Duree") <= 0):
             return FenetreErreur("Erreur", self.name, self.duree.name, "La durée ne peut pas être inférieure ou égale à 0.")
 
         self.objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Objet"))[0]
-        self.angle = self.getData("Angle")        
+        self.angle = self.getData("Angle")
         self.duree = self.getData("Duree")
 
-        super().compute()        
-              
+        super().compute()
+
         self.nbrAngle = round(NOMBRE_D_OR * self.duree)
         self.angleParEtape = self.angle/self.nbrAngle
-       
+
         self.compteur = 0
 
         self.timer = QtCore.QTimer()
@@ -59,7 +59,7 @@ class RotationZNode(NodeAnimation):
     @staticmethod
     def description():
         return "Fait tourner des objets."
-        
+
     def getTrace(self, m):
         trace = m.A11 + m.A22 + m.A33 + 1
         return trace
@@ -91,4 +91,4 @@ class RotationZNode(NodeAnimation):
                 y = (m.A23 + m.A32)/s
                 z = 0.25 * s
                 w = (m.A21 - m.A12)/s
-        return (x,y,z,w)    
+        return (x,y,z,w)

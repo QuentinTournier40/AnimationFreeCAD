@@ -13,8 +13,8 @@
 ## limitations under the License.
 
 
-from Qt.QtWidgets import *
-from Qt import QtCore, QtGui
+from PySide2.QtWidgets import *
+from PySide2 import QtCore, QtGui
 
 
 class MouseButtonCaptureWidget(QPushButton):

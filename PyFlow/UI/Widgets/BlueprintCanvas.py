@@ -26,10 +26,10 @@ try:
 except:
     from inspect import getargspec
 
-from Qt import QtCore
-from Qt import QtGui
-from Qt import QtWidgets
-from Qt.QtWidgets import *
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2 import QtWidgets
+from PySide2.QtWidgets import *
 
 from PyFlow.UI.EditorHistory import EditorHistory
 from PyFlow.UI.Utils.stylesheet import Colors

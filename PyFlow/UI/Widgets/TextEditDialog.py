@@ -13,11 +13,11 @@
 ## limitations under the License.
 
 
-from Qt import QtCore, QtGui
-from Qt.QtWidgets import QDialog
-from Qt.QtWidgets import QVBoxLayout
-from Qt.QtWidgets import QDialogButtonBox
-from Qt.QtWidgets import QTextEdit
+from PySide2 import QtCore, QtGui
+from PySide2.QtWidgets import QDialog
+from PySide2.QtWidgets import QVBoxLayout
+from PySide2.QtWidgets import QDialogButtonBox
+from PySide2.QtWidgets import QTextEdit
 
 
 class TextEditingField(QTextEdit):

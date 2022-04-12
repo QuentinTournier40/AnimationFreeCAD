@@ -15,8 +15,8 @@
 
 from nine import str
 
-from Qt.QtWidgets import *
-from Qt import QtCore, QtGui
+from PySide2.QtWidgets import *
+from PySide2 import QtCore, QtGui
 
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Core.Common import SingletonDecorator
