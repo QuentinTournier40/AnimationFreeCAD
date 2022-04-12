@@ -580,9 +580,6 @@ class PyFlow(QMainWindow):
         instance.currentSoftware = software
         SessionDescriptor().software = instance.currentSoftware
 
-        if software == "standalone":
-            editableStyleSheet(instance)
-
         try:
             extraPackagePaths = []
             extraPathsString = ConfigManager().getPrefsValue("PREFS", "General/ExtraPackageDirs")
