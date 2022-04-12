@@ -13,8 +13,8 @@
 ## limitations under the License.
 
 
-from Qt.QtWidgets import *
-from Qt import QtCore, QtGui
+from PySide2.QtWidgets import *
+from PySide2 import QtCore, QtGui
 
 from PyFlow.Input import InputActionType
 from PyFlow.UI.Widgets.KeyboardModifiersCapture import KeyboardModifiersCaptureWidget

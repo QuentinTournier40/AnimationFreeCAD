@@ -13,7 +13,7 @@
 ## limitations under the License.
 
 
-from Qt.QtWidgets import QComboBox
+from PySide2.QtWidgets import QComboBox
 from PyFlow.UI.Canvas.UINodeBase import UINodeBase
 
 

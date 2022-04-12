@@ -13,8 +13,8 @@
 ## limitations under the License.
 
 
-from Qt.QtCore import QRegExp
-from Qt.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
+from PySide2.QtCore import QRegExp
+from PySide2.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
 try:
     # python 2 support
     import __builtin__ as builtins

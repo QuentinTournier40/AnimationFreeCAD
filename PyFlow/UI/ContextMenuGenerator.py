@@ -13,8 +13,8 @@
 ## limitations under the License.
 
 
-from Qt.QtWidgets import QMenu
-from Qt.QtWidgets import QAction
+from PySide2.QtWidgets import QMenu
+from PySide2.QtWidgets import QAction
 
 
 class ContextMenuGenerator(object):

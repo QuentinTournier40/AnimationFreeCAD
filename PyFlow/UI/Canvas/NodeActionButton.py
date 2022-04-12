@@ -13,10 +13,10 @@
 ## limitations under the License.
 
 
-from Qt import QtCore, QtGui
-from Qt import QtSvg
-from Qt.QtWidgets import QGraphicsWidget
-from Qt.QtWidgets import QSizePolicy
+from PySide2 import QtCore, QtGui
+from PySide2 import QtSvg
+from PySide2.QtWidgets import QGraphicsWidget
+from PySide2.QtWidgets import QSizePolicy
 
 
 class NodeActionButtonBase(QGraphicsWidget):

@@ -14,8 +14,8 @@
 
 
 from datetime import datetime
-from Qt.QtWidgets import QFileDialog
-from Qt.QtWidgets import QMessageBox
+from PySide2.QtWidgets import QFileDialog
+from PySide2.QtWidgets import QMessageBox
 
 from PyFlow import getRawNodeInstance
 from PyFlow.Core.Common import *

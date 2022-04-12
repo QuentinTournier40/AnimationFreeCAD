@@ -161,7 +161,7 @@ def INITIALIZE(additionalPackageLocations=[], software=""):
     from PyFlow.UI.Canvas.UINodeBase import REGISTER_UI_NODE_FACTORY
     from PyFlow.UI.Canvas.UIPinBase import REGISTER_UI_PIN_FACTORY
     from PyFlow import ConfigManager
-    from Qt.QtWidgets import QMessageBox
+    from PySide2.QtWidgets import QMessageBox
 
     packagePaths = Packages.__path__
 

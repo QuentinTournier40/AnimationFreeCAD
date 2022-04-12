@@ -13,9 +13,9 @@
 # limitations under the License.
 
 from math import atan2, degrees
-from Qt import QtCore
-from Qt import QtGui
-from Qt.QtWidgets import QStyle
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2.QtWidgets import QStyle
 
 from PyFlow import getPinFromData
 
@@ -238,14 +238,14 @@ class NodePainter(object):
 
     @staticmethod
     def drawState(node, painter, pen, lod, SWITCH_LOD, r):
-        prevWidth = pen.width()  
+        prevWidth = pen.width()
         paint = False
         if node.computing:
             pen.setColor(Colors.Yellow)
             pen.setStyle(node.optPenSelectedType)
             pen.setWidth(prevWidth * 2)
             paint = True
-        else:        
+        else:
             if node._rawNode.isDirty():
                 pen.setColor(Colors.Orange)
                 pen.setStyle(node.optPenSelectedType)
@@ -255,7 +255,7 @@ class NodePainter(object):
                 pen.setColor(Colors.Green)
                 pen.setStyle(node.optPenSelectedType)
                 pen.setWidth(prevWidth * 2)
-                paint = True         
+                paint = True
 
         if paint and node.isValid():
             painter.setPen(pen)
@@ -265,10 +265,10 @@ class NodePainter(object):
                 rect.setWidth(rect.width() - pen.width() / 2)
                 rect.setHeight(rect.height() - pen.width() / 2)
                 rect.setX(pen.width() / 2)
-                rect.setY(rect.y() + pen.width() / 2)            
+                rect.setY(rect.y() + pen.width() / 2)
                 painter.drawRoundedRect(rect, node.roundness, node.roundness)
             else:
-                painter.drawRect(r)    
+                painter.drawRect(r)
         pen.setWidth(prevWidth)
 
     @staticmethod

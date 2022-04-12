@@ -15,14 +15,14 @@
 
 from nine import *
 
-from Qt import QtCore
-from Qt import QtGui
+from PySide2 import QtCore
+from PySide2 import QtGui
 from PyFlow.UI.Canvas.UICommon import *
 from PyFlow.UI.Canvas.Painters import NodePainter
 from PyFlow.UI.Canvas.UINodeBase import UINodeBase, InputTextField
 from PyFlow.UI.Widgets.QtSliders import pyf_ColorSlider
 from PyFlow.UI.Widgets.PropertiesFramework import CollapsibleFormWidget
-from Qt.QtWidgets import (QGraphicsWidget, QGraphicsItem)
+from PySide2.QtWidgets import (QGraphicsWidget, QGraphicsItem)
 
 
 class UIStickyNote(UINodeBase):

@@ -1,22 +1,22 @@
 from tabnanny import check
 from nine import str
-from Qt import QtGui
-from Qt import QtCore
+from PySide2 import QtGui
+from PySide2 import QtCore
 import FreeCAD
 
 
 from PyFlow.UI.Tool.Tool import DockTool
 
-from Qt.QtWidgets import QUndoView
-from Qt.QtWidgets import QWidget
-from Qt.QtWidgets import QCheckBox
-from Qt.QtWidgets import QHBoxLayout
-from Qt.QtWidgets import QLabel
-from Qt.QtWidgets import QVBoxLayout
-from Qt.QtWidgets import QPushButton
-#from Qt.QtWidgets import QIntValidator
-from Qt.QtWidgets import QLineEdit
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import QUndoView
+from PySide2.QtWidgets import QWidget
+from PySide2.QtWidgets import QCheckBox
+from PySide2.QtWidgets import QHBoxLayout
+from PySide2.QtWidgets import QLabel
+from PySide2.QtWidgets import QVBoxLayout
+from PySide2.QtWidgets import QPushButton
+#from PySide2.QtWidgets import QIntValidator
+from PySide2.QtWidgets import QLineEdit
+from PySide2.QtWidgets import *
 
 class DemoDockTool(DockTool):
     """docstring for History tool."""
@@ -46,7 +46,7 @@ class DemoDockTool(DockTool):
         self.avancement = QLineEdit(self)
 
         #self.onlyInt = QIntValidator()
-        #self.line.setValidator(self.onlyInt)   
+        #self.line.setValidator(self.onlyInt)
 
         self.layout.addWidget(self.boutonStartAndStop)
         self.layout.addWidget(self.boutonArreter)
@@ -70,17 +70,17 @@ class DemoDockTool(DockTool):
         # FreeCAD.Gui.runCommand('Std_ViewDockUndockFullscreen',1)
 
         self.setWidget(self.content)
-        
+
         # self.verticalLayout.setContentsMargins(2, 2, 2, 2)
-        
-    
+
+
     @staticmethod
     def getIcon():
         return QtGui.QIcon(":brick.png")
 
     def onShow(self):
         super(DemoDockTool, self).onShow()
-        
+
 
     @staticmethod
     def toolTip():

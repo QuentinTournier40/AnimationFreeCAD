@@ -3,7 +3,7 @@ from PyFlow.Packages.AnimationFreeCAD.Class.Animation import Animation
 from PyFlow.Packages.AnimationFreeCAD.Nodes.en.NodeAnimation import NodeAnimation
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import *
 from FreeCAD import Vector
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 
 import FreeCAD
 
@@ -17,20 +17,20 @@ class SpinNode(NodeAnimation):
         self.createOutputPin("End angle", "FloatPin")
         self.duree = self.createInputPin("Duration", "FloatPin")
 
-    def compute(self, *args, **kwargs):  
+    def compute(self, *args, **kwargs):
         if(self.getData("Object") == DEFAULT_VALUE_OBJECT_PIN):
-            return FenetreErreur("Error", self.name, self.objet.name, "Please choose an object.")  
+            return FenetreErreur("Error", self.name, self.objet.name, "Please choose an object.")
         if(self.getData("Duration") <= 0):
             return FenetreErreur("Error", self.name, self.duree.name, "Duration cannot be less than or equal to 0.")
 
         objet = FreeCAD.ActiveDocument.getObjectsByLabel(self.getData("Object"))[0]
-        axeDeRotation = self.getData("Rotation axis")        
-        centreDeRotation = self.getData("Rotation center")        
-        angleDeDebut = self.getData("Angle at start of rotation")        
+        axeDeRotation = self.getData("Rotation axis")
+        centreDeRotation = self.getData("Rotation center")
+        angleDeDebut = self.getData("Angle at start of rotation")
         angleDeFin = self.getData("Angle at end of rotation")
         duree = self.getData("Duration")
 
-        super().compute()        
+        super().compute()
 
         self.mouvement = Rotation(axeDeRotation, centreDeRotation, angleDeDebut, angleDeFin,self)
         self.animation.executionDuree(self.mouvement, objet, duree)

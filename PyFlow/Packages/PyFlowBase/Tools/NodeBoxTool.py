@@ -14,8 +14,8 @@
 
 
 from nine import str
-from Qt import QtCore
-from Qt import QtGui
+from PySide2 import QtCore
+from PySide2 import QtGui
 
 from PyFlow.UI.Tool.Tool import DockTool
 from PyFlow.UI.Views.NodeBox import NodesBox

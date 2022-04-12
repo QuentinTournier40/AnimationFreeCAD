@@ -1,4 +1,4 @@
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 
 
 class FenetreErreur():

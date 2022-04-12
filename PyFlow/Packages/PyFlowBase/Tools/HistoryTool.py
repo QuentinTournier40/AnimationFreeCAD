@@ -14,9 +14,9 @@
 
 
 from nine import str
-from Qt import QtCore
-from Qt import QtGui
-from Qt.QtWidgets import *
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2.QtWidgets import *
 
 from PyFlow.Packages.PyFlowBase.Tools import RESOURCES_DIR
 from PyFlow.UI.Tool.Tool import DockTool

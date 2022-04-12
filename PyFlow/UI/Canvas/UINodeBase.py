@@ -15,11 +15,11 @@
 
 from nine import str
 import logging
-from Qt import QtCore
-from Qt import QtGui
-from Qt import QtSvg
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2 import QtSvg
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import Mouvement
-from Qt.QtWidgets import *
+from PySide2.QtWidgets import *
 from PyFlow.ConfigManager import ConfigManager
 from PyFlow.Core.Common import *
 from PyFlow.UI.Widgets.QtSliders import *
@@ -523,7 +523,7 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
         else:
             print("Pas de mouvement")
             return(-1)
-    
+
     def getEtapeMax(self):
         mouvement = self.getMouvement()
         if(mouvement != False):
@@ -531,10 +531,10 @@ class UINodeBase(QGraphicsWidget, IPropertiesViewSupport, IUINode):
         else:
             print("Pas de mouvement")
             return(-1)
-            
+
     def getMouvement(self):
-        try: 
-            self._rawNode.mouvement 
+        try:
+            self._rawNode.mouvement
             if self._rawNode.mouvement is not None:
                 return self._rawNode.mouvement
             else:

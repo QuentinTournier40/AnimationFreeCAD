@@ -16,11 +16,11 @@ class Mouvement(ABC):
     def mettreEnPause(self):
         if(self.timer.isActive()):
             self.timer.stop()
-    
+
     def activerMouvement(self):
         if(not self.timer.isActive()):
             self.timer.start()
-    
+
     def getEtape(self):
         return self.etape
 
@@ -33,7 +33,7 @@ class Mouvement(ABC):
     def executionAller(self, sortie=""):
         self.execution(True,sortie)
         self.monTemps = time.time()
-    
+
     def executionAllerRetour(self, sortie=""):
         self.execution(True,"self.execution(False, \""+ sortie + "\")")
         self.monTemps = time.time()
@@ -51,8 +51,8 @@ class Mouvement(ABC):
         if(self.objet == unMouvement.objet):
             resultat = True
         return resultat
-    
-from Qt.QtWidgets import *
+
+from PySide2.QtWidgets import *
 
 
 class FenetreErreur():

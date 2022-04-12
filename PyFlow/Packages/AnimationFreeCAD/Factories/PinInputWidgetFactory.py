@@ -3,8 +3,8 @@ from PyFlow.Core.Common import *
 from PyFlow.UI.Widgets.InputWidgets import *
 from PyFlow.UI.Widgets.QtSliders import *
 from PyFlow.Packages.AnimationFreeCAD.Class.Mouvement import DEFAULT_VALUE_OBJECT_PIN
-from Qt import QtCore
-from Qt.QtWidgets import *
+from PySide2 import QtCore
+from PySide2.QtWidgets import *
 
 import FreeCAD
 
@@ -43,7 +43,7 @@ class LabelInputWidget(InputWidgetRaw):
     def __init__(self, **kwds):
         super(LabelInputWidget, self).__init__(**kwds)
         self.setLayout(QtWidgets.QHBoxLayout(self))
-        self.combo = MyQComboBox()  
+        self.combo = MyQComboBox()
         self.populateCombo()
         self.combo.currentTextChanged.connect(self._onDataChangedComboBox)
         self.layout().addWidget(self.combo)
@@ -54,10 +54,10 @@ class LabelInputWidget(InputWidgetRaw):
 
     def blockWidgetSignals(self, bLocked):
         self.combo.blockSignals(bLocked)
-    
+
     def _onDataChangedComboBox(self, val):
         self.dataSetCallback(val)
-    
+
     def setWidgetValue(self, val):
         if(len(FreeCAD.ActiveDocument.getObjectsByLabel(val)) == 0 and val != DEFAULT_VALUE_OBJECT_PIN):
             self._onDataChangedComboBox(DEFAULT_VALUE_OBJECT_PIN)
@@ -67,14 +67,14 @@ class LabelInputWidget(InputWidgetRaw):
 class ObjectInputWidget(LabelInputWidget):
     def __init__(self, **kwds):
         super(ObjectInputWidget, self).__init__(**kwds)
-        
+
     def populateCombo(self):
         objects = FreeCAD.ActiveDocument.Objects
         liste = []
         if(len(objects) != 0):
             for object in objects:
                 liste.append(object.Label)
-            liste.sort()           
+            liste.sort()
             liste.insert(0, DEFAULT_VALUE_OBJECT_PIN)
             self.combo.addItems(liste)
         else:
@@ -84,7 +84,7 @@ class ObjectInputWidget(LabelInputWidget):
 class CurveInputWidget(LabelInputWidget):
     def __init__(self, **kwds):
         super(CurveInputWidget, self).__init__(**kwds)
-        
+
     def populateCombo(self):
         objects = FreeCAD.ActiveDocument.Objects
         liste = []
@@ -95,7 +95,7 @@ class CurveInputWidget(LabelInputWidget):
                         liste.append(object.Label)
                 except AttributeError:
                     pass
-            liste.sort()           
+            liste.sort()
             liste.insert(0, DEFAULT_VALUE_OBJECT_PIN)
             self.combo.addItems(liste)
         else:
@@ -103,12 +103,12 @@ class CurveInputWidget(LabelInputWidget):
             self.combo.addItems(liste)
 
     def has_method(self, o, name):
-        return callable(getattr(o, name, None)) 
-    
+        return callable(getattr(o, name, None))
+
 class VectorInputWidget(InputWidgetRaw):
     def __init__(self, **kwds):
         super(VectorInputWidget, self).__init__(**kwds)
-        self.setLayout(QtWidgets.QGridLayout()) 
+        self.setLayout(QtWidgets.QGridLayout())
         self.x = valueBox(None, "float", True)
         self.y = valueBox(None, "float", True)
         self.z = valueBox(None, "float", True)

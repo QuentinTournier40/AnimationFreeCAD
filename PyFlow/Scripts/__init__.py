@@ -22,7 +22,7 @@ import time
 
 from PyFlow.App import PyFlow
 from PyFlow import graphUiParser
-from Qt.QtWidgets import QApplication
+from PySide2.QtWidgets import QApplication
 from PyFlow import INITIALIZE
 from PyFlow.Core.Common import *
 from PyFlow.Core.version import currentVersion

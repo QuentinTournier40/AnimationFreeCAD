@@ -16,8 +16,8 @@
 # Input widgets for pins
 
 from copy import copy
-from Qt import QtCore
-from Qt.QtWidgets import *
+from PySide2 import QtCore
+from PySide2.QtWidgets import *
 
 from PyFlow.Packages.PyFlowBase import PACKAGE_NAME
 from PyFlow import GET_PACKAGES
@@ -313,7 +313,7 @@ def getInputWidget(dataType, dataSetter, defaultValue, widgetVariant=DEFAULT_WID
         elif widgetVariant == "FilePathWidget":
             return PathInputWidget(mode="file", dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
         elif widgetVariant == "FolderPathWidget":
-            return PathInputWidget(mode="directory", dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)            
+            return PathInputWidget(mode="directory", dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
         elif widgetVariant == "EnumWidget":
             return EnumInputWidget(dataSetCallback=dataSetter, defaultValue=defaultValue, **kwds)
         elif widgetVariant == "ObjectPathWIdget":

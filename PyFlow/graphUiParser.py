@@ -18,9 +18,9 @@ import json
 import threading
 import time
 
-from Qt.QtWidgets import *
-from Qt import QtGui
-from Qt import QtCore
+from PySide2.QtWidgets import *
+from PySide2 import QtGui
+from PySide2 import QtCore
 from PyFlow import INITIALIZE
 from PyFlow.Core.Common import *
 from PyFlow.Core.GraphManager import GraphManagerSingleton
@@ -62,7 +62,7 @@ def run(filePath):
                     uiNodeJsonTemplate["wrapper"] = inp.wrapperJsonData
                     uiNode.postCreate(uiNodeJsonTemplate)
                     cat = CollapsibleFormWidget(headName=inp.name)
-                    prop.layout().addWidget(cat) 
+                    prop.layout().addWidget(cat)
                     cat = uiNode.createOutputWidgets(cat)
 
                 nodes = grph.getNodesList()
@@ -74,7 +74,7 @@ def run(filePath):
                         uiNode.postCreate(uiNodeJsonTemplate)
                         if uiNode.bExposeInputsToCompound:
                             cat = CollapsibleFormWidget(headName="{} inputs".format(node.name))
-                            prop.layout().addWidget(cat)                        
+                            prop.layout().addWidget(cat)
                             uiNode.createInputWidgets(cat, pins=False)
                 prop.show()
                 def programLoop():

@@ -13,8 +13,8 @@
 ## limitations under the License.
 
 
-from Qt import QtCore, QtGui
-from Qt.QtWidgets import QComboBox, QCompleter
+from PySide2 import QtCore, QtGui
+from PySide2.QtWidgets import QComboBox, QCompleter
 
 
 class EnumComboBox(QComboBox):
@@ -84,7 +84,7 @@ class EnumComboBox(QComboBox):
 
 if __name__ == "__main__":
     import sys
-    from Qt.QtWidgets import QApplication
+    from PySide2.QtWidgets import QApplication
     a = QApplication(sys.argv)
 
     def clb(string):

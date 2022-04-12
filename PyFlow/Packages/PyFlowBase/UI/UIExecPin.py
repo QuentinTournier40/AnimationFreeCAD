@@ -13,7 +13,7 @@
 ## limitations under the License.
 
 
-from Qt import (
+from PySide2 import (
     QtGui,
     QtCore
 )

@@ -15,20 +15,20 @@
 
 from types import MethodType
 
-from Qt.QtWidgets import QGraphicsTextItem
-from Qt.QtWidgets import QGraphicsItem
-from Qt.QtWidgets import QGraphicsWidget
-from Qt.QtWidgets import QInputDialog
-from Qt.QtWidgets import QGraphicsItemGroup
-from Qt.QtWidgets import QGraphicsProxyWidget
-from Qt.QtWidgets import QStyle
-from Qt.QtWidgets import QLabel
-from Qt.QtWidgets import QLineEdit
-from Qt.QtWidgets import QTextBrowser
-from Qt.QtWidgets import QPushButton
-from Qt.QtWidgets import QMenu
-from Qt import QtGui
-from Qt import QtCore
+from PySide2.QtWidgets import QGraphicsTextItem
+from PySide2.QtWidgets import QGraphicsItem
+from PySide2.QtWidgets import QGraphicsWidget
+from PySide2.QtWidgets import QInputDialog
+from PySide2.QtWidgets import QGraphicsItemGroup
+from PySide2.QtWidgets import QGraphicsProxyWidget
+from PySide2.QtWidgets import QStyle
+from PySide2.QtWidgets import QLabel
+from PySide2.QtWidgets import QLineEdit
+from PySide2.QtWidgets import QTextBrowser
+from PySide2.QtWidgets import QPushButton
+from PySide2.QtWidgets import QMenu
+from PySide2 import QtGui
+from PySide2 import QtCore
 
 from PyFlow.UI.Canvas.UICommon import *
 from PyFlow.UI import RESOURCES_DIR

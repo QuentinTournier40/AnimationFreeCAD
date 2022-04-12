@@ -15,8 +15,8 @@
 
 from nine import str
 import uuid
-from Qt import QtWidgets
-from Qt import QtGui, QtCore
+from PySide2 import QtWidgets
+from PySide2 import QtGui, QtCore
 
 from PyFlow.UI.Utils.stylesheet import editableStyleSheet
 
