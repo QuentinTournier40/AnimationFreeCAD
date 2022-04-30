@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1">
+  <name>Animation FreeCAD</name>
+  <description>The FreeCAD Animation workbench allows users to animate any object easily through visual scripting Nodes thanks to PyFlow.</description>
+  <version>1.0-beta</version>
+  <date>2022-04-30</date>
+  <license file="LICENSE">Apache-2.0</license>
+  <url type="repository" branch="main">https://github.com/QuentinTournier40/AnimationFreeCAD</url>
+  <url type="readme">https://github.com/QuentinTournier40/AnimationFreeCAD/blob/main/README.md</url>
+  <maintainer email="qttournier@gmail.com">Quentin Tournier</maintainer>
+  <maintainer email="andrecot2502@gmail.com">Andréas Cottet</maintainer>
+  <author email="qttournier@gmail.com">Quentin Tournier</author>
+  <author email="andrecot2502@gmail.com">Andréas Cottet</author>
+  <icon>icons/clapCinema.svg</icon>
+  <content>
+    <workbench>
+      <classname>AnimationFreeCAD</classname>
+      <subdirectory>./</subdirectory>
+      <freecadmin>0.19</freecadmin>
+    </workbench>
+  </content>
+</package>
