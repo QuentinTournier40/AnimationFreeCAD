@@ -18,7 +18,7 @@
       <subdirectory>./</subdirectory>
       <freecadmin>0.19</freecadmin>
       <!-- Python package dependencies !-->
-      <depend eq="1.4.0">docutils</depend>
+      <depend eq="1.4.0">blinker</depend>
       <depend eq="0.18.1">docutils</depend>
       <depend eq="1.4">nine</depend>
     </workbench>
