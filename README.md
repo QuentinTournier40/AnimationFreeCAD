@@ -60,18 +60,14 @@ Example:
 
 ## Prerequisites
 
-This workbench requires FreeCAD v0.19 or higher. There are also external dependencies. Install the following dependencies into the local Module directory `{Your FreeCAD installation folder}/FreeCAD/Mod`
+This workbench requires FreeCAD v0.19 or higher and
 
-1. **Qt.Py-master**
-2. **nine**
-3. **blinker-master**
-4. **docutils**
+1. [nine](https://pypi.org/project/nine/)
+2. [blinker](https://pypi.org/project/blinker/)
+3. [docutils](https://pypi.org/project/docutils/)
 
-You will find in the folder requirements the files of its libraries:  
-`{Your FreeCAD installation folder}/FreeCAD/Mod/AnimationFreeCAD/requirements`.  
-Simply copy them in the `Mod` folder of FreeCAD: `{Your FreeCAD installation folder}/FreeCAD/Mod`.
+These external dependencies are available throw the [pip](https://pypi.org/project/pip/) python package manager .
 
-⚠️⚠️ **Note for Windows users:** After doing this you will need to run FreeCAD in **administrator mode** for the first time in order to properly load dependencies. ⚠️⚠️
 
 ---------------------------------------
 
