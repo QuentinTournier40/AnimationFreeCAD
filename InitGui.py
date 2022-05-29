@@ -14,15 +14,6 @@ class AnimationFreeCAD(Workbench):
                                            "icons",
                                            "clapCinema.svg")
 
-    def Initialize_Old(self):
-        """This function is executed when FreeCAD starts"""
-        import pyflow_start
-        from PySide2 import QtCore, QtGui
-        import PyFlow # import here all the needed files that create your FreeCAD commands
-
-        self.list = ["OpenPyFlowCmd"] # A list of command names created in the line above
-        self.appendToolbar("open", self.list)
-
     def Initialize(self):
         """This function is executed when FreeCAD starts"""
         from PyFlow.App import PyFlow
