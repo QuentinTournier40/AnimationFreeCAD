@@ -8,7 +8,7 @@ class AnimationFreeCAD(Workbench):
 
         self.__class__.MenuText = "AnimationFreeCAD"
         self.__class__.ToolTip = "Faire des animations"
-        self.__class__.Icon = os.path.join(App.getResourceDir(),"../"
+        self.__class__.Icon = os.path.join(App.getUserAppDataDir(),
                                            "Mod", "AnimationFreeCAD",
                                            "icons",
                                            "clapCinema.svg")
