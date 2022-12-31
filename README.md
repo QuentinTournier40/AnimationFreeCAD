@@ -85,7 +85,7 @@ We'd like to thank:
 ## Authors
 
 [@QuentinTournier40](https://github.com/QuentinTournier40)  
-[@SHaiZen](https://github.com/SHaiZen25)  
+[@AndreasCottet](https://github.com/AndreasCottet)  
 [@AimFried](https://github.com/AimFried)  
 [@nvacher](https://github.com/nvacher)  
 
